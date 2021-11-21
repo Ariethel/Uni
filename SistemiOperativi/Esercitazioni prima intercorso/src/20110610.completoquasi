@@ -1,0 +1,58 @@
+#include <ourhdr.h>
+
+int x = 0;
+
+void worker (char *path,char *pattern,int inizio, int fine){
+	printf("Inizio: %d\nFine:%d\n",inizio,fine);
+	int fp = open(path,O_RDONLY);
+	int rd;
+	char buf[100] = "";
+	lseek (fp, inizio, SEEK_SET);
+	while ((rd = read(fp, buf, fine)) > 0 && strlen(buf) <= fine){
+
+	}if (rd < 0)
+		err_sys("read failed");
+
+	printf("buf: %s\n",buf);
+	if (strstr(buf,pattern) != NULL)
+		x++;
+
+}
+
+int main(int argc, char **argv){
+	int pid[100],rd;
+	char buf[100] = "";
+	int sizeworker;
+
+	for (int i = 0; i < argc; i++)
+	        printf("argv[%d] = %s\n", i, argv[i]);
+
+
+	int fp = open(argv[1], O_RDONLY);
+	int n_process = atoi(argv[3]);
+	while ((rd = read(fp, buf, sizeof(buf))) > 0){
+
+	}
+	if (rd < 0)
+		err_sys("Read Failed");
+	sizeworker = strlen(buf)/n_process;
+	for (int i = 0; i < n_process; i++){
+		if ((pid[i] = fork()) <  0)
+			err_sys("fork failed");
+		if (pid[i] == 0){
+			worker(argv[1],argv[2],sizeworker*i, sizeworker);
+			exit(1);
+		}
+
+	}
+
+	for (int i = 0; i < n_process; i++){
+		waitpid(pid[i],NULL, 0);
+		printf("processo %d terminato...\n",i);
+	}
+
+	printf("Ho trovato %d occorrenze",x);
+
+	exit(0);
+}
+
