@@ -1,0 +1,5 @@
+>Mostrare file nascosti
+>Navigare in workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/PROJECTNAME/
+>Cancellare le cartelle .location
+
+>In alternativa e' possibile cancellare tutte le cartelle metadata del progetto. Continuera' a funzionare dopo aver buildato di nuovo
