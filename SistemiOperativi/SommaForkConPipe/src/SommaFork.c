@@ -20,7 +20,7 @@ void worker(int id,int pwr,int *array,int start,int end){
 }
 
 int main(void) {
-	int array[100] = {1,2,3,4,5,6,1,1};
+	int array[9] = {1,2,3,4,5,6,1,1};
 	int pid;
 	int sommaTot = 0,tmp = 0;
 	int pipes[N_PROC][2];
@@ -69,7 +69,7 @@ int main(void) {
 
 
 
-	printf("Somma totale: %d",sommaTot);
+	printf("Somma totale: %d\n",sommaTot);
 
 	return EXIT_SUCCESS;
 }
