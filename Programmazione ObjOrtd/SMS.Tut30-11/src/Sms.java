@@ -1,18 +1,19 @@
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class Sms{	
-	public Sms(String mittente, String iD, String testo, GregorianCalendar data) {
+public class Sms implements Serializable{	
+	public Sms(String mittente, String iD, String testo, Date date) {
 		this.mittente = mittente;
 		ID = iD;
 		this.testo = testo;
-		this.data = data;
+		this.data = date;
 	}
 	
 	public Sms() {
 		GregorianCalendar d = new GregorianCalendar();
-		d.getTime();
-		this.data = d;
+		this.data = d.getTime();
 	}
 	
 	public String getMittente() {
@@ -33,20 +34,21 @@ public class Sms{
 	public void setTesto(String testo) {
 		this.testo = testo;
 	}
-	public GregorianCalendar getData() {
+	
+	public Date getData() {
 		return data;
 	}
-	public void setData(GregorianCalendar data) {
+
+	public void setData(Date data) {
 		this.data = data;
 	}
-	
-	
+
 	@Override
 	public String toString() {
 		return "Sms [mittente=" + mittente + ", ID=" + ID + ", testo=" + testo + ", data=" + data + "]";
 	}
 
 	private String mittente,ID,testo;
-	GregorianCalendar data;
+	Date data;
 	
 }

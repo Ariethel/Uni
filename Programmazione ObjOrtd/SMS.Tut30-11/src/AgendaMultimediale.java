@@ -1,7 +1,8 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
-public class AgendaMultimediale {
+public class AgendaMultimediale implements Serializable{
 	public AgendaMultimediale(){}
 	
 	
