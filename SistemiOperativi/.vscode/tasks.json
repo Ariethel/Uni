@@ -12,7 +12,8 @@
 				"-o",
 				"${fileDirname}/${fileBasenameNoExtension}",
 				"-l:libso2021.a",
-				"-pthread"
+				"-pthread",
+				"-lm"
 			],
 			"options": {
 				"cwd": "${fileDirname}"
