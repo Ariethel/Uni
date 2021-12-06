@@ -1,6 +1,10 @@
 
 public class GestioneOrmeggi {
 	
+	public GestioneOrmeggi(Imbarcazione[] i) {
+		this.imbarcazioni = i;
+	}
+	
 	public void aggiungiImbarcazione(Imbarcazione i) {
 		imbarcazioni[num] = i;
 		num++;
