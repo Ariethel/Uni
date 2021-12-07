@@ -11,16 +11,14 @@ public class TestImbarcazioni {
 	
 	public static void main(String args[]) throws IOException, ClassNotFoundException {
 		File f = new File("imbarcazioni.dat"); 
-		Imbarcazione[] i = new Imbarcazione[5];
+		Imbarcazione[] i = new Imbarcazione[3];
 		int j = 0;
-		Imbarcazione imb;
+		Object imb;
 		if(f.exists()) {
 			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
-			while((imb = (Imbarcazione) ois.readObject()) != null) {
-				i[j] = imb;
-				j++;
-			}
+			i = (Imbarcazione[]) ois.readObject();
 			GestioneOrmeggi go = new GestioneOrmeggi(i);
+			go.stampaTutto();
 			ois.close();
 		}else {
 			i[j] = new Imbarcazione("abc", "Corsair", 10, 1998, null, null, null);

@@ -1,6 +1,8 @@
+import java.io.Serializable;
 import java.util.Date;
 
-public class Imbarcazione {
+public class Imbarcazione implements Serializable{
+	
 	public Imbarcazione(String targa, String marca, double lunghezza, int annoCostruzione, Date DateOrmeggio,
 			Date DatePartenza, Boolean cabinato) {
 		this.targa = targa;

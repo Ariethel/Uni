@@ -3,6 +3,7 @@ public class GestioneOrmeggi {
 	
 	public GestioneOrmeggi(Imbarcazione[] i) {
 		this.imbarcazioni = i;
+		num = i.length;
 	}
 	
 	public void aggiungiImbarcazione(Imbarcazione i) {
@@ -31,7 +32,11 @@ public class GestioneOrmeggi {
 		imbarcazioni[i].checkOut();
 	}
 	
-	
+	void stampaTutto() {
+		for (int i = 0; i < num; i++) {
+			System.out.println(imbarcazioni[i]);
+		}
+	}
 	
 	
 	int num;
