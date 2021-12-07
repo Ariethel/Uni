@@ -78,7 +78,7 @@ int main(int argc, int *argv[]) {
     if (argc > 1){
         intervallo = atoi(argv[1]) * 1000;
     }else{
-        intervallo = 400000;
+        intervallo = 500000;
     }
 
 
@@ -88,8 +88,6 @@ int main(int argc, int *argv[]) {
     if ((vecchioHandler[SIGTERM] = signal(SIGTERM, termina)) == SIG_ERR)
         err_sys("Signal 15");
 
-
-    char c = '.';
     while (i < 1000){
         stampaCarattere();
 
@@ -99,10 +97,12 @@ int main(int argc, int *argv[]) {
 
     //Definire due handler che ad 1 associamo l'evento "accelera" e a 2 associamo l'evento "decelera"
 
-    if (signal(SIGUSR1, accelera) == SIG_ERR)
+    if ((vecchioHandler[SIGUSR1] = signal(SIGUSR1, accelera)) == SIG_ERR)
         err_sys("Error registering handler for SigUsr1");
 
-    if (signal(SIGUSR2, rallenta) == SIG_ERR)
+    if ((vecchioHandler[SIGUSR2] = signal(SIGUSR2, rallenta)) == SIG_ERR)
         err_sys("Error registering handler for SigUsr2");
+
+
 	return EXIT_SUCCESS;
 }
