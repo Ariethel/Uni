@@ -10,57 +10,65 @@ per poi terminare a sua volta.
 
 #include <ourhdr.h>
 int pid[10];
-const sigset_t *set;
+int count = 0;
 
-
-void worker(){
-	int count = 0;
-	int *signal;
-	sigwait(set,signal);
-	if (signal == 10){
-		printf("Received SIGUSR1 on child %d\n",getpid());
+void worker(int s){
+	if (s == SIGUSR1)
 		count++;
+
+	if (count == 100){
+		printf("\n\n\n\n\n\n\n\nHa vinto il figlio %d\n",getpid());
+		kill(getppid(),SIGCHLD);
+		exit(0);
 	}
 
-
-	if (count == 100)
-		exit(count);
 }
+
+
+void killaTutti(int s){
+	if (s == SIGCHLD){
+		for (int i = 0; i < 0; i++){
+			kill(pid[i],SIGKILL);
+		}
+	}
+}
+
 
 void inviaSegnale(){
 	int i = (random()%10) + 1;
-	printf("Invio segnale %d a %d",SIGUSR1,pid[i]);
+	printf("Invio segnale %d a %d\n",SIGUSR1,pid[i]);
 	kill(pid[i],SIGUSR1);
 }
 
 int main(){
-	int s;
+
 	for (int i = 0; i < 10; i++){
+
 		if ((pid[i] = fork()) < 0)
 			err_sys("Fork failed");
 		if (pid[i] == 0){
 			//Sono nel figlio
 			printf("Creato figlio %d\n",i);
-			worker(s);
-			exit(1);
+			signal(SIGUSR1,&worker);
+			pause(); //Aspetta l'arrivo di un segnale
 		}
 	}
 
-	while(1){
-		inviaSegnale();
 
-		usleep(100);
-	}
+	if (pid != 0){
+		//Sono nel padre
+
+		signal(SIGCHLD,&killaTutti); //Killa tutti i figlio se un processo finisce
 
 
-	int status;
+		sleep(5); //Mi serve a vedere la creazione dei figlio
 
-	waitpid(pid, &status, 0);
 
-	if ( WIFEXITED(status) )
-	{
-		int exit_status = WEXITSTATUS(status);
-		printf("Exit status of the child was %d\n", exit_status);
+		while(1){
+			inviaSegnale();
+
+			usleep(100000);
+		}
 	}
 
 
