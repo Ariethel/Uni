@@ -32,6 +32,7 @@ int visitaRicorsiva(char *path){
 	while((entry = readdir(dir)) != NULL){
 		switch(entry->d_type){
 		case DT_REG:
+			if (strcmp())
 
 
 		}
