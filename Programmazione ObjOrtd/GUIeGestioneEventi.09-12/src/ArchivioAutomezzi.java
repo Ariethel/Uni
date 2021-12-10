@@ -62,7 +62,7 @@ public class ArchivioAutomezzi<E> {
 	String targa; //Variabile globale per la targa
 	String alimentazione; //Variabile globale per l'alimentazione
 	String numPosti; //Variabile globale per il numero di posti
-	ArrayList<E> risultati;
+	ArrayList<E> risultati = (ArrayList<E>) automezzi;
 	public static void main(String[] args) {
 		
 		
@@ -222,7 +222,11 @@ public class ArchivioAutomezzi<E> {
 					risultati = (ArrayList<E>) cercaAutoveicoli(cercaTipo,targa,alimentazione,numPosti);
 				else if (cercaTipo.equals("Motocicli"))
 					risultati = (ArrayList<E>) cercaMotocicli(cercaTipo,targa,alimentazione,numPosti);
-			}
+				
+				for (E aut : risultati) {
+					JOptionPane.showConfirmDialog(null, aut.toString());
+				}
+			}		
 			
 
 			private ArrayList<Autoveicolo> cercaAutoveicoli(String cercaTipo, String targa, String alimentazione, String numPosti) {
@@ -293,15 +297,12 @@ public class ArchivioAutomezzi<E> {
 		
 		//Comportamento del pulsante cerca
 		JTextPane txtpnRicerca = new JTextPane();
-		txtpnRicerca.addAncestorListener(new AncestorListener() {
-			public void ancestorAdded(AncestorEvent event) {
+		txtpnRicerca.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
 				for (E automezzo : risultati) {
 					txtpnRicerca.setText(automezzo.toString());
 				}
-			}
-			public void ancestorMoved(AncestorEvent event) {
-			}
-			public void ancestorRemoved(AncestorEvent event) {
 			}
 		});
 		
