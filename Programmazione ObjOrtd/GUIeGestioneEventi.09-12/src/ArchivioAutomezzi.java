@@ -38,6 +38,9 @@ import javax.swing.JButton;
 import java.awt.Choice;
 import java.awt.List;
 import javax.swing.JList;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
+import javax.swing.JTextPane;
 
 public class ArchivioAutomezzi {
 	
@@ -52,6 +55,10 @@ public class ArchivioAutomezzi {
 	private JFrame frame;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private JTextField textField;
+	String cercaTipo; //Variabile globale per cercare Autoveicolo o Motociclo
+	String targa; //Variabile globale per la targa
+	String alimentazione; //Variabile globale per l'alimentazione
+	String numPosti; //Variabile globale per il numero di posti
 	public static void main(String[] args) {
 		
 		
@@ -95,8 +102,8 @@ public class ArchivioAutomezzi {
 				else {
 					try {
 						ArrayList<Automezzo> automezzi;
-						automezzi = getFromFile(openFileChooser.getSelectedFile());
-						for (Automezzo a : automezzi) {
+						automezzi = getFromFile(openFileChooser.getSelectedFile()); //Funzione per prendere gli oggetti da un file
+						for (Automezzo a : automezzi) { //Questo ciclo serve solo a stampare gli oggetti come test
 							JOptionPane.showInputDialog(a.toString());
 						}
 					} catch (ClassNotFoundException e1) {
@@ -113,11 +120,24 @@ public class ArchivioAutomezzi {
 		
 		mnFile.add(mntmOpenFile);
 		
+		
+		//Comportamento pulsante save
 		JMenuItem mntmSaveFile = new JMenuItem("Save File");
 		mnFile.add(mntmSaveFile);
 		
+		
+		
+		//Comportamento pulsante exit
 		JMenuItem mntmExit = new JMenuItem("Exit");
+		mntmExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
 		mnFile.add(mntmExit);
+		
+		
+		
 		
 		JMenu mnEdit = new JMenu("Edit");
 		menuBar.add(mnEdit);
@@ -126,43 +146,125 @@ public class ArchivioAutomezzi {
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		JRadioButton rdbtnAutomezzi = new JRadioButton("Autoveicoli");
-		rdbtnAutomezzi.setBounds(128, 5, 102, 23);
-		buttonGroup.add(rdbtnAutomezzi);
-		panel.add(rdbtnAutomezzi);
+		
+		
+		
+		
+		
+		//Pulsanti per capire che tipo di mezzo cercare
+		JRadioButton rdbtnAutoveicoli = new JRadioButton("Autoveicoli");
+		rdbtnAutoveicoli.setText("Autoveicoli");
+		rdbtnAutoveicoli.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent e) {
+				if (rdbtnAutoveicoli.isSelected()) {
+					cercaTipo = rdbtnAutoveicoli.getText();
+					JOptionPane.showInputDialog(cercaTipo);
+				}
+					
+				
+				
+			}
+		});
+		rdbtnAutoveicoli.setBounds(128, 5, 102, 23);
+		buttonGroup.add(rdbtnAutoveicoli);
+		panel.add(rdbtnAutoveicoli);
 		
 		JRadioButton rdbtnMotocicli = new JRadioButton("Motocicli");
+		rdbtnMotocicli.setText("Motocicli");
+		rdbtnMotocicli.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent e) {
+				if (rdbtnMotocicli.isSelected()) {
+					cercaTipo = rdbtnMotocicli.getText();
+					JOptionPane.showInputDialog(cercaTipo);
+				}
+					
+			}
+		});
 		rdbtnMotocicli.setBounds(235, 5, 87, 23);
 		buttonGroup.add(rdbtnMotocicli);
 		panel.add(rdbtnMotocicli);
 		
-		textField = new JTextField();
+		
+	
+		
+		
+		
+		textField = new JTextField("Press Enter");
+		textField.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				targa = textField.getText();
+				JOptionPane.showInputDialog(targa);
+			}
+		});
 		textField.setBounds(12, 67, 114, 19);
 		panel.add(textField);
 		textField.setColumns(10);
 		
 		JLabel lblTarga = new JLabel("Targa");
-		lblTarga.setBounds(12, 40, 70, 15);
+		lblTarga.setBounds(12, 36, 134, 24);
 		panel.add(lblTarga);
 		
 		JLabel lblAlimentazione = new JLabel("Alimentazione");
 		lblAlimentazione.setBounds(158, 35, 122, 24);
 		panel.add(lblAlimentazione);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(148, 64, 132, 24);
-		panel.add(comboBox);
-		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(308, 65, 61, 22);
-		panel.add(comboBox_1);
-		
 		JLabel lblNPosti = new JLabel("N Posti");
 		lblNPosti.setBounds(308, 40, 70, 15);
 		panel.add(lblNPosti);
 		
 		JButton btnCerca = new JButton("Cerca");
+		btnCerca.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cerca(cercaTipo,targa,alimentazione,numPosti);
+			}
+
+			private void cerca(String cercaTipo, String targa, String alimentazione, String numPosti) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		btnCerca.setBounds(318, 90, 117, 25);
+		
 		panel.add(btnCerca);
+		
+		
+		//ComboBox alimentazione
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(158, 64, 112, 24);
+		comboBox.addItem("Benzina");
+		comboBox.addItem("GPL");
+		comboBox.addItem("Metano");
+		comboBox.addItem("Diesel");
+		comboBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				alimentazione = (String) comboBox.getSelectedItem();
+				JOptionPane.showInputDialog(alimentazione);
+			}
+		});
+		panel.add(comboBox);
+		
+		
+		//ComboBox Numero Posti
+		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setBounds(308, 64, 112, 24);
+		comboBox_1.addItem("1");
+		comboBox_1.addItem("2");
+		comboBox_1.addItem("3");
+		comboBox_1.addItem("4");
+		comboBox_1.addItem("5");
+		comboBox_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				numPosti = (String) comboBox_1.getSelectedItem();
+				JOptionPane.showInputDialog(numPosti);
+			}
+		});
+		
+		
+		panel.add(comboBox_1);
+		
+		//Comportamento del pulsante cerca
+		JTextPane txtpnRicerca = new JTextPane();
+		txtpnRicerca.setBounds(12, 98, 294, 132);
+		panel.add(txtpnRicerca);
 	}
 }
