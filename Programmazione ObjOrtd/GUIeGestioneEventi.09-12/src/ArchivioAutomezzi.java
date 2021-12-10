@@ -41,8 +41,10 @@ import javax.swing.JList;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import javax.swing.JTextPane;
+import javax.swing.event.AncestorListener;
+import javax.swing.event.AncestorEvent;
 
-public class ArchivioAutomezzi {
+public class ArchivioAutomezzi<E> {
 	
 	private ArrayList<Automezzo> getFromFile(File selectedFile) throws IOException, ClassNotFoundException {
 		FileInputStream is = new FileInputStream(selectedFile);
@@ -55,10 +57,12 @@ public class ArchivioAutomezzi {
 	private JFrame frame;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private JTextField textField;
+	ArrayList<Automezzo> automezzi; //Array dove conservo gli oggetti letti da file
 	String cercaTipo; //Variabile globale per cercare Autoveicolo o Motociclo
 	String targa; //Variabile globale per la targa
 	String alimentazione; //Variabile globale per l'alimentazione
 	String numPosti; //Variabile globale per il numero di posti
+	ArrayList<E> risultati;
 	public static void main(String[] args) {
 		
 		
@@ -101,7 +105,6 @@ public class ArchivioAutomezzi {
 					throw new BadDataFormatException("Mi serve un file txt");
 				else {
 					try {
-						ArrayList<Automezzo> automezzi;
 						automezzi = getFromFile(openFileChooser.getSelectedFile()); //Funzione per prendere gli oggetti da un file
 						for (Automezzo a : automezzi) { //Questo ciclo serve solo a stampare gli oggetti come test
 							JOptionPane.showInputDialog(a.toString());
@@ -215,13 +218,39 @@ public class ArchivioAutomezzi {
 		JButton btnCerca = new JButton("Cerca");
 		btnCerca.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				cerca(cercaTipo,targa,alimentazione,numPosti);
+				if (cercaTipo.equals("Autoveicoli"))
+					risultati = (ArrayList<E>) cercaAutoveicoli(cercaTipo,targa,alimentazione,numPosti);
+				else if (cercaTipo.equals("Motocicli"))
+					risultati = (ArrayList<E>) cercaMotocicli(cercaTipo,targa,alimentazione,numPosti);
 			}
+			
 
-			private void cerca(String cercaTipo, String targa, String alimentazione, String numPosti) {
-				// TODO Auto-generated method stub
+			private ArrayList<Autoveicolo> cercaAutoveicoli(String cercaTipo, String targa, String alimentazione, String numPosti) {
+				ArrayList<Autoveicolo> trovati = null;
+				for (Automezzo aut : automezzi) {
+					if (aut instanceof Autoveicolo) {
+						Autoveicolo autoveicolo = (Autoveicolo) aut;
+						if (autoveicolo.getTarga().equals(targa) && autoveicolo.getAlimentazione().equals(alimentazione) && (Integer.toString(autoveicolo.getNumPosti()).equals(numPosti)))
+							trovati.add(autoveicolo);
+					}
+				}
+				return trovati;
+			}
+			
+			private ArrayList<Motociclo> cercaMotocicli(String cercaTipo, String targa, String alimentazione, String numPosti){
+				ArrayList<Motociclo> trovati = null;
+				for (Automezzo aut : automezzi) {
+					if (aut instanceof Motociclo) {
+						Motociclo motociclo = (Motociclo) aut;
+						if (motociclo.getTarga().equals(targa) && (Integer.toString(motociclo.getNumPasseggeri())).equals(numPosti))
+							trovati.add(motociclo);
+					}
+				}
+				return trovati;
 				
 			}
+			
+			
 		});
 		btnCerca.setBounds(318, 90, 117, 25);
 		
@@ -264,6 +293,18 @@ public class ArchivioAutomezzi {
 		
 		//Comportamento del pulsante cerca
 		JTextPane txtpnRicerca = new JTextPane();
+		txtpnRicerca.addAncestorListener(new AncestorListener() {
+			public void ancestorAdded(AncestorEvent event) {
+				for (E automezzo : risultati) {
+					txtpnRicerca.setText(automezzo.toString());
+				}
+			}
+			public void ancestorMoved(AncestorEvent event) {
+			}
+			public void ancestorRemoved(AncestorEvent event) {
+			}
+		});
+		
 		txtpnRicerca.setBounds(12, 98, 294, 132);
 		panel.add(txtpnRicerca);
 	}

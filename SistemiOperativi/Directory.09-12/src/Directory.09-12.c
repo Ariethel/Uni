@@ -20,9 +20,13 @@
 
 #include <ourhdr.h>
 #include <dirent.h>
+int max_depth = 0;
 
-int visitaRicorsiva(char *path){
+void visitaRicorsiva(char *path){
 	DIR *dir;
+	char buffer[256];
+	printf("\n");
+
 
 	if ((dir = opendir(path)) == NULL)
 		err_sys("Failed opening %s",path);
@@ -32,12 +36,58 @@ int visitaRicorsiva(char *path){
 	while((entry = readdir(dir)) != NULL){
 		switch(entry->d_type){
 		case DT_REG:
-			if (strcmp())
-
-
+			printf("%s->%s\n",path,entry->d_name);
+			break;
+		case DT_DIR:
+			if (strcmp(entry -> d_name,".") == 0 || strcmp(entry -> d_name,"..") == 0)
+				continue;
+			sprintf(buffer, "%s/%s",path,entry->d_name);
+			visitaRicorsiva(buffer);
+			break;
+		default:
+			printf("%s->%s (unknown file type)\n",path,entry->d_name);
 		}
 
 	}
+	closedir(dir);
+}
+
+
+
+
+
+void visitaRicorsivaPrfondita(char *path, int depth){
+	DIR *dir;
+	char buffer[256];
+
+	if (depth > max_depth)
+		max_depth = depth;
+
+	printf("\n");
+
+
+	if ((dir = opendir(path)) == NULL)
+		err_sys("Failed opening %s",path);
+
+	struct dirent *entry;
+
+	while((entry = readdir(dir)) != NULL){
+		switch(entry->d_type){
+		case DT_REG:
+			printf("%s->%s\n",path,entry->d_name);
+			break;
+		case DT_DIR:
+			if (strcmp(entry -> d_name,".") == 0 || strcmp(entry -> d_name,"..") == 0)
+				continue;
+			sprintf(buffer, "%s/%s",path,entry->d_name);
+			visitaRicorsivaPrfondita(buffer,depth+1);
+			break;
+		default:
+			printf("%s->%s (unknown file type)\n",path,entry->d_name);
+		}
+
+	}
+	closedir(dir);
 }
 
 
@@ -55,12 +105,18 @@ int main(int argc, char *argv[]) {
 	}
 
 
-	//FINE PRIMA TRACCIA
-
 
 
 	//INIZIO SECONDA TRACCIA
+	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+	visitaRicorsiva(argv[1]);
 
+
+	//INIZIO TERZA TRACCIA
+	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+	int depth = 0;
+	visitaRicorsivaPrfondita(argv[1],depth);
+	printf("Profondita' massima: %d\n",max_depth);
 
 	closedir(dir);
 	return EXIT_SUCCESS;
