@@ -62,7 +62,7 @@ public class ArchivioAutomezzi<E> {
 	String targa; //Variabile globale per la targa
 	String alimentazione; //Variabile globale per l'alimentazione
 	String numPosti; //Variabile globale per il numero di posti
-	ArrayList<E> risultati = (ArrayList<E>) automezzi;
+	ArrayList<Automezzo> risultati = automezzi;
 	public static void main(String[] args) {
 		
 		
@@ -219,18 +219,19 @@ public class ArchivioAutomezzi<E> {
 		btnCerca.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (cercaTipo.equals("Autoveicoli"))
-					risultati = (ArrayList<E>) cercaAutoveicoli(cercaTipo,targa,alimentazione,numPosti);
+					risultati = (ArrayList<Automezzo>) cercaAutoveicoli(cercaTipo,targa,alimentazione,numPosti);
 				else if (cercaTipo.equals("Motocicli"))
-					risultati = (ArrayList<E>) cercaMotocicli(cercaTipo,targa,alimentazione,numPosti);
+					risultati = (ArrayList<Automezzo>) cercaMotocicli(cercaTipo,targa,alimentazione,numPosti);
 				
-				for (E aut : risultati) {
+				
+				for (Automezzo aut : risultati) {
 					JOptionPane.showConfirmDialog(null, aut.toString());
 				}
 			}		
 			
 
-			private ArrayList<Autoveicolo> cercaAutoveicoli(String cercaTipo, String targa, String alimentazione, String numPosti) {
-				ArrayList<Autoveicolo> trovati = null;
+			private ArrayList<Automezzo> cercaAutoveicoli(String cercaTipo, String targa, String alimentazione, String numPosti) {
+				ArrayList<Automezzo> trovati = null;
 				for (Automezzo aut : automezzi) {
 					if (aut instanceof Autoveicolo) {
 						Autoveicolo autoveicolo = (Autoveicolo) aut;
@@ -241,8 +242,8 @@ public class ArchivioAutomezzi<E> {
 				return trovati;
 			}
 			
-			private ArrayList<Motociclo> cercaMotocicli(String cercaTipo, String targa, String alimentazione, String numPosti){
-				ArrayList<Motociclo> trovati = null;
+			private ArrayList<Automezzo> cercaMotocicli(String cercaTipo, String targa, String alimentazione, String numPosti){
+				ArrayList<Automezzo> trovati = null;
 				for (Automezzo aut : automezzi) {
 					if (aut instanceof Motociclo) {
 						Motociclo motociclo = (Motociclo) aut;
@@ -300,7 +301,7 @@ public class ArchivioAutomezzi<E> {
 		txtpnRicerca.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				for (E automezzo : risultati) {
+				for (Automezzo automezzo : risultati) {
 					txtpnRicerca.setText(automezzo.toString());
 				}
 			}
