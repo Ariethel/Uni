@@ -1,0 +1,27 @@
+VELISTI(Vid, VNome, Esperienza, DataNascita)
+PRENOTAZIONI(Vid, Bid, Data)
+BARCHE(Bid, BNome, Colore)
+
+
+
+(b) Trovare i codici e i nomi dei velisti che hanno prenotato una barca rossa e una verde.
+
+
+pi VID, Vnome (VELISTI join on VID(s BARCHE.colore = "rosso" join on BID (PRENOTAZIONI join on BID s BARCHE.colore = "verde")))
+
+
+(c) Trovare i codici dei velisti che non hanno mai prenotato una barca rossa.
+
+
+((pi VID (VELISTI.VID - pi VELISTI.VID(VELISTI join on VID (PRENOTAZIONI join on BID s BARCHE.colore = rossa)))
+
+
+(d) Trovare i codici e i nomi dei velisti che non hanno mai prenotato una barca rossa.
+
+
+(pi VELISTI.VID, VELISTi.vnome - pi VELISTI.VID, VELISTI.vnome(VELISTI join on VID (PRENOTAZIONI join on BID s BARCHE.colore = rossa)))
+
+
+(e) Trovare i codici e i nomi dei velisti che hanno prenotato almeno due barche.
+
+pi Vid,Vnome(VELISTI natural_join (P2(PRENOTAZIONI natural_join BARCHE) tetha_join on (p1.vid = p2.vid and p1.bid != p2.bid) P1(PRENOTAZIONI natural_join BARCHE)))
