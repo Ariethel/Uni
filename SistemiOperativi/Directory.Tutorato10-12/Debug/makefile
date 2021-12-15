@@ -9,7 +9,6 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include src/subdir.mk
--include subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -49,7 +48,7 @@ Directory.Tutorato10-12: $(OBJS) $(USER_OBJS) makefile objects.mk $(OPTIONAL_TOO
 
 # Other Targets
 clean:
-	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) Directory.Tutorato10-12
+	-$(RM) Directory.Tutorato10-12
 	-@echo ' '
 
 .PHONY: all clean dependents main-build

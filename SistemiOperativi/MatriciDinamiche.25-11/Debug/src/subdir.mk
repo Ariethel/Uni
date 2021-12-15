@@ -6,11 +6,11 @@
 C_SRCS += \
 ../src/MatriciDinamiche.25-11.c 
 
-OBJS += \
-./src/MatriciDinamiche.25-11.o 
-
 C_DEPS += \
 ./src/MatriciDinamiche.25-11.d 
+
+OBJS += \
+./src/MatriciDinamiche.25-11.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -21,4 +21,11 @@ src/%.o: ../src/%.c src/subdir.mk
 	@echo 'Finished building: $<'
 	@echo ' '
 
+
+clean: clean-src
+
+clean-src:
+	-$(RM) ./src/MatriciDinamiche.25-11.d ./src/MatriciDinamiche.25-11.o
+
+.PHONY: clean-src
 

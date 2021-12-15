@@ -1,0 +1,2 @@
+/*Fare quello che fa l'esercizio 1 ma passando un array di path e creare un figlio per ogni path
+questo dovra' cercare l'elemento maggiore ed alla fine il padre dovra' restituire solo quello maggiore tra tutti quelli restituiti dai figli*/

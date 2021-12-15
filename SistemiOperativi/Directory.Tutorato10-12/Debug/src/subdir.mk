@@ -6,11 +6,11 @@
 C_SRCS += \
 ../src/Directory.Tutorato10-12.c 
 
-OBJS += \
-./src/Directory.Tutorato10-12.o 
-
 C_DEPS += \
 ./src/Directory.Tutorato10-12.d 
+
+OBJS += \
+./src/Directory.Tutorato10-12.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -21,4 +21,11 @@ src/%.o: ../src/%.c src/subdir.mk
 	@echo 'Finished building: $<'
 	@echo ' '
 
+
+clean: clean-src
+
+clean-src:
+	-$(RM) ./src/Directory.Tutorato10-12.d ./src/Directory.Tutorato10-12.o
+
+.PHONY: clean-src
 

@@ -9,7 +9,6 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include src/subdir.mk
--include subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -49,7 +48,7 @@ MatriciDinamiche.25-11: $(OBJS) $(USER_OBJS) makefile objects.mk $(OPTIONAL_TOOL
 
 # Other Targets
 clean:
-	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) MatriciDinamiche.25-11
+	-$(RM) MatriciDinamiche.25-11
 	-@echo ' '
 
 .PHONY: all clean dependents main-build
