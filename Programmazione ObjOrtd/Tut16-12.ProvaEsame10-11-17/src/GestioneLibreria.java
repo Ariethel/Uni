@@ -22,6 +22,7 @@ import java.awt.FlowLayout;
 import javax.swing.JTextPane;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.image.ColorModel;
 
 public class GestioneLibreria {
 	
@@ -115,13 +116,27 @@ public class GestioneLibreria {
 		comboBox.setBounds(12, 29, 146, 24);
 		frame.getContentPane().add(comboBox);
 		
-		JButton btnVisualizza = new JButton("Visualizza");
-		btnVisualizza.setBounds(239, 29, 117, 25);
-		frame.getContentPane().add(btnVisualizza);
-		
 		JTextPane txtpnDettagli = new JTextPane();
 		txtpnDettagli.setText("Dettagli");
 		txtpnDettagli.setBounds(22, 58, 286, 193);
 		frame.getContentPane().add(txtpnDettagli);
+		
+		JButton btnVisualizza = new JButton("Visualizza");
+		btnVisualizza.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String titolo = (String) comboBox.getSelectedItem();
+				try {
+					Libro result = libreria.cercaTitolo(titolo);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				txtpnDettagli.setText(result.toString());
+			}
+		});
+		btnVisualizza.setBounds(239, 29, 117, 25);
+		frame.getContentPane().add(btnVisualizza);
+		
+		
 	}
 }
