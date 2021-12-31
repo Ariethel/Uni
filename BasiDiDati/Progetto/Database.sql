@@ -60,7 +60,7 @@ Lunghezza decimal(2,2) not null
 
 create table afferire(
 Titolo varchar(20) references canzoni.Titolo on update cascade,
-Nome varchar(20) references generi.nome
+Nome varchar(20) references generi.nome on update cascade
 );
 
 create table comporre(
