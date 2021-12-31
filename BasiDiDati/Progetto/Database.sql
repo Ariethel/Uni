@@ -31,3 +31,44 @@ on update cascade,
 DurataComplessiva decimal(2,2) not null,
 NumeroCanzoni int not null
 );
+
+create table generi(
+Nome varchar(20) primary key
+);
+
+create table autori(
+NomeAutore varchar(20) primary key,
+AnniEsperienza int not null
+);
+
+create table ascoltare(
+CF char(16) references utenti.CF on update cascade,
+Titolo varchar(20) references canzoni.titolo on update cascade,
+UltimoAscolto date not null
+);
+
+create table raccogliere(
+Codice int references playlist.Codice on update cascade,
+Titolo varchar(20) references canzoni.titolo on update cascade
+);
+
+create table canzoni(
+Titolo varchar(20) primary key,
+NomeAlbum varchar(20) references album.NomeAlbum on update cascade,
+Lunghezza decimal(2,2) not null
+);
+
+create table afferire(
+Titolo varchar(20) references canzoni.Titolo on update cascade,
+Nome varchar(20) references generi.nome
+);
+
+create table comporre(
+Titolo varchar(20) references canzoni.Titolo on update cascade,
+NomeAutore varchar(20) references autori.NomeAutore on update cascade
+);
+
+create table incidere(
+NomeAutore varchar(20) references autori.NomeAutore on update cascade,
+NomeAlbum varchar(20) references album.NomeAlbum on update cascade
+);
