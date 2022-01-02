@@ -11,25 +11,26 @@ public class TesserinoPersonale extends Tesserino implements Serializable{
 		this.categoria = categoria;
 		this.sommaSpesa = sommaSpesa;
 	}
-	
-	
+
+
+	@Override
 	public double paga() {
 		if (this.categoria.equalsIgnoreCase("Docente"))
 			sommaSpesa += 1.60;
 		if (this.categoria.equalsIgnoreCase("Amministrativo"))
 			sommaSpesa += 4.00;
-		
+
 		return this.categoria.equalsIgnoreCase("Docente") ? 1.60 : 4;
 	}
-	
+
 	public void cambiaCategoria() {
 		if (this.categoria.equalsIgnoreCase("Docente"))
 			this.categoria = "Amministrativo";
 		else
 			this.categoria = "Docente";
 	}
-	
-	
+
+
 	public double getSommaSpesa() {
 		return sommaSpesa;
 	}

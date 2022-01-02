@@ -4,10 +4,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
+
 public class Main {
 	static final String DB_URL = "jdbc:mysql://localhost/ufficio";
 	static final String USER = "root";
-	static final String PASS = "root";
+	static final String PASS = "HLJ*2e6m";
 
 
 	static final String QUERY1 = "select i1.nome\n"

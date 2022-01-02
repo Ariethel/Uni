@@ -5,28 +5,28 @@ public class PagamentoPasti implements Serializable{
 
 
 	private static final long serialVersionUID = 7473917263114252485L;
-	
-	
+
+
 	public void aggiungiTesserino(Tesserino t) {
 		tesserini.add(t);
 	}
-	
+
 	public boolean usaTesserino(String code) throws TesserinoScadutoException, SaldoInsufficienteException {
 		for (Tesserino tesserino : tesserini) {
 			if (tesserino.getCodice().equalsIgnoreCase(code)) {
 				sommaIncassata += tesserino.paga();
 				return true;
 			}
-				
+
 		}
-		
+
 		return false;
 	}
-	
+
 	public double calcolaTotale() {
 		return sommaIncassata;
 	}
-	
+
 	public PagamentoPasti dammiTesserinoPerTipo(int x) throws ParametroInvalidoException {
 		PagamentoPasti pp = new PagamentoPasti();
 		if (x != 0 && x != 1) throw new ParametroInvalidoException();
@@ -42,22 +42,22 @@ public class PagamentoPasti implements Serializable{
 					pp.aggiungiTesserino(tesserino);
 			}
 		}
-		
+
 		return pp;
 	}
-	
+
 	public double dammiSommaSpesa() {
 		double spesa = 0;
 		for (Tesserino tesserino : tesserini) {
 			if (tesserino instanceof TesserinoPersonale)
 				spesa += ((TesserinoPersonale) tesserino).getSommaSpesa();
 		}
-		
+
 		return spesa;
 	}
-	
-	
-	
+
+
+
 	public double getSommaIncassata() {
 		return sommaIncassata;
 	}
@@ -77,5 +77,5 @@ public class PagamentoPasti implements Serializable{
 
 
 	private double sommaIncassata;
-	private ArrayList<Tesserino> tesserini = new ArrayList<Tesserino>();
+	private ArrayList<Tesserino> tesserini = new ArrayList<>();
 }

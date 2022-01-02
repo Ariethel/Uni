@@ -7,7 +7,7 @@ public abstract class Tesserino implements Serializable{
 		this.cognome = cognome;
 		this.attivo = attivo;
 	}
-	
+
 	public String getCodice() {
 		return codice;
 	}
@@ -32,26 +32,26 @@ public abstract class Tesserino implements Serializable{
 	public void setAttivo(boolean attivo) {
 		this.attivo = attivo;
 	}
-	
+
 	public void attiva() {
-		if (this.attivo == true)
+		if (this.attivo)
 			throw new RuntimeException();
 		else {
 			this.attivo = true;
 		}
 	}
-	
+
 	public void disattiva() {
-		if (this.attivo == false)
+		if (!this.attivo)
 			throw new RuntimeException();
 		else {
 			this.attivo = false;
 		}
 	}
-	
+
 	public abstract double paga() throws TesserinoScadutoException, SaldoInsufficienteException;
-	
+
 	private String codice, nome,cognome;
 	private boolean attivo;
-	
+
 }
