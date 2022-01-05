@@ -18,6 +18,20 @@ Tessera int references Artisti.Tessera,
 Anno int
 );
 
+create table Settore(
+Tessera int references Artisti.Tessera,
+Arte varchar(16),
+Genere varchar(16)
+);
+
+insert into Settore values
+(123,"Danza", "Moderna"),
+(123,"Danza", "Classica"),
+(123,"Danza", "Pop"),
+(123,"Suonare", "Sax"),
+(234,"Suonare", "Chitarra");
+
+
 insert into Spettacolo values
 ("Soledad",2006),
 ("Soledad", 2007),
