@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Commedia extends Film{
 	
-	public Commedia(String id, String titolo) {
+	public Commedia(int id, String titolo) {
 		super(id, titolo);
 	}
 

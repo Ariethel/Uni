@@ -1,18 +1,23 @@
 package noleggio;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Film {
-	public Film(String id, String titolo) {
-		this.id = id;
+public class Film implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5265580137426902845L;
+	public Film(int id2, String titolo) {
+		this.id = id2;
 		this.titolo = titolo;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -55,5 +60,6 @@ public class Film {
 
 
 
-	protected String id, titolo;
+	int id;
+	protected String titolo;
 }

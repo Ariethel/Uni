@@ -1,7 +1,15 @@
 package noleggio;
 
-public class Noleggio {
+import java.io.Serializable;
+
+public class Noleggio implements Serializable {
 	
+	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5005668485520489687L;
 	
 	
 	public Noleggio(Film film, int idCliente, int giorniRitardo) throws BadIDException {
@@ -40,6 +48,15 @@ public class Noleggio {
 	public void setGiorniRitardo(int giorniRitardo) {
 		this.giorniRitardo = giorniRitardo;
 	}
+	
+	
+
+
+	@Override
+	public String toString() {
+		return "Noleggio [film=" + film + ", idCliente=" + idCliente + ", giorniRitardo=" + giorniRitardo + "]";
+	}
+
 
 
 

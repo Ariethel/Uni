@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Azione extends Film{
 	
 	
-	public Azione(String id, String titolo) {
+	public Azione(int id, String titolo) {
 		super(id, titolo);
 	}
 
