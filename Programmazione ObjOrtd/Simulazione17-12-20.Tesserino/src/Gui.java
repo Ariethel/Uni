@@ -115,7 +115,15 @@ public class Gui {
 		JButton btnNewButton = new JButton("Cerca");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				try {
+					pp.usaTesserino(Integer.parseInt(textField.getText()));
+				} catch (NumberFormatException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (TesserinoScadutoException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 		panel_1.add(btnNewButton);
