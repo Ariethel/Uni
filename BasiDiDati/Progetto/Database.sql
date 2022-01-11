@@ -72,6 +72,7 @@ create table incidere( #fatta
 NomeAutore varchar(20) references autori.NomeAutore on update cascade,
 NomeAlbum varchar(20) references album.NomeAlbum on update cascade
 );
+							
 
 insert into utenti(CF, Nome, Cognome, Citta, CV, Via, Tipo, DataIscrizione, TipoAbbonamento) values
 ("AAAAAAAAAAAAAAAA", "Donald", "Duck", "Napoli", "15", "V. Leoni", "Abbonato", "2022-01-01", "Mensile"), 

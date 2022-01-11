@@ -28,8 +28,9 @@ WHERE Codice = (SELECT Codice
                                                                                              
 # 3 - Selezione aggregata su tutti i valori
 # Selezionare la somma di tutte le canzoni che partecipano ad una playlist
-SELECT SUM(DISTINCT Titolo) as NumeroTotaleCanzoni
-FROM raccogliere;
+SELECT SUM(NumeroCanzoni) NumeroTotaleCanzoni
+FROM playlist;
+
 				 	
 
 
