@@ -1,0 +1,33 @@
+Utenti(CF, Nome, Cognome, Citta, CV, Via, Tipo, DataIscrizione, TipoAbbonamento*, ScadenzaAbbonamento*, ScadenzaProva*)
+
+Album(NomeAlbum, DataPubblicazione, DurataComplessiva, NumeroCanzoni)
+
+Playlist(Codice, CF, DurataComplessiva, NumeroCanzoni) 
+	ViR (CF, Utenti.CF)
+
+Genere(Nome)
+
+Autore(NomeD'Arte, AnniEsperienza)
+
+Ascoltare(CF, Titolo, OraUltimoAscolto) 
+	ViR (CF, Utenti.CF) 
+	ViR (Titolo, Canzone.Titolo)
+
+Raccogliere(Codice, Titolo) 
+	ViR (Codice, Playlist.Codice) 
+	ViR (Titolo, Canzone.Titolo)
+
+Canzone(Titolo, NomeAlbum, Lunghezza)
+	ViR (NomeAlbum, Album.NomeAlbum)
+
+Afferire(Titolo, Nome)
+	ViR (Titolo, Canzone.Titolo)
+	ViR (Nome, Genere.Nome)
+
+Comporre(Titolo, NomeD'Arte)
+	ViR (Titolo, Canzone.Titolo)
+	ViR (NomeD'Arte, Autore.NomeD'Arte)
+
+Incidere(NomeD'Arte, NomeAlbum)
+	ViR (NomeD'Arte, Autore.NomeD'Arte)
+	ViR (NomeAlbum, Album.NomeAlbum)
