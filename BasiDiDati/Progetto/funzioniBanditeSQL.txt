@@ -1,4 +1,0 @@
-Funzioni non utilizzabili nel progetto
-
-limit
-overhead
