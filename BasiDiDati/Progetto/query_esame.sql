@@ -27,11 +27,17 @@ WHERE Codice = (SELECT Codice
 																							 WHERE NomeAutore = "Folkstone");
                                                                                              
 # 3 - Selezione aggregata su tutti i valori
+# Selezionare la somma di tutte le canzoni che partecipano ad una playlist
+SELECT SUM(DISTINCT Titolo) as NumeroTotaleCanzoni
+FROM raccogliere;
+				 	
+
+
+# 4 - Selezione aggregata su raggruppamenti
 # Selezionare la somma delle canzoni di ogni playlist (Codice, #Canzoni)
-SELECT Codice, MAX(NumeroCanzoni) as Canzoni
-FROM playlist
-GROUP BY Codice
-HAVING 
+SELECT Codice, COUNT(Titolo) as Canzoni
+FROM raccogliere
+GROUP BY Codice;			
 			
 
 
