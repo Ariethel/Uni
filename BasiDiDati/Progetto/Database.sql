@@ -41,9 +41,9 @@ NomeAutore varchar(20) primary key,
 AnniEsperienza int not null
 );
 
-create table ascoltare( #Voglio inseirire canzoni ascoltate soltanto da GUI con un bottone ed una ricerca
-CF char(16) references utenti.CF on update cascade,
+create table ascoltare( #
 Titolo varchar(20) references canzoni.titolo on update cascade,
+CF char(16) references utenti.CF on update cascade,
 UltimoAscolto date not null
 );
 
@@ -138,6 +138,46 @@ insert into canzoni values
 ("Il testamento diTito","La buona novella", 05.51),
 ("Laudate Hominem","La buona novella", 03.27);
 
+insert into ascoltare values
+("Going Under","AAAAAAAAAAAAAAAA","2003-03-04"),
+("Bring Me to Life", "AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Everybody's fool", "AAAAAAAAAAAAAAAA", "2003-03-04"),
+("My Immortal", "AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Haunted", "AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Tourniquet", "AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Imaginary", "AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Taking Over Me", "AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Hello", "AAAAAAAAAAAAAAAA", "2003-03-04"),
+("My Last Breath", "AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Whisper", "AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Ol bal di Oss ", "AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Longobardia", "AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Aufstand", "AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Anime dannate", "AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Freri", "AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Un'altra VoltaAncora", "AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Luppulus in fabula", "AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Terra santa", "AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Senza certezze", "AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Vortici scuri", "AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Nell'altro cadro", "AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Vanita di vanita", "AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Rocce nere", "AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Part 1","AAAAAAAAAAAAAAAA","2003-03-04"),
+("Part 2","AAAAAAAAAAAAAAAA","2003-03-04"),
+("Laudate Dominum","AAAAAAAAAAAAAAAA", "2003-03-04"),
+("L'infanzia diMaria","AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Il ritornodiGiuseppe","AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Il sogno di Maria","AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Ave Maria","AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Via della croce","AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Tre madri","AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Il testamento diTito","AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Tre madri","BBBBBBBBBBBBBBBB", "2003-03-04"),
+("Il testamento diTito","BBBBBBBBBBBBBBBB", "2003-03-04"),
+("Laudate Hominem","BBBBBBBBBBBBBBBB", "2003-03-04"),
+("Laudate Hominem","AAAAAAAAAAAAAAAA", "2003-03-04");
+
 insert into playlist (Codice,CF) values
 (111, "AAAAAAAAAAAAAAAA"),
 (222, "CCCCCCCCCCCCCCCC"),
@@ -151,6 +191,7 @@ insert into raccogliere values
 (222,"Going Under"),
 (333,"Longobardia"),
 (333,"Rocce Nere"),
+(333,"Freri"),
 (333,"Whisper");
 
 insert into afferire values
@@ -159,7 +200,10 @@ insert into afferire values
 ("Part 1", "Jazz"),
 ("Part 2", "Jazz"),
 ("Bring Me to Life","Goth Metal"),
-("Bring Me to Life","Musica d'autore");
+("Bring Me to Life","Musica d'autore"),
+("My Immortal", "Ballad"),
+("Laudate Dominum", "Ballad");
+
 
 insert into comporre values
 ("Going Under","Evanescence"),
