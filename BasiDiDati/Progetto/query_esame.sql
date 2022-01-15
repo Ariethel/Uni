@@ -33,11 +33,6 @@ FROM NumCanzoni;
 											
 # 4 - Selezione aggregata su raggruppamenti
 # Selezionare la somma delle canzoni di ogni playlist (Codice, #Canzoni)
-drop view if exists NumCanzoni;
-CREATE VIEW NumCanzoni AS 
-	(SELECT Codice, COUNT(Titolo) as Numero
-	 FROM raccogliere
-     GROUP BY Codice);
 
 SELECT *
 from NumCanzoni;
@@ -53,13 +48,7 @@ HAVING Lunghezza > 03.00;
 
 # 6 - Selezione aggregata su raggruppamenti con condizioni che includano un'altra funzione di raggruppamento
 # Selezionare l'Album piu' lungo
-drop view if exists LunghezzaAlbum;
-CREATE view LunghezzaAlbum AS
-	(SELECT a.NomeAlbum as Titolo, sum(Lunghezza) as Durata
-	FROM canzoni c join album a on c.NomeAlbum = a.NomeAlbum
-    WHERE c.NomeAlbum = a.NomeAlbum
-    GROUP BY a.NomeAlbum);
-        
+
 SELECT la.Titolo, la.Durata
 FROM LunghezzaAlbum la
 WHERE Durata = (SELECT max(durata)
@@ -77,19 +66,12 @@ WHERE Titolo in (SELECT Titolo
 # 8 - Una selezione con l'uso appropriato del doppio not exists
 # Selezionare gli utenti che hanno ascoltato tutte le canzoni
 # Utenti che non hanno non ascoltato delle canzoni
+
 SELECT Nome, Cognome, CF
 FROM utenti
 WHERE CF not in (SELECT CF
-				 FROM ascoltare
-				 WHERE Titolo not in (SELECT titolo
-									  FROM canzoni));
-
-
-SELECT Nome, Cognome, CF
-FROM utenti
-WHERE CF in (SELECT CF
 			FROM ascoltare
-			WHERE Titolo not in (SELECT Titolo # ho tutte le canzoni non ascoltate
+			WHERE Titolo not in (SELECT Titolo
 								 FROM canzoni
 								 WHERE Titolo not in (SELECT Titolo
 													  FROM ascoltare)));

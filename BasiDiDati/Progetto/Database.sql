@@ -247,3 +247,19 @@ insert into incidere values
 ("Folkstone","Damnati ad Metalla"),
 ("Coltrane","My Favorite Things"),
 ("Fabrizio De Andre","La buona novella");
+
+
+drop view if exists LunghezzaAlbum;
+CREATE view LunghezzaAlbum AS
+	(SELECT a.NomeAlbum as Titolo, sum(Lunghezza) as Durata
+	FROM canzoni c join album a on c.NomeAlbum = a.NomeAlbum
+    WHERE c.NomeAlbum = a.NomeAlbum
+    GROUP BY a.NomeAlbum);
+    
+    
+    
+drop view if exists NumCanzoni;
+CREATE VIEW NumCanzoni AS 
+	(SELECT Codice, COUNT(Titolo) as Numero
+	 FROM raccogliere
+     GROUP BY Codice);
