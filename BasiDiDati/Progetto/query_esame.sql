@@ -50,9 +50,20 @@ FROM canzoni
 GROUP BY Titolo, Lunghezza
 HAVING Lunghezza > 03.00;
 
-# 6 - Selezione aggregata su raggruppamenti con condizioni che includano un'altra funzione di raggruppamento
-# 
 
+# 6 - Selezione aggregata su raggruppamenti con condizioni che includano un'altra funzione di raggruppamento
+# Selezionare l'Album piu' lungo
+drop view if exists LunghezzaAlbum;
+CREATE view LunghezzaAlbum AS
+	(SELECT a.NomeAlbum as Titolo, sum(Lunghezza) as Durata
+	FROM canzoni c join album a on c.NomeAlbum = a.NomeAlbum
+    WHERE c.NomeAlbum = a.NomeAlbum
+    GROUP BY a.NomeAlbum);
+        
+SELECT la.Titolo, la.Durata
+FROM LunghezzaAlbum la
+WHERE Durata = (SELECT max(durata)
+				FROM LunghezzaAlbum);
 
 # 7 - Selezione con operazioni sugli insieme (in o not in)
 # Selezionare tutte le ballate che non ha scritto De Andre
@@ -60,7 +71,7 @@ SELECT *
 FROM comporre
 WHERE Titolo in (SELECT Titolo
 				 FROM afferire
-				 WHERE Nome = "Ballad")   and NomeAutore <> "Fabrizio De Andre";
+				 WHERE Nome = "Ballad") and NomeAutore <> "Fabrizio De Andre";
                  
                  
 # 8 - Una selezione con l'uso appropriato del doppio not exists
@@ -72,11 +83,6 @@ WHERE CF not in (SELECT CF
 				 FROM ascoltare
 				 WHERE Titolo not in (SELECT titolo
 									  FROM canzoni));
-
-
-
-
-
 
 
 SELECT Nome, Cognome, CF
