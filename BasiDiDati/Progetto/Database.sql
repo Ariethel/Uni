@@ -2,7 +2,7 @@ drop schema if exists progetto;
 create schema progetto;
 use progetto;
 
-create table utenti( #fatta
+create table utenti( 
 CF char(16) primary key,
 Nome varchar(20) not null,
 Cognome varchar(20) not null,
@@ -17,14 +17,14 @@ ScadenzaProva date default null
 );
 
 
-create table album( #fatta
+create table album( 
 NomeAlbum varchar(20) primary key,
 DataPubblicazione date not null,
 DurataComplessiva decimal(4,2) not null,
 NumeroCanzoni int default 0
 );
 
-create table playlist( #fatta
+create table playlist( 
 Codice int primary key,
 CF char(16) references utenti.CF
 on update cascade,
@@ -32,43 +32,43 @@ DurataComplessiva decimal(4,2) default 0,
 NumeroCanzoni int default 0
 );
 
-create table generi( #fatta
+create table generi( 
 Nome varchar(20) primary key
 );
 
-create table autori( #fatta
+create table autori( 
 NomeAutore varchar(20) primary key,
 AnniEsperienza int not null
 );
 
-create table ascoltare( #
+create table ascoltare( 
 Titolo varchar(20) references canzoni.titolo on update cascade,
 CF char(16) references utenti.CF on update cascade,
 UltimoAscolto date not null
 );
 
-create table raccogliere( #fatta
+create table raccogliere( 
 Codice int references playlist.Codice on update cascade,
 Titolo varchar(20) references canzoni.titolo on update cascade
 );
 
-create table canzoni( #fatta
+create table canzoni( 
 Titolo varchar(20) primary key,
 NomeAlbum varchar(20) references album.NomeAlbum on update cascade,
 Lunghezza decimal(4,2) not null
 );
 
-create table afferire( # fatta
+create table afferire( 
 Titolo varchar(20) references canzoni.Titolo on update cascade,
 Nome varchar(20) references generi.nome on update cascade
 );
 
-create table comporre( #fatta
+create table comporre( 
 Titolo varchar(20) references canzoni.Titolo on update cascade,
 NomeAutore varchar(20) references autori.NomeAutore on update cascade
 );
 
-create table incidere( #fatta
+create table incidere( 
 NomeAutore varchar(20) references autori.NomeAutore on update cascade,
 NomeAlbum varchar(20) references album.NomeAlbum on update cascade
 );
@@ -113,7 +113,7 @@ insert into canzoni values
 ("Hello", "Fallen", 03.40),
 ("My Last Breath", "Fallen", 04.07),
 ("Whisper", "Fallen", 05.27),
-("Ol bal di Oss ", "Damnati ad Metalla", 01.52),
+("Ol bal di Oss", "Damnati ad Metalla", 01.52),
 ("Longobardia", "Damnati ad Metalla", 04.07),
 ("Aufstand", "Damnati ad Metalla", 03.48),
 ("Anime dannate", "Damnati ad Metalla", 04.51),
@@ -150,7 +150,7 @@ insert into ascoltare values
 ("Hello", "AAAAAAAAAAAAAAAA", "2003-03-04"),
 ("My Last Breath", "AAAAAAAAAAAAAAAA", "2003-03-04"),
 ("Whisper", "AAAAAAAAAAAAAAAA", "2003-03-04"),
-("Ol bal di Oss ", "AAAAAAAAAAAAAAAA", "2003-03-04"),
+("Ol bal di Oss", "AAAAAAAAAAAAAAAA", "2003-03-04"),
 ("Longobardia", "AAAAAAAAAAAAAAAA", "2003-03-04"),
 ("Aufstand", "AAAAAAAAAAAAAAAA", "2003-03-04"),
 ("Anime dannate", "AAAAAAAAAAAAAAAA", "2003-03-04"),
@@ -181,18 +181,57 @@ insert into ascoltare values
 insert into playlist (Codice,CF) values
 (111, "AAAAAAAAAAAAAAAA"),
 (222, "CCCCCCCCCCCCCCCC"),
-(333, "EEEEEEEEEEEEEEEE");
+(333, "EEEEEEEEEEEEEEEE"),
+(444, "DDDDDDDDDDDDDDDD");
 
 insert into raccogliere values
 (111,"Ave Maria"),
 (111,"Part 2"),
 (111,"Freri"),
+(222,"Ave Maria"),
 (222,"Il testamento diTito"),
 (222,"Going Under"),
+(333,"Ave Maria"),
 (333,"Longobardia"),
 (333,"Rocce Nere"),
 (333,"Freri"),
-(333,"Whisper");
+(333,"Whisper"),
+(444, "Going Under"),
+(444, "Bring Me to Life"),
+(444, "Everybody's fool"),
+(444, "My Immortal"),
+(444, "Haunted"),
+(444, "Tourniquet"),
+(444, "Imaginary"),
+(444, "Taking Over Me"),
+(444, "Hello"),
+(444, "My Last Breath"),
+(444, "Whisper"),
+(444, "Ol bal di Oss"),
+(444, "Longobardia"),
+(444, "Aufstand"),
+(444, "Anime dannate"),
+(444, "Freri"),
+(444, "Un'altra VoltaAncora"),
+(444, "Luppulus in fabula"),
+(444, "Terra santa"),
+(444, "Senza certezze"),
+(444, "Vortici scuri"),
+(444, "Nell'altro cadro"),
+(444, "Vanita di vanita"),
+(444, "Rocce nere"),
+(444, "Part 1"),
+(444, "Part 2"),
+(444, "Laudate Dominum"),
+(444, "L'infanzia diMaria"),
+(444, "Il ritornodiGiuseppe"),
+(444, "Il sogno di Maria"),
+(444, "Ave Maria"),
+(444, "Via della croce"),
+(444, "Tre madri"),
+(444, "Il testamento diTito"),
+(444, "Laudate Hominem");
+
 
 insert into afferire values
 ("Aufstand", "Folk Metal"),

@@ -64,17 +64,15 @@ WHERE Titolo in (SELECT Titolo
                  
                  
 # 8 - Una selezione con l'uso appropriato del doppio not exists
-# Selezionare gli utenti che hanno ascoltato tutte le canzoni
-# Utenti che non hanno non ascoltato delle canzoni
-
-SELECT Nome, Cognome, CF
-FROM utenti
+# Estrarre gli utenti che non hanno ascoltato alcuna canzone dell'album "Fallen"
+SELECT *
+FROM utenti u
 WHERE CF not in (SELECT CF
-			FROM ascoltare
-			WHERE Titolo not in (SELECT Titolo
-								 FROM canzoni
-								 WHERE Titolo not in (SELECT Titolo
-													  FROM ascoltare)));
+				 FROM ascoltare
+				 WHERE titolo not in (SELECT c.Titolo
+								      FROM canzoni c
+								      WHERE c.NomeAlbum != "Fallen"));
+
 
                                           
 
