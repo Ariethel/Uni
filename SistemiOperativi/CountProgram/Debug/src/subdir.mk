@@ -6,11 +6,11 @@
 C_SRCS += \
 ../src/CountProgram.c 
 
-OBJS += \
-./src/CountProgram.o 
-
 C_DEPS += \
 ./src/CountProgram.d 
+
+OBJS += \
+./src/CountProgram.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -21,4 +21,11 @@ src/%.o: ../src/%.c src/subdir.mk
 	@echo 'Finished building: $<'
 	@echo ' '
 
+
+clean: clean-src
+
+clean-src:
+	-$(RM) ./src/CountProgram.d ./src/CountProgram.o
+
+.PHONY: clean-src
 
