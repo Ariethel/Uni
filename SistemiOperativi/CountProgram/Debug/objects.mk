@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -l:libso2021 -lpthread
+LIBS := -lso2021 -lpthread
 

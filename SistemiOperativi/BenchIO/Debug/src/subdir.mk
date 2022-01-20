@@ -6,11 +6,11 @@
 C_SRCS += \
 ../src/BenchIO.c 
 
-OBJS += \
-./src/BenchIO.o 
-
 C_DEPS += \
 ./src/BenchIO.d 
+
+OBJS += \
+./src/BenchIO.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -21,4 +21,11 @@ src/%.o: ../src/%.c src/subdir.mk
 	@echo 'Finished building: $<'
 	@echo ' '
 
+
+clean: clean-src
+
+clean-src:
+	-$(RM) ./src/BenchIO.d ./src/BenchIO.o
+
+.PHONY: clean-src
 
