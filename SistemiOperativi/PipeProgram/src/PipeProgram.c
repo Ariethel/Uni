@@ -86,6 +86,7 @@ int main(void) {
 		err_sys("Error pipe not alloced");
 	}
 
+
 	if ((pid = fork()) < 0) {
 		err_sys("Error fork");
 	}
