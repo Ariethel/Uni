@@ -10,35 +10,65 @@ terminazione di B (tutti i processi devono terminare).
 
 #include <ourhdr.h>
 #define N_PROC 3
+int DpipeA[2]; //Pipe dal figlio D al padre A
 
-void d_worker(){
-	printf("D creato\n");
+void d_worker(char str[]){
+	char strn[500];
+	strcat(strn,str);
+	strcat(strn,", Figlio D.\n");
+	if (write(DpipeA[WRITE_END], &strn,sizeof(strn)) < 0) err_sys("Write from C to D failed");
+	close(DpipeA[WRITE_END]);
 }
 
 
-void c_worker(){
-	printf("C creato\n");
+void c_worker(char str[]){
 	int pidD;
+	char strn[50];
+	strcat(strn,str);
+	strcat(strn,", Figlio C");
+	int CpipeD[2];
+	if (pipe(CpipeD) < 0) err_sys("Pipe da C a D failed");
 	if ((pidD = fork()) < 0) err_sys("Fork D Failed");
 	if (pidD == 0){
-		d_worker();
+		//Sono dentro D
+		close(CpipeD[WRITE_END]);
+		char str[50];
+		if (read(CpipeD[READ_END],&str, sizeof(str)) < 0) err_sys("Read frome C to D failed");
+		close(CpipeD[READ_END]);
+		d_worker(str);
 		exit(0);
 	}
+	close(CpipeD[READ_END]);
+	if (write(CpipeD[WRITE_END], &strn,sizeof(strn)) < 0) err_sys("Write from C to D failed");
+	close(CpipeD[WRITE_END]);
 }
 
 
-void b_worker(){
+void b_worker(char str[]){
 	int pidC;
-	printf("B creato\n");
+	char strn[50];
+	strcat(strn,str);
+	strcat(strn,", Figlio B");
+	int BpipeC[2];
+	if (pipe(BpipeC) < 0) err_sys("Pipe da B a C failed");
 	if ((pidC = fork()) < 0) err_sys("Fork C Failed");
 	if (pidC == 0){
-		c_worker();
+		//Sono dentro C
+		close(BpipeC[WRITE_END]);
+		char str[50];
+		if (read(BpipeC[READ_END], &str, sizeof(str)) < 0) err_sys("Read from B to C failed");
+		close(BpipeC[READ_END]);
+		c_worker(str);
 		exit(0);
 	}
+	close(BpipeC[READ_END]);
+	if (write(BpipeC[WRITE_END],&strn, sizeof(strn)) < 0) err_sys("Write from B to C failed");
+	close(BpipeC[WRITE_END]);
 
 }
 
 int main(void) {
+	if (pipe(DpipeA) < 0) err_sys("Pipe da D a A failed");
 	int pidB;
 	int ApipeB[2];
 	if (pipe(ApipeB) < 0) err_sys("Pipe da A a B failed");
@@ -46,12 +76,22 @@ int main(void) {
 	if ((pidB = fork()) < 0)
 		err_sys("Fork B Failed");
 	if (pidB == 0){
-		//CONTINUARE DA QUI
-		b_worker();
+		//Sono dentro B
+		close(ApipeB[WRITE_END]);
+		char str[50];
+		if (read(ApipeB[READ_END], &str, sizeof(str)) < 0) err_sys("Read failed from A to B");
+		b_worker(str);
+		close(ApipeB[READ_END]);
 		exit(0);
 	}
 	close(ApipeB[READ_END]);
-	char str = "Padre: A";
+	char str[50] = "Padre A";
 	if (write(ApipeB[WRITE_END],&str,sizeof(str)) < 0) err_sys("Write failed from A to B");
+	close(ApipeB[WRITE_END]);
+	for (int i = 0; i < 3; i++) wait(NULL);
+	char strfinal[50];
+	if (read(DpipeA[READ_END], &strfinal, sizeof(strfinal)) < 0) err_sys("Read failed from D to A");
+	close(DpipeA[READ_END]);
+	printf("Stringa ricevuta da A ---> %s", strfinal);
 	return EXIT_SUCCESS;
 }
