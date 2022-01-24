@@ -6,11 +6,11 @@
 C_SRCS += \
 ../src/PipeProgram.c 
 
-OBJS += \
-./src/PipeProgram.o 
-
 C_DEPS += \
 ./src/PipeProgram.d 
+
+OBJS += \
+./src/PipeProgram.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -21,4 +21,11 @@ src/%.o: ../src/%.c src/subdir.mk
 	@echo 'Finished building: $<'
 	@echo ' '
 
+
+clean: clean-src
+
+clean-src:
+	-$(RM) ./src/PipeProgram.d ./src/PipeProgram.o
+
+.PHONY: clean-src
 
