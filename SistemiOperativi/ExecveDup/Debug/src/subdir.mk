@@ -6,11 +6,11 @@
 C_SRCS += \
 ../src/ExecveDup.c 
 
-OBJS += \
-./src/ExecveDup.o 
-
 C_DEPS += \
 ./src/ExecveDup.d 
+
+OBJS += \
+./src/ExecveDup.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -21,4 +21,11 @@ src/%.o: ../src/%.c src/subdir.mk
 	@echo 'Finished building: $<'
 	@echo ' '
 
+
+clean: clean-src
+
+clean-src:
+	-$(RM) ./src/ExecveDup.d ./src/ExecveDup.o
+
+.PHONY: clean-src
 
