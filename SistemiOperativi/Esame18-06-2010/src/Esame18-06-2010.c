@@ -85,7 +85,7 @@ int main(void) {
 		exit(0);
 	}
 	close(ApipeB[READ_END]);
-	char str[50] = "Padre A";
+	char str[50] = "Padre  A";
 	if (write(ApipeB[WRITE_END],&str,sizeof(str)) < 0) err_sys("Write failed from A to B");
 	close(ApipeB[WRITE_END]);
 	for (int i = 0; i < 3; i++) wait(NULL);
