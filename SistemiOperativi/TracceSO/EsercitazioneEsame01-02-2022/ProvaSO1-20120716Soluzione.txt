@@ -1,0 +1,65 @@
+﻿DOMANDA 1
+
+Gli algoritmi di scheduling si valutano per: Utilizzo della CPU, produttivita’ tempo di completamento, tempo di attesa e tempo di risposta. L’utilizzo della cpu deve essere il piu’ alto possibile al fine di massimizzare l’utilizzo dell’hw. Il throughput rappresenta la quantita’ di output generata in un dato lasso temporale e deve essere quanto piu’ alta possibile. Il tempo di completamento e’ quello che interessa al programma stesso, ovvero il tempo necessario al completamento del programma espresso come tempo di attesa + tempo di esecuzione + eventuali attese. Il tempo di attesa e’ quello che il processo passa nella ready queue mentre quello di risposta e’ dato dal tempo impiegato a fornire il primo output utile dal momento in cui il programma viene sottoposto al calcolatore.
+
+
+DOMANDA 2
+
+Il linking dinamico e’ un meccanismo che permette di risparmiare memoria, cio’ avviene attraverso un sistema detto late binding grazie al quale in un codice programma e’ possibile inserire dei collegamenti simbolici detti bind. Il codice di questi collegamenti non viene immediatamente caricato in memoria insieme al programma, viene invece caricato solo al momento dell’occorrenza effettiva per poi essere nuovamente scaricato una volta terminata la sua esecuzione. Questo meccanismo risulta particolarmente utile nel caso di procedure raramente utilizzare, la piu’ comune e’ sicuramente la routine di gestione degli errori.
+
+
+DOMANDA 3
+
+	
+DOMANDA 4
+
+DOMANDA 5
+#include <ourhdr.h>
+int pipeFP[2];
+
+void worker(int fp, int inizio, int fine){
+	close(pipeFP[READ_END]);
+	lseek(fp, inizio, SET_CURR);
+	lseek(fp, fine, SET_END);
+	char line[256];
+	int n = 0;
+	while(getline(line, n, fp) != NULL) count++;
+	if (write(fp[WRITE_END], count, sizeof(int)) < 0)
+		err_sys(“Write failed”);
+	close(pipeFP[WRITE_END]);
+}
+
+
+
+int main(int argc, char *argv[]){
+	int pid[8];
+	char path[256];
+	int fp = open(path, O_RDWR);
+	struct stat *statbuf;
+	stat(fp, statbuf);
+	int PartialSize = statbuf→size / 8;
+	if (pipe(pipeFP) < 0) err_sys(“Pipe failed”);
+
+	close(pipeFP[WRITE_END]);
+	for (int i = 0; i < 8; i++){
+		if ((pid[i] = fork()) < 0) err_sys(“fork %d failed”, i);
+		if (pid == 0){
+			// Sono nel figlio
+			worker(fp,PartialSize * i, PartialSize * i+1);
+			exit(1);
+
+		}
+
+	}
+	int sum = 0
+	int num;
+	for (int i = 0; i< 8; i++){
+		if (read(pipeFP[READ_END], num, sizeof(int)) < 0)
+			err_sys(“read failed”);
+		sum += num;
+	}
+	close(pipeFP[READ_END]);
+	sprintf(stdout, “sum: %d”, sum);
+	
+	return EXIT_SUCCESS;
+}

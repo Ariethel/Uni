@@ -1,0 +1,100 @@
+﻿DOMANDA 5
+#include <ourhdr.h>
+int pp[2];
+
+void worker4(int fp){
+	close(pp[READ_END]);
+	int num;
+	int i = 0
+	while(read(fp, num, sizeof(int)) > 0){
+		if (num % 3323 == 0){
+			if ((write(pp[WRITE_END], “%d”,i)) < 0)
+				err_sys(“write failed”);
+		}
+		i++;
+	}
+	close(pp[WRITE_END]);
+	exit(1)
+}
+
+void worker3(int fp){
+	close(pp[READ_END]);
+	int num;
+	int i = 0
+	while(read(fp, num, sizeof(int)) > 0){
+		if (num % 2221 == 0){
+			if ((write(pp[WRITE_END], “%d”,i)) < 0)
+				err_sys(“write failed”);
+		}
+		i++;
+	}
+	close(pp[WRITE_END]);
+	exit(1)
+}
+
+void worker2(int fp){
+	close(pp[READ_END]);
+	int num;
+	int i = 0
+	while(read(fp, num, sizeof(int)) > 0){
+		if (num % 1117 == 0){
+			if ((write(pp[WRITE_END], “%d”,i)) < 0)
+				err_sys(“write failed”);
+		}
+		i++;
+	}
+	close(pp[WRITE_END]);
+	exit(1)
+}
+
+void worker1(int fp){
+	close(pp[READ_END]);
+	int num;
+	int i = 0
+	while(read(fp, num, sizeof(int)) > 0){
+		if (num % 991 == 0){
+			if ((write(pp[WRITE_END], “%d”,i)) < 0)
+				err_sys(“write failed”);
+		}
+		i++;
+	}
+	close(pp[WRITE_END]);
+	exit(1)
+}
+
+int main(void){
+	int fp = open(“file.txt”, O_CREAT | O_RDWR);
+	for (int i = 0; i < 100000; i++){
+		int num = random();
+		if (write(fp, “%d”, sizeof(int)) < 0)
+			err_sys(“write failed”);
+	}
+	if (pipe(pp) < 0) err_sys(“pipe failed”);
+	int pid[4];
+	for (int i = 0; i < 4; i++){
+		if((pid[i] = fork()) < 0) err_sys(“fork %d failed”,i);
+		if (pid[i] == 0){
+			//Sono nel figlio
+			if (i == 0)
+				worker1();
+			if (i == 1)
+				worker2();
+			if (i == 2)
+				worker3();
+			if (i == 3)
+				worker4();
+		}
+	}
+	close(pp[WRITE_END]);
+	int pos;
+	int array[100000];
+	int i = 0;
+	while (read(pp[READ_END], pos, sizeof(int)) > 0){	
+		array[i] = pos;
+		i++;
+	}
+	close(pp[READ_END]);
+	for (int j = 0; j < i; j++)
+		printf(“%d\n”, array[j]);
+	return EXIT_SUCCESS;
+}
