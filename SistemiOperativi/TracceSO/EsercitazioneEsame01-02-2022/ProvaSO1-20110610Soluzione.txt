@@ -1,0 +1,15 @@
+﻿DOMANDA 1
+
+I principali indici prestazionali degli algoritmi di scheduling sono: Utilizzo della cpu, produttivita’, tempo di completament, tempo di attesa e tempo di risposta. E’ necessario avere un alto utilizzo della cpu, un throughput alto, un basso tempo di completamento, un basso tempo di attesa in ready queue e un tempo di risposta quanto piu’ basso possibile. Il tempo di completamento e’ il tempo totale passato dalla sottomissione del programma al calcolatore fino alla sua esecuzione. Il tempo di attesa e’ quello passato in ready queue e quello di risposta e’ il tempo che passa dall’esecuzione del programma fino al primo risultato utile.
+
+DOMANDA 2
+
+Il linker dinamico risulta utile quando ci sono porzioni di programma usate soltanto raramente, in tal caso e’ possibile inserire dei collegamenti simbolici detti bind che servono soltanto da placeholder all’interno del programma, quando si fara’ riferimento a quelle istruzioni verra’ dinamicamente caricata quella porzione di codice in memoria per essere eseguita.
+
+DOMANDA 3
+
+Il working-set e’ un meccanismo necessario a prevenire il fenomeno di trashing. Si usa un’unita’ di tempo delta durante il quale vengono inserite in un working set le pagine usate, ogni delta unita’ di tempo le pagine non utilizzate verranno rimosse dal working set. In questo modo e’ possibile risparmiare frame per nuovi programmi da inserire in memoria.
+
+DOMANDA 4
+
+L’allocazione a lista concatenata ha il vantaggio di evitare la frammentazione che si ottiene nell’allocazione contigua quando si eliminano file precedentemente allocati. Nell’allocazione concatenata ogni file e’ diviso in n blocchi, ed ogni parte del blocco nella file allocation table punta al successivo. Lo svantaggio e’ che questa tecnica porta ad avere tabelle molto pesanti, con conseguente spreco di memoria.

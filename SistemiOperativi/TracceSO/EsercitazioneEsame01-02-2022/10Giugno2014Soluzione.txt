@@ -1,0 +1,34 @@
+﻿DOMANDA 1
+
+Il thrashing e’ un fenomeno che si presenta quando il numero di pagine per un processo scende al di sotto del limite inferiore stabilito dall’architettura.
+In caso di thrashing il sistema continuera’ ad ottenere page fault, passando effettivamente piu’ tempo nelle operazioni di paginazione che ad eseguire il processo.
+E’ possibile per il SO riconoscere il thrashing, e prevenirlo attraverso un meccanismo detto working-set. Con questo particolare mecanismo ed il principio di localita’ e’ possibile usare una unita’ delta che permette di stabilire quali sono le pagine effettivamente usate nelle ultime delta unita’ di tempo. Una pagina che non viene utilizzata esce dal working-set. A questo punto se i frame liberi sono sufficienti a contenere il working-set di un programma, questo viene eseguito, altrimenti uno dei programmi viene salvato in memoria secondaria e ne viene eseguito uno nuovo dopo aver liberato le pagine di quello precedente
+
+E’ possibile prevedere il thrashing grazie alla frequenza di page fault, stabilendo dall’architettura che sotto un numero di page fault si scende nel thrashing e’ possibile allocare un frame in piu’ al processo in analisi quando si trova vicino ad una certa soglia.
+
+
+
+DOMANDA 2
+La sincronizzazione dei processi e’ necessaria nel caso di una zona di memoria condivisa tra piu’ processi. Wait() e signal() sono due funzioni che permettono di appropriarsi e di rilasciare una risorsa in modo da garantire la mutua esclusione, ovvero la proprieta’ che determina il possibile accesso ad un solo processo per volta a quella che viene detta zona critica.
+
+Void wait(){
+	while (s <= 0)
+		;
+	s--;
+}
+
+void signal(){
+	s++;
+}
+
+
+DOMANDA 3
+
+La segmentazione serve a separare la memoria fisica da quella logica, e’ possibile realizzarla attraverso la separazione dei frammenti di programma in memoria non contigua. E’ necessaria per evitare la frammentazione esterna, ovvero il problema che sorge nell’avere piccole zone di memoria non contigue difficilmente sfruttabili per via della dimensione. Grazie alla segmentazione e’ possibile sfruttarle inserendovi le porzioni di programma sufficientemente piccole da poter essere ospitate.
+
+
+DOMANDA 4
+
+Normalmente per un trasferimento di I/O la cpu dovrebbe ciclicamente chiedere al dispositivo la sua disponibilita’, e questo potrebbe comportare un gran numero di cicli di clock sprecati, e’ piu’ utile invece segnalare tramite l’aiuto di un controllore e di un segnale di interruzione quando il dispositivo e’ pronto direttamente alla cpu, in modo da ridurre l’overhead. Il DMA invece e’ un meccanismo molto utile per i grandi trasferimenti di dati, per i quali risulta sconveniente utilizzare i registri della cpu, questo permette il trasferimento di dati direttamente dal dispositivo di I/O a quello di destinazione senza passare dalla cpu. Risulta particolarmente efficiente per lunghi trasferimenti su dispositivi lenti come gli hard disk o altre forme di memoria ausiliaria.
+
+

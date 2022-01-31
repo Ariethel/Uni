@@ -1,0 +1,28 @@
+﻿DOMANDA 1
+
+Un processo e’ una istanza in esecuzione di un programma precedentemente scritto e salvato su memoria ausiliaria. La syscall fork(); consente di creare una copia di un processo, in modo da consentire lo svolgimento di compiti in parallelo. Per effettuare una chiamata fork bisogna controllare che il valore restituito non faccia parte di quelli che segnalino eventuali errori, dopodiche’ eseguire le istruzioni desiderate nel processo figlio ed immediatamente chiuderlo con una funzione exit() al fine di evitare che la fork chiami se stessa in una ulteriore fork ricorsivamente.
+
+DOMANDA 2
+
+In un sistema di tipo batch si puo’ eseguire soltanto un processo per volta, per tale motivo l’algoritmo di scheduling migliore risulta il FCFS, molto semplice da implementare e che non ha bisogno di alcun tipo di supporto hardware. Il funzionamento dell’algoritmo e’ banalmente una coda di processi lineare, il primo processo in ready queue viene eseguito per primo e si termina soltanto quando ha finito per poi passare al prossimo
+
+
+DOMANDA 3
+
+int main(void){
+
+	int pid;
+	if ((pid = fork()) < 0) err_sys(“fork failed”);
+	if (pid == 0){
+		int byte = random() % 99001 + 1000;
+		int nomeFileint = random() + 10000000;
+		char file[256] = nomeFileint + ‘0’;
+		strcat(file, “.txt”);
+		int fp = open(file, O_CREAT | O_RDWR);
+		if (fp < 0 ) err_sys(“Could not create file”);
+		sleep(1);
+	}
+
+
+
+}

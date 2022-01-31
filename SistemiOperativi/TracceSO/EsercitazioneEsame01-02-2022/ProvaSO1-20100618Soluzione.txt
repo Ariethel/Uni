@@ -1,0 +1,67 @@
+﻿DOMANDA 1
+
+L’algoritmo round-robin si basa su una coda circolare, ad ogni processo viene dato un quanto di tempo di disponibilita’, dopo il quale si passa al prossimo. I programmi vengono eseguiti in ordine di arrivo.
+Grazie alla prelazione il sistema puo’ autonomamente decidere di togliere risorse ad un processo bloccato o che sta eccedendo il limite di tempo ad esso consentito. E’ tuttavia piu’ complesso realizzare un sistema con prelazione poiche’ questa ha spesso bisogno di supporto hardware come i timer, puo’ inoltre causare delle race condition nel caso di prelazione a favore di un processo che ha memoria condivisa con il precedente processo, che essendo stato schedulato potrebbe aver lasciato dei dati incompleti.
+
+DOMANDA 2
+
+La tabella delle pagine serve a tenere traccia delle traduzioni degli indirizzi virtuali in fisici. Questa puo’ essere realizzata in diversi modi. Nella tabella delle pagine classica viene registrato un indirizzo virtuale e, subito al di sotto, l’indirizzo fisico ad esso associato. In questo modo pero’ un processo potrebbe avere milioni di indirizzi fisici virutali, ed occupare una grande quantita’ di memoria per la sola tabella. In quella invertita, invece, c’e’ soltanto una tabella che tiene conto del numero di frame reali con l’id del processo che lo possiede ed altri, eventuali bit di stato. In questa tabella la ricerca non puo’ essere effettuata per indirizzi virtuali, quindi e’ necessaria una hash map per velocizzare il procedimento, il sistema deve inoltre essere pronto nel caso di page fault. Risulta piu’ difficile inoltre implementare la memoria condivisa poiche’ questa si utilizza solitamente con gli indirizzi virtuali.
+
+
+DOMANDA 3
+
+I processi possono comunicare tra loro in due modi: Scambio di messaggi e memoria condivisa.
+Il primo metodo e’ di facile realizzazione ma consente di spostare soltanto piccole quantita’ di dati, si e’ quindi ritenuto necessario implementare il meccanismo di memoria condivisa, attraverso il quale piu’ processi possono condividere del codice (come librerie, funzioni standard …) permettendo in questo modo di risparmiare spazio in memoria. E’ tuttavia piu’ complesso realizzare programmi che sfruttino la memoria condivisa poiche’ bisogna tener conto della sincronizzazione tra processi, attraverso la quale viene garantito che soltanto un dispositivo per volta possa accedere alla zona, detta critica, condizione necessaria al fine di evitare incoerenza dei dati e race condition.
+
+DOMANDA 4
+
+DOMANDA 5
+
+#include <ourhdr.h>
+
+void workerB(char str){
+	char strpid[256] = getpid() + ‘0’;
+	strcat(str,strpid);
+	int pidC;
+	int pp[2];
+	if (pipe(pp) < 0) err_sys(“Pipe failed);
+	if ((pidC = fork()) < 0) err_sys(“fork failed);
+	if (pidC == 0){
+	// Sono nel figlio C
+		close(pp[WRITE_END]);
+		char str[256];
+		if (read(pp[READ_END, str, sizeof(str)) < 0) err_sys(“read failed”);
+		workerC(str);
+		exit(1);
+	}
+
+	close(pp[READ_END]);
+	char str[256] = getpid() + ‘0’;
+	if ((write(pp[WRITE_END],str, sizeof(str)) < 0) err_sys(“write failed); 
+	close(pp[WRITE_END]);
+		
+}
+
+
+
+int main(void){
+	int pid;
+	int pp[2];
+	if (pipe(pp) < 0) err_sys(“Pipe failed);
+	
+
+	if ((pid = fork()) < 0) err_sys(“fork failed);
+	if (pid == 0){
+	// Sono nel figlio B
+		close(pp[WRITE_END]);
+		char str[256];
+		if (read(pp[READ_END, str, sizeof(str)) < 0) err_sys(“read failed”);
+		workerB(str);
+		exit(1);
+	}
+	close(pp[READ_END]);
+	char str[256] = getpid() + ‘0’;
+	if ((write(pp[WRITE_END],str, sizeof(str)) < 0) err_sys(“write failed); 
+	close(pp[WRITE_END]);
+	return EXIT_SUCCESS;
+}

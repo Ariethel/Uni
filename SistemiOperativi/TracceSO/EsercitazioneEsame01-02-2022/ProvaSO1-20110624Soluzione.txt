@@ -1,0 +1,52 @@
+﻿DOMANDA 1
+
+Un microkernel ospita esclusivamente le funzioni necessarie al funzionamento del SO, come lo scambio di messaggi tra processi o lo scheduling dei jobs, tutto il resto viene lasciato come compito delle applicazioni utente. Ha il vantaggio di essere estremamente leggero rispetto ad un kernel monolitico, e’ inoltre piu’ facile da mantenere ed aggiornare grazie alla suddivisione in moduli che permette un testing granulare di ogni funzionalita’.
+
+DOMANDA 2
+
+Delle pagine di dimensioni piccole riducono sicuramente la frammentazione rispetto a quelle di grandi dimensioni, ma spesso portano a tabelle delle pagine estremamente grandi e di difficile gestione in fase di ricerca, le pagine di grandi dimensioni invece aumentano la frammentazione ma rendono le attivita’ di ricerca piu’ facili. Storicamente si avanza verso le pagine di grandi dimensioni.
+
+DOMANDA 3
+
+DOMANDA 4
+
+Ci sono principalmente 2 modi per trasferire file da I/O a Cpu, la prima e’ la richiesta ciclica, nella quale la cpu chiede disponibilita’ al controller del dispositivo, questa tecnica e’ utile per trasferimenti di piccole dimensioni ma puo’ comportare lo spreco di numerosi cicli di clock. La seconda tecnica e’ utile nel caso di un trasferimento da / verso la memoria secondaria. In tal caso e’ possibile utilizzare una DMA che si occupa del trasferimento di grosse quantita’ di dati senza interpellare la cpu.
+
+DOMANDA 5
+
+int count;
+
+void worker(int inizio, int fine, char path, char pattern){
+	char buffer[256];
+	int fp = open(path,O_RDONLY);
+	lseek (fp, inizio, SET_CURR);
+	lseek (fp, fine, SET_END);
+	while((read = (fp, buffer, sizeof(buffer)) > 0){
+		if (strstr(buffer,pattern))
+			count++;
+	}
+	
+}
+
+int main(int argc, char *argv[]){
+	if (argc < 3) err_sys(“not enough arguments”);
+	char pattern[256] = argv[1];
+	char path[256] = argv[2];
+	int n = argv[3] + ‘0’;
+	int pid[n];
+	struct stat *statbuf;
+	stat(path,statbuf);
+	int sizePerProcess = statbuf→ d_size / n;
+	for (int i = 0; i < n; i++){
+		if ((pid[i] = fork()) < 0) err_sys(“fork %d failed”, i);
+		if (pid[i] == 0){
+			// Sono nel figlio
+			worker(sizePerProcess*i, sizePerProcess * i+1, path, pattern);
+			exit(1);
+		}
+	}
+
+	wait(NULL);
+	sprintf(stdout, “%d”, count);
+}
+

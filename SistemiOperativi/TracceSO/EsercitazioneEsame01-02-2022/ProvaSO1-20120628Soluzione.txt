@@ -1,0 +1,25 @@
+﻿DOMANDA 1
+
+I thread sono dei processi “leggeri”, in particolare sono piu’ leggeri dei processi forkati poiche’ non clonano completamente il processo padre, bensi’ condividono con esso gran parte della memoria.
+
+DOMANDA 5
+void vista_ricorsvia(char path){
+	DIR *dir;
+	if ((dir = opendir(path)) < ) err_sys(“cannot open dir”);
+	struct dirent *entry;
+	while(entry = readdir(dir) != NULL){
+		switch(entry → d_type){
+		case DT_REG:
+			struct stat *statbuf;
+			stat(entry→d_type, statbuf)
+			if (statbuf→ size > 1024)
+				printf(“%s → %d”, entry→d_name, statbuf→size);
+			break;
+		case DT_DIR:
+			vista_ricorsiva(path);
+		}
+	}
+}
+int main(void){	
+	vista_ricorsiva(path);
+}

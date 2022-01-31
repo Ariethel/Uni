@@ -1,0 +1,77 @@
+﻿DOMANDA 1
+
+Il sistema operativo deve fornire due meccanismi base per il supporto delle architetture multiprocessore: La protezione dei processi e delle loro zone di memoria critiche e la comunicazione tra questi tramite scambio di messaggi o memoria condivisa.
+
+DOMANDA 2
+
+La cooperazione tra processi e’ garantita dal SO attraverso la condivisione di dati tra questi. Questa puo’ essere realizzata attraverso lo scambio di messaggi, utile per piccoli scambi e semplice da implementare, oppure attraverso la memoria condivisa, un sistema molto piu’ complesso che pero’ necessita di parecchie accortenze affinche’ i processi non vadano ad intralciarsi andando a modificare solo parzialmente parti di codice che altri processi andranno poi a leggere. A livello hardware la sincronizzazione puo’ richiedere istruzioni in linguaggio macchina facenti parte direttamente della pipeline, cosi’ da non sprecare eccessive risorse.
+
+DOMANDA 3
+
+Una system call e’ un’istruzione privilegiata invocabile soltanto dal kernel. Queste sono istruzioni di basso livello non invocabili direttamente da programmi utente, potenzialmente pericolosi per il Sistema. Quando un programma utente richiede l’utilizzo di una syscall l’esecuzione viene passata completamente al sistema operativo, che in modalita’ kernel esegue l’istruzione e ritorna il controllo al programma utente, questo e’ possibile tramite l’utilizzo di un bit di stato che serve a discriminare la modalita’ di esecuzione da utente a kernel, solo il SO ha la possibilita’ di cambiare questo bit.
+
+DOMANDA 4
+
+
+
+DOMANDA 5
+
+void cancella_vocali(char str[], int rd){
+	char buffer[256];
+	int j = 0;
+	for (int i = 0; i < rd; i++){
+		if (str[i] == ‘a’ ||str[i] == ‘e’ ||str[i] == ‘i’ ||str[i] == ‘o’ || str[i] == ‘u’) continue;
+		else{
+			buffer[j] = str[i];
+			j++;
+		}
+			
+	}
+	str = buffer;
+	
+}
+
+int main(void){	
+	int pipe1[2]; P => F
+	int pipe2[2]; F => P
+
+	if (pipe(pipe1) < 0) err_sys(“Pipe 1 failed”);
+	if (pipe(pipe2) < 0) err_sys(“Pipe 2 failed”);
+	
+	int pid;
+	if ((pid = fork()) < 0)  err_sys(“Fork Failed”);
+	if (pid == 0){
+		// Sono nel figlio
+		close(pipe2[READ_END]);
+		close(pipe1[WRITE_END]);
+		char str[256];
+		int rd;
+		while(strcmp(str, “%%%”) != 0){
+			if (rd = read(pipe1[READ_END], str, sizeof(str)) < 0)
+				err_sys(“read failed”);
+			cancella_vocali(str, rd);
+			if (write(pipe2[WRITE_END], str, sizeof(str)) < 0)
+				err_sys(“write failed”);
+		}
+		close(pipe1[READ_END]);
+		close(pipe2[WRITE_END]);
+		exit(1);
+	}
+
+	int fp = open(“file.txt”, O_RDWR);
+	if (fp < 0) err_sys(“could not open file”);
+	char line[256];
+	char result[256];
+	int n;
+	close(pipe1[READ_END]);
+	close(pipe2[WRITE_END]);
+	while(getline(line, n,fp) != NULL){
+		if (write(pipe1[WRITE_END], line, sizeof(line)) < 0) 
+			err_sys(“write failed”);
+		if (read(pipe2[READ_END], result, sizeof(result)) < 0)
+			err_sys(“Read failed”);
+	}
+	close(pipe2[READ_END]);
+	close(pipe1[WRITE_END]);
+	
+}
