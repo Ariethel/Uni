@@ -1,0 +1,44 @@
+﻿DOMANDA 1
+
+Un sistema real time e’ un calcolatore la cui correttezza dei risultati e’ legata al tempo necessario a generarli, l’indice prestazionale piu’ importante e’ il tempo di risposta
+
+
+DOMANDA 2
+
+La tabella delle pagine normale memorizza un indirizzo virtuale e subito sotto quello fisico corrispondente, il problema e’ che risulta possibile avere milioni di indirizzi virtuali e, di conseguenza, una tabella delle pagine estremamente grande. La tabella invertita, invece, ha una riga per ogni pagina fisica effettivamente presente in memoria, questo riduce notevolmente la dimensione della pagina, ma rende il sistema vulnerabile a page miss e rende la ricerca piu’ difficoltosa, problema arginabile implementando una hash map.
+
+DOMANDA 3
+
+nell’algoritmo lfu ad ogni pagina viene assegnato un counter, incrementato ogni volta che la pagina viene utilizzata. Quando si presentera’ la necessita’ di una sostituzione di pagina, quella con il counter piu’ basso verra’ rimpiazzata. Questo algoritmo e’ poco efficiente poiche’ una pagina potrebbe essere stata utilizzata tanto in fase iniziale e ritrovarsi con un counter alto anche se effettivamente non viene utilizzata di frequente. Inoltre potrebbe essere sostituita sempre la nuova pagina appena inserita, che avra’ per forza di cose il counter piu’ basso di tutte le altre. Questo algoritmo e’ migliorabile con un sistema di Aging che permette al counter di scendere ogni x lasso di tempo.
+
+DOMANDA 4
+
+DOMANDA 5
+#include <ourhdr.h>
+
+void worker(){	
+	int count = 0;
+	int time;
+	for (int i = 0; i < 100000; i++){
+		count = i;
+		time = random() % 91 + 10;
+		usleep(time);
+		
+	}
+}
+int main(){
+	int pid[2]
+	for (int i = 0; i < 2; i++){	
+		if ((pid[i] = fork()) < 0) err_sys(“fork failed”);
+		if (pid[i] == 0){
+			// Sono nel figlio
+			worker();
+			exit(1);
+		}
+	}
+	
+	
+	
+
+	return EXIT_SUCCESS;
+}

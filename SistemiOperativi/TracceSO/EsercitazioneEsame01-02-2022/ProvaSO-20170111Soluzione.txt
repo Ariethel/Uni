@@ -1,0 +1,5 @@
+﻿DOMANDA 4
+
+La tecnica di implementazione FAT consiste nel dividere i file in liste concatenate sprase per il disco, questo risole il problema della frammentazione trovata con l’algoritmo di allocazione contigua. Lo svantaggio e’ la lentezza del passaggio tra i vai blocchi, questo e’ risolvibile con delle liste che puntano al blocco successivo, tuttavia queste liste possono essere estremamente pesasnti.
+
+
