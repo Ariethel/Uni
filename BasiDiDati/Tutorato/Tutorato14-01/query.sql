@@ -52,3 +52,4 @@ WHERE not exists (SELECT *
 				  FROM Utente u WHERE not exists (SELECT *
 												  FROM Acquisto a
 												  WHERE p.Cod = a.CodProdotto AND p.Marchio = a.Marchio AND u.CF = a.utente));
+                                                  
