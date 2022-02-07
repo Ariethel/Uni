@@ -1,0 +1,104 @@
+## CARICAMENTO IN MEMORIA ##
+Per il caricamento in memoria ad ogni programma viene assegnato uno spazio
+degli indirizzi, questo ha un indirizzo di base e uno finale, il programma
+non deve sforare da questi indirizzi altrimenti viene meno la caratteristica di
+protezione del SO. Per effettuare il calcolo degli indirizzi si somma un offset
+all'indirizzo di base mediante un adder (binding dinamico). In alternativa
+e' possibile far corrispondere ogni indirizzo logico ad uno fisico (binding statico).
+
+## SEGMENTAZIONE
+La segmentazione consiste nel suddividere la memoria in segmenti di uguale 
+lunghezza, cosi' facendo sara' possibile far corrispondere la visione fisica
+della memoria a quella utente. L'indirizzo logico generato dalla CPU sara' 
+una coppia (n segmento, offset). I segmenti piu' comuni sono:
+TEXT -> Contiene il codice eseguibile, solitamente protetto da scrittura
+Data -> Contiene i dati inizializzati al caricamento e lo heap (cambia su richiesta)
+Stack -> puo' espandersi, contiene lo stack di attivazione delle subroutine
+BSS -> Contiene le variabili statiche / globali
+
+Unix utilizza 3 segmenti, TEXT, DATA e STACK
+
+La segmentazione ha il vantaggio di permettere una facile implementazione dei
+meccanismi di protezione e condivisione. Inoltre permette di avere consistenza
+fra vista utente e struttura fisica della memoria.
+Tuttavia genera frammentazione esterna, per cui richiede la compattazione.
+
+## AMP E SMP ##
+I sistemi multiprocessore attualmente in uso sono di due tipi. Alcuni impiegano
+la multielaborazione asimmetrica (asymmetric multiprocessing), in cui a ogni pro-
+cessore si assegna un compito specifico. Un processore principale controlla il sistema,
+gli altri attendono istruzioni dal processore principale oppure hanno compiti prede-
+finiti. Questo schema definisce una relazione gerarchica; il processore principale or-
+ganizza e assegna il lavoro ai processori secondari.
+I sistemi più comuni utilizzano la multielaborazione simmetrica (symmetric
+multiprocessing, SMP), in cui ogni processore è abilitato all’esecuzione di tutte le ope-
+razioni del sistema. La tecnica SMP pone tutti i processori su un piano di parità; tra
+essi non vi è subordinazione gerarchica.
+Il bilanciamento del carico
+tenta di ripartire il carico di lavoro uniformemente tra tutti i processori di un sistema
+SMp. bisogna notare che il bilanciamento è necessario, di norma, solo nei sistemi in
+cui ciascun processore ha una coda privata di processi eseguibili. Nei sistemi che
+mantengono una coda comune, il bilanciamento del carico è sovente superfluo: un
+processore inattivo passerà immediatamente all’esecuzione di un processo dalla coda
+comune dei processi eseguibili. Va ricordato, tuttavia, che in quasi tutti i sistemi ope-
+rativi attuali che supportano l’SMp, ogni processore è effettivamente dotato di una
+propria coda di processi eseguibili.
+Il bilanciamento del carico può seguire due approcci: la migrazione push e la
+migrazione pull. La prima prevede che un processo apposito controlli periodicamen-
+te il carico di ogni processore: se identifica uno sbilanciamento, riporta il carico in
+equilibrio, spostando i processi dal processore saturo ad altri più liberi, o inattivi. La
+migrazione pull, invece, si ha quando un processore inattivo prende un processo in
+attesa a un processore sovraccarico. I due tipi di migrazione non sono mutuamente
+esclusivi, e trovano spesso applicazione contemporanea nei sistemi con bilanciamento
+del carico.	
+
+## Pentium IA32 ##
+La gestione della memoria nei sistemi IA-32 è suddivisa in due componenti: segmen-
+tazione e paginazione. La Cpu genera indirizzi logici che vengono passati all’unità
+di segmentazione. L’unità di segmentazione produce un indirizzo lineare per ogni in-
+dirizzo logico. L’indirizzo lineare viene quindi passato all’unità di paginazione, che
+genera l’indirizzo fisico nella memoria principale. Dunque, l’unità di segmentazione
+e l’unità di paginazione formano insieme l’equivalente dell’unità di gestione della
+memoria (MMu).Nell’architettura IA-32 un segmento può raggiungere la dimensione massima di 4 Gb;
+il numero massimo di segmenti per processo è pari a 16 k. Lo spazio degli indirizzi
+logici di un processo è composto da due partizioni: la prima contiene fino a 8 k seg-
+menti riservati al processo; la seconda contiene fino a 8 k segmenti condivisi fra tutti
+i processi. Le informazioni riguardanti la prima partizione sono contenute nella
+tabella locale dei descrittori (local descriptor table, LDT), quelle relative alla se-
+conda partizione sono memorizzate nella tabella globale dei descrittori (global
+descriptor table, GDT). Ciascun elemento nella LDT e nella GDT è lungo 8 byte e con-
+tiene informazioni dettagliate riguardanti uno specifico segmento, oltre agli indirizzi
+base e limite.
+un indirizzo logico è una coppia (selettore, offset), dove il selettore è un numero
+di 16 bit:
+s  g p
+13 1 2
+in cui s indica il numero del segmento, g indica se il segmento si trova nella GDT o
+nella LDT e p contiene informazioni relative alla protezione. L’offset è un numero di
+32 bit che indica la posizione del byte (o della parola) all’interno del segmento in
+questione.
+La macchina ha sei registri di segmento che consentono a un processo di far rife-
+rimento contemporaneamente a sei segmenti; inoltre possiede sei registri di micro-
+programma di 8 byte per i corrispondenti descrittori prelevati dalla LDT o dalla GDT.
+Questa cache evita alla macchina di dover prelevare dalla memoria i descrittori per
+ogni riferimento alla memoria.
+un indirizzo lineare di IA-32 è lungo 32 bit e si genera come segue. Il registro di
+segmento punta all’elemento appropriato all’interno della LDT o della GDT; le infor-
+mazioni relative alla base e al limite di tale segmento si usano per generare un
+indirizzo lineare. Innanzi tutto si usa il valore del limite per controllare la validità
+dell’indirizzo; se non è valido, si ha un errore di riferimento alla memoria che causa
+la generazione di un’eccezione e la restituzione del controllo al sistema operativo; al-
+trimenti, si somma il valore dell’offset al valore della base, ottenendo un indirizzo li-
+neare di 32 bit.
+I dieci bit più
+significativi puntano a un elemento nella tabella delle pagine più esterna, detta in
+IA-32 directory delle pagine. (Il registro Cr3 punta alla directory delle pagine del
+processo corrente.) Gli elementi della directory delle pagine puntano a una tabella
+delle pagine interne, indicizzata da dieci bit intermedi dell’indirizzo lineare. Infine, i
+bit meno significativi in posizione 0-11 contengono l’offset da applicare all’interno
+della pagina di 4 kb cui si fa riferimento nella tabella delle pagine.
+un elemento appartenente alla directory delle pagine è il flag page Size; se impo-
+stato, indica che il frame non ha la dimensione standard di 4 Mb, ma misura invece
+4 kb. In questo caso, la directory di pagina punta direttamente al frame di 4 Mb, sca-
+valcando la tabella delle pagine interna; i 22 bit meno significativi nell’indirizzo li-
+neare indicano l’offset nella pagina di 4 Mb.
