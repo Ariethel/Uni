@@ -1,4 +1,4 @@
-Utenti(CF, Nome, Cognome, Citta, CV, Via, Tipo, DataIscrizione, TipoAbbonamento*, ScadenzaAbbonamento*, ScadenzaProva*)
+﻿Utenti(CF, Nome, Cognome, Citta, CV, Via, Tipo, DataIscrizione, TipoAbbonamento*, ScadenzaAbbonamento*, ScadenzaProva*)
 
 Album(NomeAlbum, DataPubblicazione, DurataComplessiva, NumeroCanzoni)
 

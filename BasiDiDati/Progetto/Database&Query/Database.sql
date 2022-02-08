@@ -44,12 +44,14 @@ AnniEsperienza int not null
 create table ascoltare( 
 Titolo varchar(20) references canzoni.titolo on update cascade,
 CF char(16) references utenti.CF on update cascade,
-UltimoAscolto date not null
+UltimoAscolto date not null,
+primary key (Titolo,CF)
 );
 
 create table raccogliere( 
 Codice int references playlist.Codice on update cascade,
-Titolo varchar(20) references canzoni.titolo on update cascade
+Titolo varchar(20) references canzoni.titolo on update cascade,
+primary key (Codice,Titolo)
 );
 
 create table canzoni( 
@@ -60,17 +62,20 @@ Lunghezza decimal(4,2) not null
 
 create table afferire( 
 Titolo varchar(20) references canzoni.Titolo on update cascade,
-Nome varchar(20) references generi.nome on update cascade
+Nome varchar(20) references generi.nome on update cascade,
+primary key (Titolo,Nome)
 );
 
 create table comporre( 
 Titolo varchar(20) references canzoni.Titolo on update cascade,
-NomeAutore varchar(20) references autori.NomeAutore on update cascade
+NomeAutore varchar(20) references autori.NomeAutore on update cascade,
+primary key (Titolo,NomeAutore)
 );
 
 create table incidere( 
 NomeAutore varchar(20) references autori.NomeAutore on update cascade,
-NomeAlbum varchar(20) references album.NomeAlbum on update cascade
+NomeAlbum varchar(20) references album.NomeAlbum on update cascade,
+primary key (NomeAutore,NomeAlbum)
 );
 							
 
@@ -287,7 +292,37 @@ insert into incidere values
 ("Coltrane","My Favorite Things"),
 ("Fabrizio De Andre","La buona novella");
 
+## HO DOVUTO USARE ADDDATE PER AGGIUNGERE I GIORNI NECESSARI ALLE RISPETTIVE DATE DI OGNI UTENTE ## 
 
+# Update ScadenzaAbbonamento per utenti mensili
+UPDATE utenti
+SET ScadenzaAbbonamento = adddate(DataIscrizione, INTERVAL 30 DAY)
+WHERE Tipo = "Abbonato" AND TipoAbbonamento = "Mensile";
+
+# Update ScadenzaAbbonamento per utenti annuali
+UPDATE utenti
+SET ScadenzaAbbonamento = adddate(DataIscrizione, INTERVAL 365 DAY)
+WHERE Tipo = "Abbonato" AND TipoAbbonamento = "Annuale";
+
+# Update ScadenzaProva per utenti free
+UPDATE utenti
+SET ScadenzaProva = adddate(DataIscrizione, INTERVAL 5 DAY)
+WHERE Tipo = "Free";
+
+# View Playlist
+drop view if exists NumCanzoni;
+CREATE VIEW NumCanzoni AS 
+	(SELECT Codice, COUNT(Titolo) as Numero
+	 FROM raccogliere
+     GROUP BY Codice);
+     
+drop view if exists DurataPlaylist;
+CREATE VIEW DurataPlaylist AS
+	(SELECT p.Codice, SUM(c.Lunghezza) as Durata
+     FROM playlist p inner join raccogliere r ON p.codice = r.Codice inner join canzoni c ON r.Titolo = c.Titolo
+     GROUP BY p.Codice);
+     
+# View Album
 drop view if exists LunghezzaAlbum;
 CREATE view LunghezzaAlbum AS
 	(SELECT a.NomeAlbum as Titolo, sum(Lunghezza) as Durata
@@ -295,10 +330,8 @@ CREATE view LunghezzaAlbum AS
     WHERE c.NomeAlbum = a.NomeAlbum
     GROUP BY a.NomeAlbum);
     
-    
-    
-drop view if exists NumCanzoni;
-CREATE VIEW NumCanzoni AS 
-	(SELECT Codice, COUNT(Titolo) as Numero
-	 FROM raccogliere
-     GROUP BY Codice);
+drop view if exists NumeroCanzoniAlbum;
+CREATE VIEW NumeroCanzoniAlbum AS
+	(SELECT a.NomeAlbum, Count(*) as NumCanzoni
+	 FROM album a inner join canzoni c ON a.NomeAlbum = c.NomeAlbum
+     GROUP BY a.NomeAlbum);
