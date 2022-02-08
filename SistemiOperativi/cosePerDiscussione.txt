@@ -6,7 +6,7 @@ protezione del SO. Per effettuare il calcolo degli indirizzi si somma un offset
 all'indirizzo di base mediante un adder (binding dinamico). In alternativa
 e' possibile far corrispondere ogni indirizzo logico ad uno fisico (binding statico).
 
-## SEGMENTAZIONE
+## SEGMENTAZIONE ##
 La segmentazione consiste nel suddividere la memoria in segmenti di uguale 
 lunghezza, cosi' facendo sara' possibile far corrispondere la visione fisica
 della memoria a quella utente. L'indirizzo logico generato dalla CPU sara' 
@@ -36,12 +36,12 @@ razioni del sistema. La tecnica SMP pone tutti i processori su un piano di parit
 essi non vi è subordinazione gerarchica.
 Il bilanciamento del carico
 tenta di ripartire il carico di lavoro uniformemente tra tutti i processori di un sistema
-SMp. bisogna notare che il bilanciamento è necessario, di norma, solo nei sistemi in
+SMP. bisogna notare che il bilanciamento è necessario, di norma, solo nei sistemi in
 cui ciascun processore ha una coda privata di processi eseguibili. Nei sistemi che
 mantengono una coda comune, il bilanciamento del carico è sovente superfluo: un
 processore inattivo passerà immediatamente all’esecuzione di un processo dalla coda
 comune dei processi eseguibili. Va ricordato, tuttavia, che in quasi tutti i sistemi ope-
-rativi attuali che supportano l’SMp, ogni processore è effettivamente dotato di una
+rativi attuali che supportano l’SMP, ogni processore è effettivamente dotato di una
 propria coda di processi eseguibili.
 Il bilanciamento del carico può seguire due approcci: la migrazione push e la
 migrazione pull. La prima prevede che un processo apposito controlli periodicamen-
@@ -59,7 +59,7 @@ di segmentazione. L’unità di segmentazione produce un indirizzo lineare per o
 dirizzo logico. L’indirizzo lineare viene quindi passato all’unità di paginazione, che
 genera l’indirizzo fisico nella memoria principale. Dunque, l’unità di segmentazione
 e l’unità di paginazione formano insieme l’equivalente dell’unità di gestione della
-memoria (MMu).Nell’architettura IA-32 un segmento può raggiungere la dimensione massima di 4 Gb;
+memoria (MMU).Nell’architettura IA-32 un segmento può raggiungere la dimensione massima di 4 Gb;
 il numero massimo di segmenti per processo è pari a 16 k. Lo spazio degli indirizzi
 logici di un processo è composto da due partizioni: la prima contiene fino a 8 k seg-
 menti riservati al processo; la seconda contiene fino a 8 k segmenti condivisi fra tutti
