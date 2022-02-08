@@ -102,3 +102,92 @@ stato, indica che il frame non ha la dimensione standard di 4 Mb, ma misura inve
 4 kb. In questo caso, la directory di pagina punta direttamente al frame di 4 Mb, sca-
 valcando la tabella delle pagine interna; i 22 bit meno significativi nell’indirizzo li-
 neare indicano l’offset nella pagina di 4 Mb.
+
+## Indicizzazione filesystem ##
+
+ALLOCAZIONE CONTIGUA
+Consiste nell’allocazione dei blocchi dei file in posizione
+contigue del disco.
+ L’allocazione contigua è semplice da implementare (basta
+memorizzare il primo indirizzo per ogni file);
+ L’allocazione contigua è efficiente in lettura anche nel caso di
+accesso diretto (basta sommare N all’indirizzo del blocco
+iniziale);
+ L’allocazione contigua introduce un problema di
+frammentazione allorchè si iniziano a inserire e rimuovere file.
+ Occorre gestire lo spazio libero (i “buchi”) oppure effettuare
+frequenti e costose ricompattazioni del disco;
+
+
+ALLOCAZIONE A LISTA CONCATENATA
+I file sono realizzati come liste concatenate di blocchi
+I vantaggi sono:
+• la riduzione del problema della frammentazione esterna
+del disco.
+• la semplificazione della struttura delle directory (basta che
+memorizzino il primo blocco di ogni file);
+Gli svantaggi sono:
+• l’accesso diretto ad un blocco è lento (occorre passare per
+n blocchi per leggere il blocco n-esimo);
+L’implementazione della lista concatenata
+può utilizzare una tabella di allocazione
+dei file (FAT) così definita:
+ In ogni cella della FAT troviamo il
+puntatore al blocco successivo del file.
+ La fine di un file è indicata con una marca
+speciale (es. –1);
+ La FAT si trova permanentemente in
+memoria quindi l’accesso diretto è più
+efficiente rispetto all’allocazione
+concatenata con puntatori nei blocchi.
+ Lo svantaggio è l’occupazione di memoria
+centrale es. un disco da 20Gb con blocchi
+da 1k richiede dai 60-80Mb.
+ La dimensione del disco e quindi della
+FAT induce problemi di lentezza!!
+
+
+ALLOCAZIONE INDICIZZATA
+Sono record associati ad ogni file che contengono: gli attributi
+del file e le informazioni necessarie a reperire i blocchi del
+file.
+ L’ i-node deve essere caricato in memoria solo quando il file
+deve essere usato e non deve risiedervi permanentemente;
+ La tabella degli i-nodes dei file in uso è una struttura
+generalmente molto più piccola della FAT descritta in
+precedenza.
+ La tecnica degli i-node permette di dimensionare lo spazio
+della tabella in funzione del massimo numero di file aperti e
+non della dimensione del disco
+ Per trattare “file grandi” gli i-nodes supportano quattro
+tecniche di indicizzazione: diretta, indiretta, indiretta doppia e
+indiretta tripla (vedi figura).
+ L’efficienza diminuisce nel caso di file di grandi dimensioni!!
+ogni file
+deve avere un blocco indice, quindi è auspicabile che questo sia quanto più piccolo è
+possibile; ma se il blocco indice è troppo piccolo non può contenere un numero di
+puntatori sufficiente per un file di grandi dimensioni, quindi è necessario disporre di
+un meccanismo per gestire questa situazione. Fra i possibili meccanismi vi sono i se-
+guenti:
+•••Schema concatenato. Un blocco indice è formato normalmente di un solo
+blocco di disco; perciò, ciascun blocco indice può essere letto e scritto esatta-
+mente con un’operazione. Per permettere la presenza di lunghi file è possibile
+collegare tra loro parecchi blocchi indice. 
+
+indice a più livelli. Una variante della rappresentazione concatenata consiste
+nell’impiego di un blocco indice di primo livello che punta a un insieme di
+blocchi indice di secondo livello che, a loro volta, puntano ai blocchi dei file.
+
+
+Schema combinato. Un’altra possibilità, utilizzata nei sistemi basati su UNIx,
+consistente nel tenere i primi 15 puntatori del blocco indice nell’inode del file.
+I primi 12 di questi 15 puntatori puntano a blocchi diretti, cioè contengono
+direttamente gli indirizzi di blocchi contenenti dati del file. Quindi, i dati per
+piccoli file (non più di 12 blocchi) non richiedono un blocco indice distinto.
+Se la dimensione dei blocchi è di 4 kb, è possibile accedere direttamente fino
+a 48 kb di dati. Gli altri tre puntatori puntano a blocchi indiretti. Il primo è
+un puntatore a un blocco indiretto singolo; si tratta di un blocco indice che
+non contiene dati, ma indirizzi di blocchi che contengono dati. Il secondo è un
+puntatore a un blocco indiretto doppio contenente l’indirizzo di un blocco che
+a sua volta contiene gli indirizzi di blocchi contenenti puntatori agli effettivi
+blocchi di dati. Il terzo è un puntatore a un blocco indiretto triplo.
