@@ -38,7 +38,6 @@ FROM NumCanzoni;
 											
 # 4 - Selezione aggregata su raggruppamenti
 # Selezionare la somma delle canzoni di ogni playlist (Codice, #Canzoni)
-
 SELECT * # Versione sfruttando la view
 from NumCanzoni;
 
@@ -67,7 +66,6 @@ HAVING count(*) >= 10;
 
 # 6 - Selezione aggregata su raggruppamenti con condizioni che includano un'altra funzione di raggruppamento
 # Selezionare l'Album piu' lungo che contiene al massimo 10 canzoni (Titolo, Durata)
-
 SELECT Titolo, Durata
 FROM LunghezzaAlbum
 WHERE Durata = 	(SELECT MAX(a.Durata)

@@ -1,4 +1,5 @@
 use progetto;
+# Query tabelle
 select *
 from utenti;
 
@@ -33,8 +34,7 @@ select *
 from incidere;
 
 
-# queste sono le views
-
+# Query Views
 select *
 from NumCanzoni;
 
