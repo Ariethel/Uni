@@ -1,0 +1,7 @@
+1 - INPUT: Orari di ogni figlio OUTPUT: Lista del massimo numero di figlio accontantabili (Bea, Elena e Fabio)
+
+2 - INPUT: Insieme S di n oggetti, soldi totali, tasso di gradimento per ogni oggetto  OUTPUT: Lista degli oggetti che sommati formino il maggior grado di gradimento e che contemporaneamente non superino il totale dei soldi
+
+3 - INPUT: Orari di ogni richiesta e soldi offerti OUTPUT: Lista delle richieste compatibili per orario e che portino al massimo guadagno
+
+4 - INPUT: Orari di ogni richiesta OUTPUT: Lista delle richieste compatibili che possono essere accomodate in pochi campi
