@@ -1,7 +1,6 @@
 package controller;
 
 import model.Customer;
-import model.CustomerDAO;
 
 import java.io.*;
 import jakarta.servlet.*;
@@ -9,44 +8,44 @@ import jakarta.servlet.annotation.*;
 import jakarta.servlet.http.*;
 
 
-/**
- * Servlet that reads a customer ID and displays
- * information on the account balance of the customer
- * who has that ID.
- * <p>
- * From <a href="http://courses.coreservlets.com/Course-Materials/">the
- * coreservlets.com tutorials on servlets, JSP, Struts, JSF, Ajax, GWT,
- * Spring, Hibernate/JPA, and Java programming</a>.
- */
-
 @WebServlet("/show-balance")
 public class ShowBalance extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // reading parameters from the request
-        String customerId = request.getParameter("customerId");
-        // instantiating a Model class to query the data
-        CustomerDAO service = new CustomerDAO();
+        String fname = request.getParameter("fname");
+        String lname = request.getParameter("lname");
+        String dnascita = request.getParameter("dnascita");
+        String genderA = request.getParameter("genderA");
+        String genderB = request.getParameter("genderB");
+        String citta = request.getParameter("citta");
+        String provincia = request.getParameter("provincia");
+        String cap = request.getParameter("cap");
+        String strada = request.getParameter("strada");
+        String idcard = request.getParameter("idcard");
+        String email = request.getParameter("email");
+        String phone = request.getParameter("phone");
+        String website = request.getParameter("website");
         // creating the javabean "customer" to receive the Model response
         // and invocating the Model service by passing the request parameter "customerId"
-        Customer customer = service.findCustomer(customerId);
-
+        Customer customer = new Customer();
         //storing the resulting javabean in the "request" object
-        request.setAttribute("customer", customer);
-        String address;
+        request.setAttribute("fname", fname);
+        request.setAttribute("lname", lname);
+        request.setAttribute("dnascita", dnascita);
+        request.setAttribute("genderA", genderA);
+        request.setAttribute("genderB", genderB);
+        request.setAttribute("citta", citta);
+        request.setAttribute("provincia", provincia);
+        request.setAttribute("cap", cap);
+        request.setAttribute("strada", strada);
+        request.setAttribute("idcard", idcard);
+        request.setAttribute("email", email);
+        request.setAttribute("phone", phone);
+        request.setAttribute("website", website);
 
-        // depending on the Model response the  "address" of the proper View component (jsp) is set
-        if (customer == null) {
-            request.setAttribute("badId", customerId);
-            address = "/WEB-INF/results/unknown-customer.jsp";
-        } else if (customer.getBalance() < 0) {
-            address = "/WEB-INF/results/negative-balance.jsp";
-        } else if (customer.getBalance() < 10000) {
-            address = "/WEB-INF/results/normal-balance.jsp";
-        } else {
-            address = "/WEB-INF/results/high-balance.jsp";
-        }
+        String address = "/WEB-INF/results/result.jsp";
 
         // The servlet dispatches the control to the chosen jsp (through its address)
         // and passes it both the reference to the javabean (stored in the "request") and

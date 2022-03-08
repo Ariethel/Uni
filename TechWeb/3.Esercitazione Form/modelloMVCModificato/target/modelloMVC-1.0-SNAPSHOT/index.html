@@ -11,14 +11,38 @@
 </table>
 <br/>
 <fieldset>
-  <legend>Bank Account Balance</legend>
+  <legend>Customer</legend>
 
   <!-- the html page invokes the "show-balance" servlet, i.e., the ShowBalance class -->
 
   <form action="show-balance">
-    Customer ID (id001, id002, id003): 
-    <input type="text" name="customerId"/><br/>
-    <input type="submit" value="Show Balance"/>
+    <label for="fname"> Nome</label><br>
+    <input type="text" id="fname" name="fname"><br>
+    <label for="lname"> Cognome</label><br>
+    <input type="text" id="lname" name="lname"><br>
+    <label for="dnascita"> Nascita</label><br>
+    <input type="date" id="dnascita" name="dnascita"><br>
+    <input type="radio" id="male" name="genderA">
+    <label for="male">MALE</label><br>
+    <input type="radio" id="female" name="genderB">
+    <label for="female">FEMALE</label><br>
+    <label for="citta">Citta</label><br>
+    <input type="text" id="citta"><br>
+    <label for="provincia">Provincia</label><br>
+    <input type="text" id="provincia"><br>
+    <label for="cap">CAP</label><br>
+    <input type="number" id="cap"><br>
+    <label for="strada">Strada</label><br>
+    <input type="text" id="strada"><br>
+    <label for="idcard">N. Carta ID</label><br>
+    <input type="number" id="idcard"><br>
+    <label for="email">Email</label><br>
+    <input type="email" id="email"><br>
+    <label for="phone">Phone</label><br>
+    <input type="number" id="phone"><br>
+    <label for="website">Website</label><br>
+    <input type="url" id="website"><br>
+    <input type="submit" value="Invia">
   </form>
 </fieldset>
 
