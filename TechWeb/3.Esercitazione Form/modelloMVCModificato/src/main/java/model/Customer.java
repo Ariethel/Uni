@@ -1,6 +1,22 @@
 package model;
 
 public class Customer {
+    public Customer(String fname, String lname, String dnascita, String genderA, String genderB, String citta, String provincia, String cap, String strada, String idcard, String email, String phone, String website) {
+        this.fname = fname;
+        this.lname = lname;
+        this.dnascita = dnascita;
+        this.genderA = genderA;
+        this.genderB = genderB;
+        this.citta = citta;
+        this.provincia = provincia;
+        this.cap = cap;
+        this.strada = strada;
+        this.idcard = idcard;
+        this.email = email;
+        this.phone = phone;
+        this.website = website;
+    }
+
     public Customer(){};
 
     public String getFname() {

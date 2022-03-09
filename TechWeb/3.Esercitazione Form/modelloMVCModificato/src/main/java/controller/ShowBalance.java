@@ -29,21 +29,9 @@ public class ShowBalance extends HttpServlet {
         String website = request.getParameter("website");
         // creating the javabean "customer" to receive the Model response
         // and invocating the Model service by passing the request parameter "customerId"
-        Customer customer = new Customer();
+        Customer customer = new Customer(fname, lname, dnascita, genderA, genderB, citta, provincia, cap, strada, idcard, email, phone, website);
         //storing the resulting javabean in the "request" object
-        request.setAttribute("fname", fname);
-        request.setAttribute("lname", lname);
-        request.setAttribute("dnascita", dnascita);
-        request.setAttribute("genderA", genderA);
-        request.setAttribute("genderB", genderB);
-        request.setAttribute("citta", citta);
-        request.setAttribute("provincia", provincia);
-        request.setAttribute("cap", cap);
-        request.setAttribute("strada", strada);
-        request.setAttribute("idcard", idcard);
-        request.setAttribute("email", email);
-        request.setAttribute("phone", phone);
-        request.setAttribute("website", website);
+        request.setAttribute("customerJsp", customer);
 
         String address = "/WEB-INF/results/result.jsp";
 

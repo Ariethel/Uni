@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><title>Registrazione</title>
+
+</head>
+<body>
+<table class="title">
+  <tr><th>Registrazione</th></tr>
+</table>
+<br/>
+<fieldset>
+  <legend>Dati registrazione</legend>
+
+  <form action="mostra-registrazione-servlet">
+    <!-- mostra-registrazione-servlet è l'identificativo della servlet da eseguire lato server e sarà inserito nella request (vedi linea 24 giù)-->
+
+    <label for="id1">Inserisci il cognome dell'utente: </label>
+    <input type="text" id="id1" name="cognomeUtenteForm"/><br/>
+    <!-- il nome di questo campo testo di input è cognomeUtenteForm -->
+
+    <!-- INSERIRE QUI I RIMANENTI CAMPI DI INPUT CON CORRISPONDENTE LABEL -->
+
+    <input type="submit" value="Mostra Esito Registrazione"/>
+    <!-- se l'utente inserirà "Micheli" nel campo di input la richiesta al server conterrà  mostra-registrazione-servlet?cognomeUtenteForm=Micheli -->
+
+  </form>
+</fieldset>
+
+</body></html>

@@ -1,0 +1,14 @@
+Questo stub per l'esercitazione 1 del corso di TSW è già perfettamente funzionante
+sul solo campo cognome.
+Esso contiene 4 files sorgenti:
+1. il form index.html
+2. la servlet controller.MostraRegistrazioneServlet
+3. il bean model.UtenteBean
+4. la jsp /WEB-INF/results/mostraDatiUtente.jsp
+
+Ci si assicuri di avere capito il funzionamento del codice prima di iniziare l'esercitazione.
+
+Per svolgere l'esercizio conviene aggiungere un campo alla volta a tutti i sorgenti nell'ordine
+sopra indicato. Una volta provata la correttezza dell'aggiunta di un campo si può passare all'aggiunta degli altri.
+
+I punti dove aggiungere il codice è marcato in ciascuno dei sorgenti  con commenti in MAIUSCOLO.

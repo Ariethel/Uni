@@ -1,16 +1,14 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: amnesia
-  Date: 08/03/22
-  Time: 12:04
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Title</title>
+    <title>Risultati</title>
 </head>
 <body>
-
+    <h2> Esito Registrazione</h2>
+    <p>La registrazione di ${customerJsp.fname} e' andata a buon fine.</p>
+    <p>I suoi dati sono:</p>
+    <fieldset>
+        <p></p>
+    </fieldset>
 </body>
 </html>
