@@ -9,15 +9,13 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "ServletCookie", value = "/index.html2")
-public class servletcookie extends HttpServlet {
-    private int numero = 0;
-
-
+@WebServlet(name = "ServletCookie", value = "/index.html")
+public class ServletCookie extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
+        //QUESTA SERVLET DEVE ESSERE FIXATA
         PrintWriter out = res.getWriter();
         //Invio
-        Cookie cookieTest = new Cookie("NumAccessi", Integer.toString(numero));
+        Cookie cookieTest = new Cookie("numAccessi", "0");
         cookieTest.setSecure(true);
         cookieTest.setMaxAge(60 * 60 * 24);
         cookieTest.setPath("/");
@@ -27,9 +25,8 @@ public class servletcookie extends HttpServlet {
         Cookie[] cookies = req.getCookies();
         Cookie c = cookies[0];
         if (c != null) {
-            numero++;
-            c.setValue(Integer.toString(Integer.parseInt(c.getValue()) + 1));
             out.println("cookie: " + c.getName() + " " + c.getValue());
-        }else numero = 0;
+            cookieTest.setValue(Integer.toString(Integer.parseInt(c.getValue()) + 1));
+        }
     }
 }
