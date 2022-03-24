@@ -14,10 +14,11 @@ public class ConfirmUpdate extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         CustomerDAO service = new CustomerDAO();
         Customer customer = new Customer();
-
+        String id = (String) request.getParameter("id");
         String fname = (String) request.getParameter("fname");
         String lname = (String) request.getParameter("lname");
         String balance = (String) request.getParameter("balance");
+        customer.setId(Integer.parseInt(id));
         customer.setFirstName(fname);
         customer.setLastName(lname);
         customer.setBalance(Double.parseDouble(balance));

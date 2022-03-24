@@ -19,6 +19,7 @@
         <input type="text" name="lname" id="lname" value="${customer.lastName}"><br>
         <label for="balance">Balance</label><br>
         <input type="text" name="balance" id="balance" value="${customer.balance}"><br>
+        <input type="hidden" name="id" value="${customer.id}">
         <input type="submit" value="Salva">
     </form>
 </body>
