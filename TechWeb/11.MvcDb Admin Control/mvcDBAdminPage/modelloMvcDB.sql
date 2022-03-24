@@ -3,13 +3,13 @@ create schema modelloMvcDB;
 use modelloMvcDB;
 
 create table utente(
-id int primary key,
+id int primary key auto_increment,
 first_name varchar(255) not null,
-last_utentename varchar(255) not null,
+last_name varchar(255) not null,
 balance double not null
 );
 
-insert into utente(id,first_name,last_name,balance) values
-(1,"Harry", "Hacker", "-3456.78"),
-(2,"Codie", "Coder", "234.56"),
-(3,"Polly", "Programmer", "987654.32");
+insert into utente(first_name,last_name,balance) values
+("Harry", "Hacker", "-3456.78"),
+("Codie", "Coder", "234.56"),
+("Polly", "Programmer", "987654.32");

@@ -45,12 +45,11 @@ public class CustomerDAO {
     public void doSave(Customer customer) {
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps = con.prepareStatement(
-                    "INSERT INTO utente (id, first_name, last_name, balance) VALUES(?,?,?,?)",
+                    "INSERT INTO utente (first_name, last_name, balance) VALUES(?,?,?)",
                     Statement.RETURN_GENERATED_KEYS);
-            ps.setInt(1, customer.getId());
-            ps.setString(2, customer.getFirstName());
-            ps.setString(3, customer.getLastName());
-            ps.setDouble(4, customer.getBalance());
+            ps.setString(1, customer.getFirstName());
+            ps.setString(2, customer.getLastName());
+            ps.setDouble(3, customer.getBalance());
             if (ps.executeUpdate() != 1) {
                 throw new RuntimeException("INSERT error.");
             }
@@ -76,6 +75,22 @@ public class CustomerDAO {
         return customers;
     }
 
+
+    public void doModify(Customer customer){
+        try(Connection conn = ConPool.getConnection()){
+            PreparedStatement ps = conn.prepareStatement("UPDATE utente u SET u.first_name = " + customer.getFirstName() + ", u.last_name =" +customer.getLastName() + ", u.balance = " + customer.getBalance()+ " WHERE u.id =" + customer.getId());
+           /* ps.setString(1,customer.getFirstName());
+            ps.setString(2,customer.getLastName());
+            ps.setDouble(3,customer.getBalance());
+            ps.setInt(4,customer.getId());*/
+            if (ps.executeUpdate() != 1){
+                throw new RuntimeException("Update Error");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 }
 

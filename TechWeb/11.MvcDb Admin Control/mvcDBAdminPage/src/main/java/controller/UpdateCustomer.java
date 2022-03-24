@@ -10,21 +10,18 @@ import model.Customer;
 import model.CustomerDAO;
 
 import java.io.IOException;
+@WebServlet("/update-customer")
+public class UpdateCustomer extends HttpServlet {
 
-@WebServlet("/add-account")
-public class AddAccount extends HttpServlet {
-    @Override
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        String fname = req.getParameter("fname");
-        String lname = req.getParameter("lname");
-        double balance = Double.parseDouble(req.getParameter("balance"));
-        Customer customer = new Customer();
-        customer.setFirstName(fname);
-        customer.setLastName(lname);
-        customer.setBalance(balance);
         CustomerDAO service = new CustomerDAO();
-        service.doSave(customer);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("index.html");
+        Customer customer = new Customer();
+
+        int id = Integer.parseInt(req.getParameter("id"));
+        customer = service.doRetrieveById(id);
+
+        req.setAttribute("customer", customer);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/results/form-modify.jsp");
         dispatcher.forward(req,res);
     }
 }
