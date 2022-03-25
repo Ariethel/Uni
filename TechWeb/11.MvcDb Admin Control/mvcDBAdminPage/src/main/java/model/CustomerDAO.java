@@ -79,7 +79,6 @@ public class CustomerDAO {
     public void doModify(Customer customer){
         try(Connection conn = ConPool.getConnection()){
             PreparedStatement ps = conn.prepareStatement("UPDATE utente u SET u.first_name = " + customer.getFirstName() + ", u.last_name =" +customer.getLastName() + ", u.balance = " + customer.getBalance() + " WHERE u.id =" + customer.getId());
-            System.out.println("UPDATE utente u SET u.first_name = " + customer.getFirstName() + ", u.last_name =" +customer.getLastName() + ", u.balance = " + customer.getBalance() + " WHERE u.id =" + customer.getId());
            /* ps.setString(1,customer.getFirstName());
             ps.setString(2,customer.getLastName());
             ps.setDouble(3,customer.getBalance());
