@@ -76,20 +76,13 @@ public class CustomerDAO {
     }
 
 
-    public void doModify(Customer customer){
-        try(Connection conn = ConPool.getConnection()){
-            PreparedStatement ps = conn.prepareStatement("UPDATE utente u SET u.first_name = " + customer.getFirstName() + ", u.last_name =" +customer.getLastName() + ", u.balance = " + customer.getBalance() + " WHERE u.id =" + customer.getId());
-           /* ps.setString(1,customer.getFirstName());
-            ps.setString(2,customer.getLastName());
-            ps.setDouble(3,customer.getBalance());
-            ps.setInt(4,customer.getId());*/
-            if (ps.executeUpdate() != 1){
-                throw new RuntimeException("Update Error");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
+    
+    public void doModify(Customer c){ 
+	try (Connection con = ConPool.getConnection()) { 
+		Statement st = con.createStatement(); 
+		String query = "update utente set first_name='" + c.getFirstName() + "', last_name='" + c.getLastName() + "', balance=" + c.getBalance() + " where id=" + c.getId() + ";";
+		st.executeUpdate(query); } 		
+	catch (SQLException e) { throw new RuntimeException(e); } 
     }
 
 }
