@@ -11,6 +11,9 @@ public class Customer {
     public boolean isBookmark() {
         return bookmark;
     }
+    public boolean getBookmark() {
+        return bookmark;
+    }
 
     public void setBookmark(boolean bookmark) {
         this.bookmark = bookmark;

@@ -70,6 +70,7 @@ public class CustomerDAO {
                 c.setFirstName(rs.getString(2));
                 c.setLastName(rs.getString(3));
                 c.setBalance(rs.getDouble(4));
+                c.setBookmark(rs.getBoolean(5));
                 customers.add(c);
             }
         }

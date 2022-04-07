@@ -7,22 +7,17 @@ import model.Customer;
 import model.CustomerDAO;
 
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.ArrayList;
 
-@WebServlet(name = "ShowAll", value = "/show-all")
-public class ShowAll extends HttpServlet {
+@WebServlet(name = "RemovePrefs", value = "/remove-prefs")
+public class RemovePrefs extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ArrayList<Customer> customers = new ArrayList<Customer>();
         CustomerDAO service = new CustomerDAO();
-        try {
-            customers = service.doRetriveAll();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        Customer customer = new Customer();
+        customer = service.doRetrieveById(Integer.parseInt(request.getParameter("id")));
+        service.doRemovePrefs(customer);
 
-        request.setAttribute("allcustomers",customers);
+
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/results/show-all.jsp");
         dispatcher.forward(request,response);
     }

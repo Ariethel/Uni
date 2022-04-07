@@ -47,7 +47,7 @@ public class ConPool {
             PoolProperties p = new PoolProperties();
             p.setUrl("jdbc:mysql://localhost:3306/modelloMvcDB?serverTimezone=" + TimeZone.getDefault().getID());
             p.setDriverClassName("com.mysql.cj.jdbc.Driver");
-            p.setUsername("admin"); //root per pc fisso, admin per pc portatile
+            p.setUsername("root"); //root per pc fisso, admin per pc portatile
             p.setPassword("root");
             p.setMaxActive(100);
             p.setInitialSize(10);

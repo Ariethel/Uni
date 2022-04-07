@@ -1,3 +1,5 @@
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="model.Customer" %>
 <%--
   Created by IntelliJ IDEA.
   User: amnesia
@@ -22,15 +24,15 @@
 
 <form action="store-prefs"> <input type="submit" value="Salva Preferiti"> </form>
 
-
-
 <ul>
     <c:forEach items="${customers}" var="customer">
-        <% if (${customer.bookmark}) %>
-            <li style="color: green">${customer.firstName} ${customer.lastName} ${customer.balance}
-        <%}else{ %>
-            <li>${customer.firstName} ${customer.lastName} ${customer.balance}
-        <%}%>
+        <c:if test = "${customer.bookmark}">
+            <li style="color: green">${customer.firstName} ${customer.lastName} ${customer.balance}</li>
+        </c:if>
+        <c:if test = "${!customer.bookmark}">
+            <li>${customer.firstName} ${customer.lastName} ${customer.balance}</li>
+        </c:if>
+
 
             <form action="update-customer">
                 <input type="hidden" name="id" value="${customer.id}">

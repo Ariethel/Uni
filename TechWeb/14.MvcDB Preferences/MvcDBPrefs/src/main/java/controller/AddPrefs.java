@@ -18,7 +18,7 @@ public class AddPrefs extends HttpServlet {
         service.doAddPrefs(customer);
 
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("show-all.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/results/show-all.jsp");
         dispatcher.forward(request,response);
     }
 

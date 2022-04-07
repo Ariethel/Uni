@@ -10,7 +10,7 @@ balance double not null,
 bookmark boolean default 0
 );
 
-insert into utente(first_name,last_name,balance) values
-("Harry", "Hacker", "-3456.78"),
-("Codie", "Coder", "234.56"),
-("Polly", "Programmer", "987654.32");
+insert into utente(first_name,last_name,balance,bookmark) values
+("Harry", "Hacker", "-3456.78",1),
+("Codie", "Coder", "234.56",0),
+("Polly", "Programmer", "987654.32",0utente);
