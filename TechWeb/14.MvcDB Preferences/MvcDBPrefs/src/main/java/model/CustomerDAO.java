@@ -1,5 +1,6 @@
 package model;
 
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -83,6 +84,26 @@ public class CustomerDAO {
 		String query = "update utente set first_name='" + c.getFirstName() + "', last_name='" + c.getLastName() + "', balance=" + c.getBalance() + " where id=" + c.getId() + ";";
 		st.executeUpdate(query); } 		
 	catch (SQLException e) { throw new RuntimeException(e); } 
+    }
+
+    public ArrayList<Customer> doRetriveBookmark(){
+        ArrayList<Customer> customers = new ArrayList<>();
+        try (Connection con = ConPool.getConnection()) {
+            Statement st = con.createStatement();
+            String query = "select * from utente where bookmark= 1;";
+            ResultSet rs = st.executeQuery(query);
+            while(rs.next()){
+                Customer p = new Customer();
+                p.setId(rs.getInt(1));
+                p.setFirstName(rs.getString(2));
+                p.setLastName(rs.getString(3));
+                p.setBalance(rs.getDouble(4));
+                p.setBookmark(rs.getBoolean(5));
+                customers.add(p);
+            }
+            return customers;
+        }
+        catch (SQLException e) { throw new RuntimeException(e); }
     }
 
     public void doAddPrefs(Customer c){
