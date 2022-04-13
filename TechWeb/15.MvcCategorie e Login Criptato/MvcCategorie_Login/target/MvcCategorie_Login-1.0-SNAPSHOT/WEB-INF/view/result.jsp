@@ -9,12 +9,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <%ArrayList<Prodotto> prodotti = (ArrayList<Prodotto>) request.getAttribute("prodotti");%>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
     <title>Categoria scelta</title>
 </head>
 <body>
-<table>
-<tr>
+<%ArrayList<Prodotto> prodotti = (ArrayList<Prodotto>) request.getAttribute("prodotti");%>
+<table class="table">
+<tr style="background-color: palegreen">
     <th>ID</th>
     <th>Nome</th>
     <th>Descrizione</th>
