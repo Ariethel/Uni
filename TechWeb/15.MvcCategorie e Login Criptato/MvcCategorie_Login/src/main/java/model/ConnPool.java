@@ -16,7 +16,7 @@ public class ConnPool {
             PoolProperties p = new PoolProperties();
             p.setUrl("jdbc:mysql://localhost:3306/MvcCat?serverTimezone=" + TimeZone.getDefault().getID());
             p.setDriverClassName("com.mysql.cj.jdbc.Driver");
-            p.setUsername("root"); //root per pc fisso, admin per pc portatile
+            p.setUsername("admin"); //root per pc fisso, admin per pc portatile
             p.setPassword("root");
             p.setMaxActive(100);
             p.setInitialSize(10);
