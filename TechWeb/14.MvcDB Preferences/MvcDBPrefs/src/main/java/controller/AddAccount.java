@@ -26,5 +26,6 @@ public class AddAccount extends HttpServlet {
         service.doSave(customer);
         RequestDispatcher dispatcher = req.getRequestDispatcher("index.html");
         dispatcher.forward(req,res);
+        dispatcher.forward(req,res);
     }
 }
