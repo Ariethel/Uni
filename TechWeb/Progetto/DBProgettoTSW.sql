@@ -30,27 +30,27 @@ primary key(n_ordine,a_titolo)
 create table seleziona(
 u_email varchar(255) references utente(email),
 u_pass varchar(255) references utente(pass),
-a_titolo varchar(255) references album(titolo),
+a_titolo varchar(255) references album(a_titolo),
 primary key(u_email,u_pass,a_titolo)
 );
 
 create table aggiunge(
 u_email varchar(255) references utente(email),
 u_pass varchar(255) references utente(pass),
-a_titolo varchar(255) references album(titolo),
+a_titolo varchar(255) references album(a_titolo),
 primary key(u_email,u_pass,a_titolo)
 );
 
 create table modifica(
 u_email varchar(255) references utente(email),
 u_pass varchar(255) references utente(pass),
-a_titolo varchar(255) references album(titolo),
+a_titolo varchar(255) references album(a_titolo),
 primary key(u_email,u_pass,a_titolo)
 );
 
 create table rimuove(
 u_email varchar(255) references utente(email),
 u_pass varchar(255) references utente(pass),
-a_titolo varchar(255) references album(titolo),
+a_titolo varchar(255) references album(a_titolo),
 primary key(u_email,u_pass,a_titolo)
 );
