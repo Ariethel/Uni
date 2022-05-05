@@ -2,7 +2,8 @@
 <html>
 <style>
     #navlist{
-        background-color: aliceblue;
+        overflow: hidden;
+        background-color: #0c6540;
         width: 100%;
         position: absolute;
         align-items: center;
@@ -12,7 +13,20 @@
         float: left;
     }
 
+    #navlist #home-button:hover{
+        background-color: #0c6540;
+    }
+
+    .search-bar{
+        float: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
     ul{
+        float: right;
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -24,18 +38,22 @@
     }
 
     li a {
-        display: block;
+        display: flex;
         color:black;
         padding: 8px;
-        margin: 0px 2px;
+        margin: 0px;
         text-align: center;
-        background-color: bisque;
+        background-color: #f1f5f4;
     }
 
     #navlist a:hover{
-        background-color: antiquewhite;
+        background-color: #dad7cd;
+        text-decoration: none;
+        color: black;
     }
 </style>
+
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -60,11 +78,9 @@
 
         <!-- Buttons -->
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Our Products</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">🛒</a></li>
+            <li><a href="./WEB-INF/view/login.jsp">Log-In</a></li>
+            <li><a href="#">Help</a></li>
         </ul>
 
     </div>
