@@ -1,0 +1,56 @@
+body {
+	font-size: 10px;
+	margin: 5px;
+}
+
+h1 {
+	font-size: medium;
+}
+
+h2 {}
+
+img {
+	max-width: 100%;
+}
+
+figure {
+	margin: 5px;
+}
+
+@media screen and (min-width: 554px) {
+	body {
+	  background-color: cornsilk;
+	  font-size: 12px;
+	}
+
+	h1{
+		font-size: large;
+	}
+
+	figure {
+		position: relative;
+        width: 40%;
+        display: inline-block;
+		margin: 10px;
+	}
+
+}
+
+@media screen and (min-width: 740px) {
+	body {
+	  background-color: sandybrown;
+	  font-size: 21px;
+	}
+
+	h1{
+		font-size: x-large;
+	}
+
+	figure {
+		position: relative;
+        width: 30%;
+        display: inline-block;
+		margin: 10px;
+	}
+
+}
