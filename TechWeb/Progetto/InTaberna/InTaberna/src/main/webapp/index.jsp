@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <jsp:include page="WEB-INF/view/head.jsp"></jsp:include>
+    <jsp:include page="/view/head.jsp"></jsp:include>
 </head>
 <body>
 <h1><%= "Hello World!" %>

@@ -1,0 +1,56 @@
+li.buttons{
+    display: inline;
+    text-decoration: none;
+    padding: 2px;
+}
+
+ul.buttons{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a.buttons, a.buttons:visited, a.buttons:hover, a.buttons:active{
+    text-decoration: none;
+    color: inherit;
+}
+
+h3.logo {
+    display: inline;
+    font-family: Macondo;
+    font-size: x-large;
+    color: darkslategrey;
+}
+
+a.logo, a.logo:visited, a.logo:hover, a.logo:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+form.search{
+    display: inline;
+}
+
+.navbar{
+    background-color: whitesmoke;
+    width: 100%;
+    height: 50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.buttons{
+    display: inline;
+    float: right;
+}
+
+.search{
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.logo{
+    padding: 5px;
+    display: inline;
+}
