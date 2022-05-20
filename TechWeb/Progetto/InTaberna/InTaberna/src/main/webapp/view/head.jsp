@@ -13,7 +13,7 @@
 <body>
     <div class="navbar">
         <div class="logo">
-            <h3 class="logo"><a class="logo" href="../../index.jsp">In Taberna</a></h3>
+            <h3 class="logo"><a class="logo" href="index.jsp">In Taberna</a></h3>
         </div>
 
         <div class="search">
