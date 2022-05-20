@@ -8,6 +8,7 @@
     <link href="resources/css/head.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Macondo">
     <title>InTaberna - Music Store</title>
+    <link rel="icon" href="resources/icons/icon.png" type="image/icon type">
 </head>
 
 <body>
@@ -19,15 +20,15 @@
         <div class="search">
             <form action="" method="get" class="search">
                 <input type="search" name="search" size="20">
-                <input type="submit" value="Submit">
+                <input type="submit" value="🔍">
             </form>
         </div>
 
         <div class="buttons">
             <ul class="buttons">
                 <li class="buttons"><a class="buttons" href="#HOME">🛒</a></li>
-                <li class="buttons"><a class="buttons" href="#HOME">Log-In</a></li>
-                <li class="buttons"><a class="buttons" href="#HOME">Help</a></li>
+                <li class="buttons"><a class="buttons" href="view/login.jsp">Log-In</a></li>
+                <li class="buttons"><a class="buttons" href="view/help.jsp">Help</a></li>
             </ul>
 
         </div>

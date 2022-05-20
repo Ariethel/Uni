@@ -37,6 +37,7 @@ a.logo, a.logo:visited, a.logo:hover, a.logo:active {
 }
 
 .buttons{
+    padding: 5px;
     display: inline;
     float: right;
 }
