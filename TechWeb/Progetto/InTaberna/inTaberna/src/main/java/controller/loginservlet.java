@@ -13,7 +13,6 @@ import java.util.ArrayList;
 public class loginservlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 
     @Override
@@ -23,7 +22,7 @@ public class loginservlet extends HttpServlet {
         if (utenti.contains(request.getParameter("username"))){
             //non so bene cosa chiamare
         }else{
-            userdao.doAddUser(request.getParameter("username"), request.getParameter("password"), request.getParameter("registrato"));
+            userdao.doAddUser(request.getParameter("username"), request.getParameter("password"));
         }
 
     }

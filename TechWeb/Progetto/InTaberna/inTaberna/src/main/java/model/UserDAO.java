@@ -43,10 +43,13 @@ public class UserDAO {
         return utenti;
     }
 
-    public void doAddUser(String email, String password, String tipo){
+    public void doAddUser(String email, String password){
         try (Connection conn = ConnPool.getConnection()) {
-            PreparedStatement ps = conn.prepareStatement("INSERT INTO utente VALUES (" + email + "," + password + "," + tipo + ");");
-            ResultSet rs = ps.executeQuery();
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO utente VALUES (?,?,?)");
+            ps.setString(1,email);
+            ps.setString(2,password);
+            ps.setString(3,"registrato");
+            ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }

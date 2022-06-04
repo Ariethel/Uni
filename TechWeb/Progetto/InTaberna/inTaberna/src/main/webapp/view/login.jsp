@@ -54,7 +54,7 @@
 
 <h1 style="justify-content: center; display: flex ">Benvenuto</h1>
 <div class="login">
-    <form name="loginform" action="login-servlet" method="post" onsubmit="return validateform()">
+    <form name="loginform" action="../login-servlet" method="post" onsubmit="return validateform()">
         <input type="text" placeholder="username" name="username" required><br>
         <input type="password" placeholder="password" name="password" required><br>
         <input type="submit" value="Register">
