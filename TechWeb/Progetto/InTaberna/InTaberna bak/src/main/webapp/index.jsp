@@ -6,7 +6,9 @@
 </head>
 <body>
     <div class="album-slideshow">
-
+        <div class="home-album">
+            <!--Copertina album, con sotto Titolo e prezzo-->
+        </div>
     </div>
 
     <div class="live-player">
