@@ -2,7 +2,7 @@ package model;
 
 public class Utente {
 
-    public void Utente(String email, String password, String tipo){
+    public Utente(String email, String password, String tipo){
         this.email = email;
         this.password = password;
         this.tipo = tipo;

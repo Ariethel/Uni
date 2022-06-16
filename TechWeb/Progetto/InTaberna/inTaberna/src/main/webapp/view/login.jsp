@@ -57,7 +57,7 @@
     <form name="loginform" action="../login-servlet" method="post" onsubmit="return validateform()">
         <input type="text" placeholder="username" name="username" required><br>
         <input type="password" placeholder="password" name="password" required><br>
-        <input type="submit" value="Register">
+        <input type="submit" formaction="../register-servlet" value="Register">
         <input type="submit" value="Submit">
     </form>
 </div>

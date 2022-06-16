@@ -13,7 +13,7 @@ public class UserDAO {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM utente");
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                Utente u = new Utente();
+                Utente u = new Utente("","","");
                 u.setEmail(rs.getString(1));
                 u.setPassword(rs.getString(2));
                 u.setTipo(rs.getString(3));
@@ -31,7 +31,7 @@ public class UserDAO {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM utente WHERE email= " + email);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                Utente u = new Utente();
+                Utente u = new Utente("","","");
                 u.setEmail(rs.getString(1));
                 u.setPassword(rs.getString(2));
                 u.setTipo(rs.getString(3));
@@ -43,12 +43,12 @@ public class UserDAO {
         return utenti;
     }
 
-    public void doAddUser(String email, String password){
+    public void doAddUser(Utente utente){
         try (Connection conn = ConnPool.getConnection()) {
             PreparedStatement ps = conn.prepareStatement("INSERT INTO utente VALUES (?,?,?)");
-            ps.setString(1,email);
-            ps.setString(2,password);
-            ps.setString(3,"registrato");
+            ps.setString(1, utente.getEmail());
+            ps.setString(2, utente.getPassword());
+            ps.setString(3,utente.getTipo());
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
