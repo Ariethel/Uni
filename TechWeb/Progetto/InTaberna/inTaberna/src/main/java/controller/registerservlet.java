@@ -22,8 +22,7 @@ public class registerservlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         Utente u = new Utente(username,password,"registrato");
-        ArrayList<Utente> utenti = service.doRetriveByEmail(username);
-        if (utenti.contains(u)){
+        if (service.doCheckEmail(username)){
             //Forward a pagina di utente gia' registrato
             RequestDispatcher dispatcher = request.getRequestDispatcher("/view/already-registered.jsp");
             dispatcher.forward(request,response);
