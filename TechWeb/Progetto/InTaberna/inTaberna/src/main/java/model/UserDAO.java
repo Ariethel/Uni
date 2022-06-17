@@ -56,6 +56,38 @@ public class UserDAO {
         return  false; //username disponibile
     }
 
+    public boolean doCheckAdmin(String email){
+        try (Connection conn = ConnPool.getConnection()) {
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM utente WHERE email = ? AND tipo = ?");
+            ps.setString(1,email);
+            ps.setString(2,"admin");
+            ResultSet rs = ps.executeQuery();
+            boolean val = rs.next(); //True se la query restituisce qualche risultato
+            if (val) {
+                return true; // L'username e' gia' preso
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return  false; //username disponibile
+    }
+
+    public boolean doCheckPassword(String username, String password){
+        try (Connection conn = ConnPool.getConnection()) {
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM utente WHERE email = ? AND pass = ?");
+            ps.setString(1,username);
+            ps.setString(2,password);
+            ResultSet rs = ps.executeQuery();
+            boolean val = rs.next();
+            if (val) {
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return  false;
+    }
+
     public void doAddUser(Utente utente){
         try (Connection conn = ConnPool.getConnection()) {
             PreparedStatement ps = conn.prepareStatement("INSERT INTO utente VALUES (?,?,?)");

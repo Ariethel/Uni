@@ -35,6 +35,16 @@
 </div>
 
 <h1>Utente gia' presente nel database</h1>
+
+<script>
+    function redirect(){
+        location.href = "index.jsp";
+    }
+
+    setTimeout(redirect,3000);
+
+</script>
+
 </body>
 
 </html>

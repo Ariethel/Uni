@@ -33,16 +33,7 @@
 
   </div>
 </div>
-<h1>Registrazione avvenuta con successo.</h1>
-<script>
-  function redirect(){
-    location.href = "index.jsp";
-  }
-
-  setTimeout(redirect,3000);
-
-
-</script>
+  <button type="button" onclick="document.location.href='admin-function.jsp';" style="float: right">Admin Function</button>
 </body>
 
 </html>

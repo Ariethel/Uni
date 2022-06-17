@@ -33,16 +33,15 @@
 
   </div>
 </div>
-<h1>Registrazione avvenuta con successo.</h1>
-<script>
-  function redirect(){
-    location.href = "index.jsp";
-  }
+<div>
+  <h3>Gestisci utenti</h3>
+  //Usare ajax per prendere tutti gli utenti
+</div>
+<div>
+  <h3>Gestisci Album</h3>
+  //Usare ajax per prendere tutti gli album
 
-  setTimeout(redirect,3000);
-
-
-</script>
+</div>
 </body>
 
 </html>
