@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="resources/css/head.css" rel="stylesheet" type="text/css"/>
+  <link href="../resources/css/head.css" rel="stylesheet" type="text/css"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Macondo">
   <title>InTaberna - Music Store</title>
-  <link rel="icon" href="resources/icons/icon.png" type="image/icon type">
+  <link rel="icon" href="../resources/icons/icon.png" type="image/icon type">
 </head>
 
 <body>
@@ -40,6 +40,15 @@
 <div>
   <h3>Gestisci Album</h3>
   //Usare ajax per prendere tutti gli album
+  <div id="addAlbum">
+    <form action="../addalbumservlet" method="get">
+      <input type="text" name="titolo" placeholder="Titolo">
+      <input type="number" name="prezzo" placeholder="Prezzo">
+      <input type="file" name="img" placeholder="Copertina">
+      <input type="number" name="homepage" placeholder="1 -> Homepage/ 0 -> Search Only">
+      <input type="submit" value="Invia">
+    </form>
+  </div>
 
 </div>
 </body>

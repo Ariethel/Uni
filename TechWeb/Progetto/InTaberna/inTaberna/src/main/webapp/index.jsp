@@ -1,3 +1,5 @@
+<%@ page import="model.Album" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -5,14 +7,24 @@
     <jsp:include page="/view/head.jsp"></jsp:include>
 </head>
 <body>
-    <div class="album-slideshow">
-        <div class="home-album">
-            <!--Copertina album, con sotto Titolo e prezzo-->
-        </div>
-    </div>
+    <%--<div class="home-album">
+        <!-- Come chiamo la servlet per caricare gli album? Provo con questo script ajax-->
+        <script>
+            asyncRequest = new XMLHttpRequest();
+            asyncRequest.open('GET', '/fillhomeservlet', true);
+        </script>
+        <!--Copertina album, con sotto Titolo e prezzo-->
+        <%
+            // retrieve your list from the request, with casting
+            ArrayList<Album> homepage = (ArrayList<Album>) request.getAttribute("homepage");
 
-    <div class="live-player">
+            // print the information about every category of the list
+            for(Album a : homepage)
+            {
+                // codice html per stampare gli album nella home
 
-    </div>
+            }
+        %>
+    </div>--%>
 </body>
 </html>

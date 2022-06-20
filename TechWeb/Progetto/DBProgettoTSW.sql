@@ -21,7 +21,7 @@ create table album(
 a_titolo varchar(255) primary key,
 prezzo double not null,
 copertina blob,
-homepage bool not null # 1 -> Album va in homepage, 0 -> Solo ricerca
+homepage bool not null default false# 1 -> Album va in homepage, 0 -> Solo ricerca
 );
 
 create table canzone(

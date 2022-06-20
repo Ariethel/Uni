@@ -14,7 +14,7 @@
 <body>
 <div class="navbar">
   <div class="logo">
-    <h3 class="logo"><a class="logo" href="index.jsp">In Taberna</a></h3>
+    <h3 class="logo"><a class="logo" href="admin-home.jsp">In Taberna</a></h3>
   </div>
 
   <div class="search">
@@ -33,7 +33,7 @@
 
   </div>
 </div>
-  <button type="button" onclick="document.location.href='admin-function.jsp';" style="float: right">Admin Function</button>
+  <button type="button" onclick="document.location.href='view/admin-function.jsp';" style="float: right">Admin Function</button>
 </body>
 
 </html>
