@@ -41,7 +41,7 @@
   <h3>Gestisci Album</h3>
   //Usare ajax per prendere tutti gli album
   <div id="addAlbum">
-    <form action="../addalbumservlet" method="get">
+    <form action="../addalbumservlet" method="post" enctype="multipart/form-data">
       <input type="text" name="titolo" placeholder="Titolo">
       <input type="number" name="prezzo" placeholder="Prezzo">
       <input type="file" name="img" placeholder="Copertina">
