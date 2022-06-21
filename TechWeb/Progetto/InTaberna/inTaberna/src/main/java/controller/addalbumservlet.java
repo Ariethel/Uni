@@ -13,9 +13,10 @@ import java.nio.file.Paths;
 
 @WebServlet(name = "addalbumservlet", value = "/addalbumservlet")
 @MultipartConfig(
-        fileSizeThreshold = 1024 * 1024 * 1, // 1 MB
-        maxFileSize = 1024 * 1024 * 10,      // 10 MB
-        maxRequestSize = 1024 * 1024 * 100   // 100 MB
+        fileSizeThreshold   = 1024 * 1024 * 1,  // 1 MB
+        maxFileSize         = 1024 * 1024 * 10, // 10 MB
+        maxRequestSize      = 1024 * 1024 * 15, // 15 MB
+        location            = "/home/amnesia/Uploads"
 )
 public class addalbumservlet extends HttpServlet {
     @Override
@@ -23,20 +24,50 @@ public class addalbumservlet extends HttpServlet {
 
     }
 
+    private static final String SAVE_DIR = "uploadFiles";
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String titolo = request.getParameter("titolo");
         Double prezzo = Double.valueOf(request.getParameter("prezzo"));
-        //File img = new File(request.getParameter("img"));
-        Part filePart = request.getPart("img"); // Retrieves <input type="file" name="file">
-        String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // MSIE fix.
-        File file = new File(fileName);
         Boolean homepage = Boolean.valueOf(request.getParameter("homepage"));
-        Album album = new Album(titolo,prezzo,file,homepage);
-        AlbumDAO service = new AlbumDAO();
-        service.doInsertAlbum(album);
+
+        // gets absolute path of the web application
+        String appPath = request.getServletContext().getRealPath("");
+        // constructs path of the directory to save uploaded file
+        String savePath = appPath + File.separator + SAVE_DIR;
+
+        // creates the save directory if it does not exists
+        File fileSaveDir = new File(savePath);
+        if (!fileSaveDir.exists()) {
+            fileSaveDir.mkdir();
+        }
+
+
+        //Save file in "location" path
+        for (Part part : request.getParts()) {
+            String fileName = extractFileName(part);
+            // refines the fileName in case it is an absolute path
+            fileName = new File(fileName).getName();
+            part.write(savePath + File.separator + fileName);
+        }
+
+
+
+        /*AlbumDAO service = new AlbumDAO();
+        service.doInsertAlbum(album);*/
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/view/admin-home.jsp");
         dispatcher.forward(request,response);
+    }
+
+    private String extractFileName(Part part) {
+        String contentDisp = part.getHeader("content-disposition");
+        String[] items = contentDisp.split(";");
+        for (String s : items) {
+            if (s.trim().startsWith("filename")) {
+                return s.substring(s.indexOf("=") + 2, s.length()-1);
+            }
+        }
+        return "";
     }
 }
