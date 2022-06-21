@@ -12,16 +12,14 @@ import java.util.ArrayList;
 public class AlbumDAO {
     public void doInsertAlbum(Album a){
         try (Connection conn = ConnPool.getConnection()) {
-            PreparedStatement ps = conn.prepareStatement("INSERT INTO album VALUES(?,?,?)");
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO album VALUES(?,?,?,?)");
             ps.setString(1,a.getTitolo());
             ps.setDouble(2,a.getPrezzo());
-            InputStream in = new FileInputStream(a.getImg());
-            ps.setBlob(3, in);
+            ps.setBlob(3, a.getImg());
+            ps.setBoolean(4,a.isHomepage());
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
         }
     }
     public ArrayList<Album> doGetHomePage() throws FileNotFoundException {
@@ -37,7 +35,8 @@ public class AlbumDAO {
                 blob= (Blob) rs.getBlob("copertina"); //Prendo la copertina in formato blob dal db
                 b=blob.getBytes(1,(int)blob.length()); //La trasformo in una stream di bytes
                 fos.write(b); //Scrivo la copertina su un file
-                Album a = new Album(rs.getString(1), rs.getDouble(2), img, rs.getBoolean(4));
+                FileInputStream in = new FileInputStream(img);
+                Album a = new Album(rs.getString(1), rs.getDouble(2),in, rs.getBoolean(4));
                 album.add(a);
             }
         } catch (SQLException | IOException e) {

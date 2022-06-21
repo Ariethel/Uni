@@ -1,4 +1,3 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 
 <head>
@@ -43,9 +42,10 @@
   <div id="addAlbum">
     <form action="../addalbumservlet" method="post" enctype="multipart/form-data">
       <input type="text" name="titolo" placeholder="Titolo">
-      <input type="number" name="prezzo" placeholder="Prezzo">
-      <input type="file" name="img" placeholder="Copertina">
-      <input type="number" name="homepage" placeholder="1 -> Homepage/ 0 -> Search Only">
+      <input type="number" name="prezzo" step="any" min=”0″ placeholder="Prezzo">
+      <input type="file" name="file" placeholder="Copertina">
+      <label for="homepage">homepage</label>
+      <input type="checkbox" id="homepage" name="homepage">
       <input type="submit" value="Invia">
     </form>
   </div>

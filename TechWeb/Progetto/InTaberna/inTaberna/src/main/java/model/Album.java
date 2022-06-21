@@ -1,10 +1,11 @@
 package model;
 
 import java.io.File;
+import java.io.InputStream;
 
 public class Album {
 
-    public Album(String titolo, double prezzo, File file , boolean homepage){
+    public Album(String titolo, double prezzo, InputStream file , boolean homepage){
         this.titolo = titolo;
         this.prezzo = prezzo;
         this.img = file;
@@ -35,16 +36,16 @@ public class Album {
         this.homepage = homepage;
     }
 
-    public File getImg() {
+    public InputStream getImg() {
         return img;
     }
 
-    public void setImg(File img) {
+    public void setImg(InputStream img) {
         this.img = img;
     }
 
     private String titolo;
     private double prezzo;
     private boolean homepage;
-    private File img;
+    private InputStream img;
 }
