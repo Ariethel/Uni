@@ -5,26 +5,75 @@
 <html>
 <head>
     <jsp:include page="/view/head.jsp"></jsp:include>
+    <link rel="stylesheet" type="text/css" href="resources/css/index.css">
 </head>
 <body>
-    <%--<div class="home-album">
-        <!-- Come chiamo la servlet per caricare gli album? Provo con questo script ajax-->
-        <script>
-            asyncRequest = new XMLHttpRequest();
-            asyncRequest.open('GET', '/fillhomeservlet', true);
-        </script>
-        <!--Copertina album, con sotto Titolo e prezzo-->
-        <%
-            // retrieve your list from the request, with casting
-            ArrayList<Album> homepage = (ArrayList<Album>) request.getAttribute("homepage");
-
-            // print the information about every category of the list
-            for(Album a : homepage)
-            {
-                // codice html per stampare gli album nella home
-
-            }
-        %>
-    </div>--%>
+<%--<form method="get" action="fillhomeservlet"></form>--%>
+<%
+    // Prendo la lista di Album che devono andare in homepage
+    ArrayList<Album> list = (ArrayList<Album>) request.getServletContext().getAttribute("homepage");
+%>
+<!-- MAIN (Center website) -->
+<div class="main">
+    <div class="row">
+        <div class="column">
+            <div class="content">
+                <img src="./getPicture?id=<%list.get(0).getTitolo();%>" onerror="this.src='./imgs/nophoto.png'" <%--style="width:100px"--%>>
+                <h3>My Work</h3>
+                <p>Lorem ipsum..</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="content">
+                <img src="lights.jpg" alt="Lights" style="width:100%">
+                <h3>My Work</h3>
+                <p>Lorem ipsum..</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="content">
+                <img src="nature.jpg" alt="Nature" style="width:100%">
+                <h3>My Work</h3>
+                <p>Lorem ipsum..</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="content">
+                <img src="mountains.jpg" alt="Mountains" style="width:100%">
+                <h3>My Work</h3>
+                <p>Lorem ipsum..</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="content">
+                <img src="lights.jpg" alt="Lights" style="width:100%">
+                <h3>My Work</h3>
+                <p>Lorem ipsum..</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="content">
+                <img src="lights.jpg" alt="Lights" style="width:100%">
+                <h3>My Work</h3>
+                <p>Lorem ipsum..</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="content">
+                <img src="lights.jpg" alt="Lights" style="width:100%">
+                <h3>My Work</h3>
+                <p>Lorem ipsum..</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="content">
+                <img src="lights.jpg" alt="Lights" style="width:100%">
+                <h3>My Work</h3>
+                <p>Lorem ipsum..</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- END MAIN -->
 </body>
 </html>

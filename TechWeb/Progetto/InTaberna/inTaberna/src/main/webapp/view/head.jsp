@@ -20,7 +20,7 @@
         <div class="search">
             <form action="" method="get" class="search">
                 <input type="search" name="search" size="20">
-                <input type="submit" value="🔍">
+                <input type="submit" class="submitButton" value="🔍">
             </form>
         </div>
 
@@ -30,7 +30,6 @@
                 <li class="buttons"><a class="buttons" href="view/login.jsp">Log-In</a></li>
                 <li class="buttons"><a class="buttons" href="view/help.jsp">Help</a></li>
             </ul>
-
         </div>
     </div>
 

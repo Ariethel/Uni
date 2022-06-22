@@ -24,24 +24,31 @@ public class AlbumDAO {
     }
     public ArrayList<Album> doGetHomePage() throws FileNotFoundException {
         ArrayList<Album> album = new ArrayList<>();
-        Blob blob; //Blob che prendo dal db
-        byte b[]; //Array di bytes
-        File img = null;
-        FileOutputStream fos = new FileOutputStream(img);
         try (Connection conn = ConnPool.getConnection()) {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM album WHERE homepage = TRUE ");
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                blob= (Blob) rs.getBlob("copertina"); //Prendo la copertina in formato blob dal db
-                b=blob.getBytes(1,(int)blob.length()); //La trasformo in una stream di bytes
-                fos.write(b); //Scrivo la copertina su un file
-                FileInputStream in = new FileInputStream(img);
-                Album a = new Album(rs.getString(1), rs.getDouble(2),in, rs.getBoolean(4));
+                Album a = new Album(rs.getString(1), rs.getDouble(2),null, rs.getBoolean(4));
                 album.add(a);
             }
-        } catch (SQLException | IOException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return album;
+    }
+
+    public byte[] load(String id) throws FileNotFoundException {
+        byte[] bt = null;
+        try (Connection conn = ConnPool.getConnection()) {
+            PreparedStatement ps = conn.prepareStatement("SELECT copertina FROM album WHERE a_titolo = (?) ");
+            ps.setString(1,id);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                bt = rs.getBytes("copertina");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return bt;
     }
 }
