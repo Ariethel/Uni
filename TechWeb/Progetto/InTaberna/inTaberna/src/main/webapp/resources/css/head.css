@@ -54,7 +54,6 @@ a.logo, a.logo:visited, a.logo:hover, a.logo:active {
 }
 
 @media screen and (max-width: 580px) {
-    /*non va, fixare*/
     .submitButton{
         display: none;
     }

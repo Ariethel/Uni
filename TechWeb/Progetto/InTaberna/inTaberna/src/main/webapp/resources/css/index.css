@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: #f1f1f1;
+   /* background-color: #f1f1f1;*/
     padding: 20px;
     font-family: Arial;
 }
@@ -23,7 +23,6 @@ h1 {
     margin: 8px -16px;
 }
 
-/* Add padding BETWEEN each column (if you want) */
 .row,
 .row > .column {
     padding: 8px;
@@ -44,7 +43,7 @@ h1 {
 
 /* Content */
 .content {
-    background-color: white;
+    background-color: whitesmoke;
     padding: 10px;
 }
 
