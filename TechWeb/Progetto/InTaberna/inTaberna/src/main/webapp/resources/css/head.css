@@ -53,11 +53,6 @@ a.logo, a.logo:visited, a.logo:hover, a.logo:active {
     display: inline;
 }
 
-@media screen and (max-width: 580px) {
-    .submitButton{
-        display: none;
-    }
-}
 
 @media screen and (max-width: 500px) {
     .navbar{

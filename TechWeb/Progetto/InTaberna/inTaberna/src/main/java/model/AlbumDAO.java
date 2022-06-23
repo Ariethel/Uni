@@ -51,4 +51,20 @@ public class AlbumDAO {
         }
         return bt;
     }
+
+
+    public ArrayList<Album> doGetLiveSearch(String str){
+        ArrayList<Album> album = new ArrayList<>();
+        try (Connection conn = ConnPool.getConnection()) {
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM album WHERE a_titolo like '%"+str+"%'");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Album a = new Album(rs.getString(1), rs.getDouble(2),null, rs.getBoolean(4));
+                album.add(a);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return album;
+    }
 }
