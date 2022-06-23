@@ -23,9 +23,8 @@
         var xmlhttp=new XMLHttpRequest();
         xmlhttp.onreadystatechange=function() {
             if (this.readyState==4 && this.status==200) {
-                var j = JSON.parse(this.responseText);
-                alert(j);
-                document.getElementById("livesearch").innerHTML=this.responseText;
+                var obj = JSON.parse(this.responseText);
+                document.getElementById("livesearch").innerHTML=obj[0].name + "   " + obj[0].prezzo + "$";
                 document.getElementById("livesearch").style.border="1px solid #A5ACB2";
             }
         }
@@ -44,8 +43,8 @@
 
         <div class="search">
             <form action="" method="get" id="searchAlbum" class="search">
-                <input type="search" name="search" id="searchBar" onkeyup="showResult(this.value)" size="20">
-                <div id="livesearch"></div>
+                <input type="search" name="search" id="searchBar" onkeyup="showResult(this.value)" autocomplete="off" size="20">
+                <table id="livesearch"></table>
             </form>
         </div>
 
