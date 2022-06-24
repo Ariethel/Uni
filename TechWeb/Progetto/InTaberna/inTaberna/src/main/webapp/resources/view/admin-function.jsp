@@ -4,13 +4,31 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../resources/css/head.css" rel="stylesheet" type="text/css"/>
+  <link href="../css/head.css" rel="stylesheet" type="text/css"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Macondo">
   <title>InTaberna - Music Store</title>
-  <link rel="icon" href="../resources/icons/icon.png" type="image/icon type">
+  <link rel="icon" href="../icons/icon.png" type="image/icon type">
+
 </head>
 
 <body>
+<script>
+  $(document).ready(function(){
+    var xmlhttp=new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function() {
+      if (this.readyState==4 && this.status==200) {
+        var obj = JSON.parse(this.responseText);
+        for (var i = 0; i < obj.length; i++){
+          $("#userList p").append(obj[i].name);
+        }
+      }
+    }
+    xmlhttp.open("GET","../../getUser",true);
+    xmlhttp.send();
+  })
+
+</script>
+
 <div class="navbar">
   <div class="logo">
     <h3 class="logo"><a class="logo" href="index.jsp">In Taberna</a></h3>
@@ -35,6 +53,9 @@
 <div>
   <h3>Gestisci utenti</h3>
   //Usare ajax per prendere tutti gli utenti
+  <div id="userList">
+    <p></p>
+  </div>
 </div>
 <div>
   <h3>Gestisci Album</h3>

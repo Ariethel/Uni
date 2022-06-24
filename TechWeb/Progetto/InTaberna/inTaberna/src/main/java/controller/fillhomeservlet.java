@@ -33,17 +33,7 @@ public class fillhomeservlet extends HttpServlet {
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        AlbumDAO service = new AlbumDAO();
-        ArrayList<Album> homepage = service.doGetHomePage();
-        for (Album a: homepage) {
-            System.out.println(a.getTitolo());
-            System.out.println(a.getPrezzo());
-        }
 
-        request.setAttribute("homepage",homepage);
-
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
-        dispatcher.forward(request,response);
     }
 
     @Override

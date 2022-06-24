@@ -4,7 +4,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <%-- <jsp:include page="/view/head.jsp"></jsp:include>--%>
        <%
            // Prendo la lista di Album che devono andare in homepage
            ArrayList<Album> list = (ArrayList<Album>) request.getServletContext().getAttribute("homepage");
@@ -33,8 +32,8 @@
            <div class="buttons">
                <ul class="buttons">
                    <li class="buttons"><a class="buttons" href="#HOME">🛒</a></li>
-                   <li class="buttons"><a class="buttons" href="view/login.jsp">Log-In</a></li>
-                   <li class="buttons"><a class="buttons" href="view/help.jsp">Help</a></li>
+                   <li class="buttons"><a class="buttons" href="resources/view/login.jsp">Log-In</a></li>
+                   <li class="buttons"><a class="buttons" href="resources/view/help.jsp">Help</a></li>
                </ul>
            </div>
        </div>

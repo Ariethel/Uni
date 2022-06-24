@@ -13,10 +13,7 @@ public class UserDAO {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM utente");
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                Utente u = new Utente("","","");
-                u.setEmail(rs.getString(1));
-                u.setPassword(rs.getString(2));
-                u.setTipo(rs.getString(3));
+                Utente u = new Utente(rs.getString(1),rs.getString(2),rs.getString(3));
                 utenti.add(u);
             }
         } catch (SQLException e) {

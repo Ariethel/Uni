@@ -22,7 +22,7 @@ public class loginservlet extends HttpServlet {
         String password = request.getParameter("password");
         if (service.doCheckAdmin(username) && service.doCheckPassword(username,password)){
             //Forward a pagina home admin
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/view/admin-home.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/admin-home.jsp");
             dispatcher.forward(request,response);
         }
 
