@@ -1,26 +1,26 @@
 <%@ page import="model.Album" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="en">
-
+<!DOCTYPE html>
+<html>
 <head>
     <%
         // Prendo la lista di Album che devono andare in homepage
         ArrayList<Album> list = (ArrayList<Album>) request.getServletContext().getAttribute("homepage");
     %>
+    <link rel="stylesheet" type="text/css" href="resources/css/index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="resources/css/head.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Macondo">
-    <link href="../css/head.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" type="text/css" href="../css/index.css">
     <title>InTaberna - Music Store</title>
-    <link rel="icon" href="../icons/icon.png" type="image/icon type">
+    <link rel="icon" href="resources/icons/icon.png" type="image/icon type">
 
     <div class="navbar">
         <div class="logo">
-            <h3 class="logo"><a class="logo" href="../../index.jsp">In Taberna</a></h3>
+            <h3 class="logo"><a class="logo" href="index.jsp">In Taberna</a></h3>
         </div>
 
         <div class="search">
@@ -32,8 +32,8 @@
         <div class="buttons">
             <ul class="buttons">
                 <li class="buttons"><a class="buttons" href="#HOME">🛒</a></li>
-                <li class="buttons"><a class="buttons" href="../../login.jsp">Log-In</a></li>
-                <li class="buttons"><a class="buttons" href="../view/help.jsp">Help</a></li>
+                <li class="buttons"><a class="buttons" href="resources/view/login.jsp">Log-In</a></li>
+                <li class="buttons"><a class="buttons" href="resources/view/help.jsp">Help</a></li>
             </ul>
         </div>
     </div>
@@ -52,16 +52,17 @@
                     var obj = JSON.parse(this.responseText);
                     $(".main").fadeOut();
                     $(".result").show();
-                    var str = "<img style=\"width:400px; height: 400px\" src=\"../../getPicture?id="+ obj[0].name+ "\">" + "<h3>" + obj[0].name +"</h3> <p>" +obj[0].prezzo +"$</p>";
+                    var str = "<img style=\"width:400px; height: 400px\" src=\"./getPicture?id="+ obj[0].name+ "\">" + "<h3>" + obj[0].name +"</h3> <p>" +obj[0].prezzo +"$</p>";
                     $(".result .content").html(str);
                 }
             }
-            xmlhttp.open("GET","../../livesearch?str="+str,true);
+            xmlhttp.open("GET","livesearch?str="+str,true);
             xmlhttp.send();
         }
     </script>
-</head>
 
+
+</head>
 <body>
 
 <div class="result">
@@ -76,7 +77,7 @@
 
 
 <div class="main">
-    <button type="button" onclick="document.location.href='./admin-function.jsp';" style="float: right">Admin Function</button>
+    <button type="button" onclick="document.location.href='resources/view/admin-function.jsp';" style="float: right">Admin Function</button>
 
     <div class="row">
         <div class="column">
