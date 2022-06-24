@@ -53,6 +53,11 @@ a.logo, a.logo:visited, a.logo:hover, a.logo:active {
     display: inline;
 }
 
+#searchBar{
+    border-radius: 5px;
+    position: center;
+    outline: none;
+}
 
 @media screen and (max-width: 500px) {
     .navbar{
