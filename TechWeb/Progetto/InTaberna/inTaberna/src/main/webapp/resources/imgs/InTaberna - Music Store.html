@@ -1,18 +1,18 @@
-<html lang="en">
-<head>
-  <link rel="stylesheet" type="text/css" href="../css/index.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" href="InTaberna%20-%20Music%20Store_files/index.css">
+  <script src="InTaberna%20-%20Music%20Store_files/jquery.js"></script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../css/head.css" rel="stylesheet" type="text/css"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Macondo">
+  <link href="InTaberna%20-%20Music%20Store_files/head.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="InTaberna%20-%20Music%20Store_files/css.css">
   <title>InTaberna - Music Store</title>
-  <link rel="icon" href="../icons/icon.png" type="image/icon type">
+  <link rel="icon" href="http://localhost:8080/inTaberna_war_exploded/resources/icons/icon.png" type="image/icon type">
 
-  <div class="navbar">
+  </head><body><div class="navbar">
     <div class="logo">
-      <h3 class="logo"><a class="logo" href="admin-home.jsp">In Taberna</a></h3>
+      <h3 class="logo"><a class="logo" href="http://localhost:8080/inTaberna_war_exploded/resources/view/admin-home.jsp">In Taberna</a></h3>
     </div>
 
     <div class="search">
@@ -23,9 +23,9 @@
 
     <div class="buttons">
       <ul class="buttons">
-        <li class="buttons"><a class="buttons" href="#HOME">🛒</a></li>
-        <li class="buttons"><a class="buttons" href="resources/view/login.jsp">Log-In</a></li>
-        <li class="buttons"><a class="buttons" href="resources/view/help.jsp">Help</a></li>
+        <li class="buttons"><a class="buttons" href="#HOME">ð</a></li>
+        <li class="buttons"><a class="buttons" href="http://localhost:8080/inTaberna_war_exploded/resources/view/resources/view/login.jsp">Log-In</a></li>
+        <li class="buttons"><a class="buttons" href="http://localhost:8080/inTaberna_war_exploded/resources/view/resources/view/help.jsp">Help</a></li>
       </ul>
     </div>
   </div>
@@ -54,9 +54,9 @@
   </script>
 
 
-</head>
 
-<body>
+
+
 <script>
   $(document).ready(function(){
     var xmlhttp=new XMLHttpRequest();
@@ -90,16 +90,16 @@
     <h3>Gestisci utenti</h3>
     //Usare ajax per prendere tutti gli utenti
     <div id="userList">
-      <p></p>
+      <p>user2<br>user2<br>user2<br>user2<br>user2<br></p>
     </div>
   </div>
   <div>
     <h3>Gestisci Album</h3>
     //Usare ajax per prendere tutti gli album
     <div id="addAlbum">
-      <form action="../../addalbumservlet" method="post" enctype="multipart/form-data">
+      <form action="../addalbumservlet" method="post" enctype="multipart/form-data">
         <input type="text" name="titolo" placeholder="Titolo">
-        <input type="number" name="prezzo" step="any" min=”0″ placeholder="Prezzo">
+        <input type="number" name="prezzo" step="any" min="â0â³" placeholder="Prezzo">
         <input type="file" name="file" placeholder="Copertina">
         <label for="homepage">homepage</label>
         <input type="checkbox" id="homepage" name="homepage">
@@ -110,6 +110,6 @@
   </div>
 </div>
 
-</body>
 
-</html>
+
+</body></html>
