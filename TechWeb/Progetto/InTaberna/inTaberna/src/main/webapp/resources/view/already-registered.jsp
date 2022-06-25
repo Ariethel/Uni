@@ -70,7 +70,6 @@
         }
 
         #songList{
-            padding: 10%;
             background-color: whitesmoke;
         }
 
