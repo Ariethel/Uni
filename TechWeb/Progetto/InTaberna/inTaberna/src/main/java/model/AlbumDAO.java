@@ -84,4 +84,34 @@ public class AlbumDAO {
         }
         return album;
     }
+
+
+    public ArrayList<Album> doRetriveByTitle(String title) {
+        ArrayList<Album> res = new ArrayList<>();
+        try (Connection conn = ConnPool.getConnection()) {
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM album WHERE a_titolo= ?");
+            ps.setString(1,title);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Album a = new Album(rs.getString(1),rs.getDouble(2),null,rs.getBoolean(4));
+                res.add(a);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return res;
+    }
+
+
+    public void doUpdateAlbum(String id, String title, Double prezzo){
+        try (Connection conn = ConnPool.getConnection()) {
+            PreparedStatement ps = conn.prepareStatement("UPDATE album SET a_titolo = (?), prezzo = (?) WHERE a_titolo = (?)");
+            ps.setString(1, title);
+            ps.setDouble(2, prezzo);
+            ps.setString(3, id);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

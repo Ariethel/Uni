@@ -9,6 +9,8 @@ import java.util.ArrayList;
 
 import model.Album;
 import model.AlbumDAO;
+import model.Canzone;
+import model.CanzoneDAO;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -18,12 +20,19 @@ public class livesearch extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String str = request.getParameter("str");
         AlbumDAO service = new AlbumDAO();
+        CanzoneDAO serviceC = new CanzoneDAO();
         ArrayList<Album> result = service.doGetLiveSearch(str);
+        ArrayList<Canzone> canzoni = serviceC.doRetriveByAlbumName(result.get(0).getTitolo());
         JSONArray array = new JSONArray();
         JSONObject user = new JSONObject();
+        JSONArray songArray = new JSONArray();
         for (Album a: result) {
             user.put("name", a.getTitolo());
             user.put("prezzo", a.getPrezzo());
+            for (Canzone c:canzoni) {
+                songArray.put(c.getTitolo());
+            }
+            user.put("songs",songArray);
             array.put(user);
         }
 

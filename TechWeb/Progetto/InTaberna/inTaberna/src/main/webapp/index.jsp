@@ -54,11 +54,19 @@
                        $(".result").show();
                        var str = "<img style=\"width:400px; height: 400px\" src=\"./getPicture?id="+ obj[0].name+ "\">" + "<h3>" + obj[0].name +"</h3> <p>" +obj[0].prezzo +"$</p>";
                        $(".result .content").html(str);
+                       $(".result .songList ul").text("");
+                       for(let i = 0; i<obj.length; i++){
+                           for(let j = 0; j < obj[i].songs.length; j++){
+                               $(".result .content").append("<li style='float: right;'>"+obj[i].songs[j]+"</li><br>");
+                           }
+                       }
+
                    }
                }
                xmlhttp.open("GET","livesearch?str="+str,true);
                xmlhttp.send();
            }
+
        </script>
 
 
@@ -66,12 +74,11 @@
 <body>
 <div class="result">
     <div class="content">
-        <!-- container del risultato livesearch
-            Aggiungere lista canzoni appartenenti ad album
-        -->
 
     </div>
 </div>
+
+
 <!-- MAIN (Center website) -->
 <div class="main">
     <div class="row">

@@ -83,10 +83,29 @@
         const obj = JSON.parse(this.responseText);
         for (let i = 0; i < obj.length; i++){
           $("#albumList ul").append("<li>"+ obj[i].name +
-          "<form action=\"\">"+
+          "<form action=\"../../updateAlbum\">"+
           "<input type=\"hidden\" name=\"id\" value=\""+obj[i].name+"\">" +
           "<input type=\"submit\" value=\"Modifica\">"
           +"</form>" + "</li>");
+        }
+      }
+    }
+    xmlhttp.open("GET","../../getAlbum",true);
+    xmlhttp.send();
+  })
+
+
+  $(document).ready(function(){
+    var xmlhttp=new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function() {
+      if (this.readyState==4 && this.status==200) {
+        const obj = JSON.parse(this.responseText);
+        for (let i = 0; i < obj.length; i++){
+          $("#albumListSong ul").append("<li>"+ obj[i].name +
+                  "<form action=\"showSong.jsp\">"+
+                  "<input type=\"hidden\" name=\"id\" value=\""+obj[i].name+"\">" +
+                  "<input type=\"submit\" value=\"Visualizza\">"
+                  +"</form>" + "</li>");
         }
       }
     }
@@ -137,6 +156,23 @@
         <input type="submit" value="Invia">
       </form>
     </div>
+
+
+
+    <h3>Gestisci canzoni</h3>
+    <h5>Visualizza Canzoni</h5>
+    <div id="albumListSong">
+      <ul>
+
+      </ul>
+    </div>
+
+    <h5>Aggiungi canzone</h5>
+    <form action="../../addSong">
+      <input type="text" name="c_title" placeholder="Nome Canzone">
+      <input type="text" name="a_title" placeholder="Nome Album">
+      <input type="submit" value="Aggiungi">
+    </form>
 
   </div>
 </div>
