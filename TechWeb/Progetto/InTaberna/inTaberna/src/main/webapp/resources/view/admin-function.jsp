@@ -65,7 +65,7 @@
         const obj = JSON.parse(this.responseText);
         for (let i = 0; i < obj.length; i++){
           $("#userList ul").append("<li>"+ obj[i].name +
-                  "<form action=\"\">"+
+                  "<form action=\"../../updateUser\">"+
                     "<input type=\"hidden\" name=\"id\" value=\""+obj[i].name+"\">" +
                     "<input type=\"submit\" value=\"Modifica\">"
                   +"</form>" + "</li>");

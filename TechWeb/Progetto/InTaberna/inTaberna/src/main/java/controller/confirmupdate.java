@@ -4,20 +4,21 @@ import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import model.UserDAO;
-import model.Utente;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
-@WebServlet(name = "updateUser", value = "/updateUser")
-public class updateUser extends HttpServlet {
+@WebServlet(name = "confirm-update", value = "/confirm-update")
+public class confirmupdate extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserDAO service = new UserDAO();
-        ArrayList<Utente> res = service.doRetriveByEmail(request.getParameter("id"));
-        request.setAttribute("utente",res.get(0));
-        RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/modifyUser.jsp");
-        dispatcher.forward(request,response);
+        String id = request.getParameter("id");
+        String email = request.getParameter("username");
+        String pass = request.getParameter("password");
+        String tipo = request.getParameter("tipo");
+        service.doUpdateUser(id,email,pass,tipo);
+
+        response.sendRedirect("resources/view/admin-function.jsp");
     }
 
     @Override

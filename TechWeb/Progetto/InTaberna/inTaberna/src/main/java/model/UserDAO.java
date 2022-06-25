@@ -97,4 +97,17 @@ public class UserDAO {
         }
     }
 
+    public void doUpdateUser(String id, String email,String pass, String tipo){
+        try (Connection conn = ConnPool.getConnection()) {
+            PreparedStatement ps = conn.prepareStatement("UPDATE utente SET email = (?), pass = (?), tipo = (?) WHERE email = (?)");
+            ps.setString(1, email);
+            ps.setString(2, pass);
+            ps.setString(3, tipo);
+            ps.setString(4,id);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
