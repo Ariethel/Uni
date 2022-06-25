@@ -52,12 +52,12 @@
                        var obj = JSON.parse(this.responseText);
                        $(".main").fadeOut();
                        $(".result").show();
-                       var str = "<img style=\"width:400px; height: 400px\" src=\"./getPicture?id="+ obj[0].name+ "\">" + "<h3>" + obj[0].name +"</h3> <p>" +obj[0].prezzo +"$</p>";
+                       var str = "<img style=\"width:400px; height: 400px\" src=\"./getPicture?id="+ obj[0].name+ "\">" + "<h3>" + obj[0].name +"</h3> <p>" +obj[0].prezzo +"$</p>" + "<form action='' style='display: inline'><input style='background-color: limegreen; border-radius: 10px' type='submit' value='Aggiungi al carrello'></form>";
                        $(".result .content").html(str);
-                       $(".result .songList ul").text("");
+                       $("#songList").text("");
                        for(let i = 0; i<obj.length; i++){
                            for(let j = 0; j < obj[i].songs.length; j++){
-                               $(".result .content").append("<li style='float: right;'>"+obj[i].songs[j]+"</li><br>");
+                               $("#songList").append("<li style='float: left;'>"+obj[i].songs[j]+"</li><br>");
                            }
                        }
 
@@ -70,10 +70,36 @@
        </script>
 
 
+    <style>
+        .result{
+            display: grid;
+            width: 100%;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        #songList{
+            padding: 10%;
+            background-color: whitesmoke;
+        }
+
+        @media screen and (max-width: 900px) {
+            .result {
+                display: block;
+            }
+
+            #songList{
+                padding: 0%;
+            }
+        }
+    </style>
+
 </head>
 <body>
 <div class="result">
     <div class="content">
+
+    </div>
+    <div id="songList">
 
     </div>
 </div>

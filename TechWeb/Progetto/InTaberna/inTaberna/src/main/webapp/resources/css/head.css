@@ -59,12 +59,6 @@ a.logo, a.logo:visited, a.logo:hover, a.logo:active {
     outline: none;
 }
 
-<!-- Non funziona -->
-.songList{
-    float: right;
-    transform: translate(-1200px,-500px);
-}
-
 @media screen and (max-width: 500px) {
     .navbar{
         width: 100%;
