@@ -24,8 +24,8 @@
     <div class="buttons">
       <ul class="buttons">
         <li class="buttons"><a class="buttons" href="#HOME">🛒</a></li>
-        <li class="buttons"><a class="buttons" href="resources/view/login.jsp">Log-In</a></li>
-        <li class="buttons"><a class="buttons" href="resources/view/help.jsp">Help</a></li>
+        <li class="buttons"><a class="buttons" href="login.jsp">Log-In</a></li>
+        <li class="buttons"><a class="buttons" href="help.jsp">Help</a></li>
       </ul>
     </div>
   </div>
@@ -62,8 +62,8 @@
     var xmlhttp=new XMLHttpRequest();
     xmlhttp.onreadystatechange=function() {
       if (this.readyState==4 && this.status==200) {
-        var obj = JSON.parse(this.responseText);
-        for (var i = 0; i < obj.length; i++){
+        const obj = JSON.parse(this.responseText);
+        for (let i = 0; i < obj.length; i++){
           $("#userList p").append(obj[i].name + "<br>");
         }
       }

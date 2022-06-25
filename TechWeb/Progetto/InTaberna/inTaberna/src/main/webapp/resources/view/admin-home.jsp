@@ -8,19 +8,19 @@
         // Prendo la lista di Album che devono andare in homepage
         ArrayList<Album> list = (ArrayList<Album>) request.getServletContext().getAttribute("homepage");
     %>
-    <link rel="stylesheet" type="text/css" href="resources/css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="resources/css/head.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/head.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Macondo">
     <title>InTaberna - Music Store</title>
-    <link rel="icon" href="resources/icons/icon.png" type="image/icon type">
+    <link rel="icon" href="../icons/icon.png" type="image/icon type">
 
     <div class="navbar">
         <div class="logo">
-            <h3 class="logo"><a class="logo" href="index.jsp">In Taberna</a></h3>
+            <h3 class="logo"><a class="logo" href="admin-home.jsp">In Taberna</a></h3>
         </div>
 
         <div class="search">
@@ -32,8 +32,8 @@
         <div class="buttons">
             <ul class="buttons">
                 <li class="buttons"><a class="buttons" href="#HOME">🛒</a></li>
-                <li class="buttons"><a class="buttons" href="resources/view/login.jsp">Log-In</a></li>
-                <li class="buttons"><a class="buttons" href="resources/view/help.jsp">Help</a></li>
+                <li class="buttons"><a class="buttons" href="login.jsp">Log-In</a></li>
+                <li class="buttons"><a class="buttons" href="help.jsp">Help</a></li>
             </ul>
         </div>
     </div>
@@ -52,11 +52,11 @@
                     var obj = JSON.parse(this.responseText);
                     $(".main").fadeOut();
                     $(".result").show();
-                    var str = "<img style=\"width:400px; height: 400px\" src=\"./getPicture?id="+ obj[0].name+ "\">" + "<h3>" + obj[0].name +"</h3> <p>" +obj[0].prezzo +"$</p>";
+                    var str = "<img style=\"width:400px; height: 400px\" src=\"../../getPicture?id="+ obj[0].name+ "\">" + "<h3>" + obj[0].name +"</h3> <p>" +obj[0].prezzo +"$</p>";
                     $(".result .content").html(str);
                 }
             }
-            xmlhttp.open("GET","livesearch?str="+str,true);
+            xmlhttp.open("GET","../../livesearch?str="+str,true);
             xmlhttp.send();
         }
     </script>
@@ -82,56 +82,56 @@
     <div class="row">
         <div class="column">
             <div class="content">
-                <img src="./getPicture?id=<%=list.get(0).getTitolo()%>" onerror="this.src='./imgs/nophoto.png'" style="width:150px; height: 150px">
+                <img src="../../getPicture?id=<%=list.get(0).getTitolo()%>" onerror="this.src='./imgs/nophoto.png'" style="width:150px; height: 150px">
                 <h3><%=list.get(0).getTitolo()%></h3>
                 <p><%=list.get(0).getPrezzo()%></p>
             </div>
         </div>
         <div class="column">
             <div class="content">
-                <img src="./getPicture?id=<%=list.get(1).getTitolo()%>" onerror="this.src='./imgs/nophoto.png'" style="width:150px; height: 150px">
+                <img src="../../getPicture?id=<%=list.get(1).getTitolo()%>" onerror="this.src='./imgs/nophoto.png'" style="width:150px; height: 150px">
                 <h3><%=list.get(1).getTitolo()%></h3>
                 <p><%=list.get(1).getPrezzo()%></p>
             </div>
         </div>
         <div class="column">
             <div class="content">
-                <img src="./getPicture?id=<%=list.get(2).getTitolo()%>" onerror="this.src='./imgs/nophoto.png'" style="width:150px; height: 150px">
+                <img src="../../getPicture?id=<%=list.get(2).getTitolo()%>" onerror="this.src='./imgs/nophoto.png'" style="width:150px; height: 150px">
                 <h3><%=list.get(2).getTitolo()%></h3>
                 <p><%=list.get(2).getPrezzo()%></p>
             </div>
         </div>
         <div class="column">
             <div class="content">
-                <img src="./getPicture?id=<%=list.get(3).getTitolo()%>" onerror="this.src='./imgs/nophoto.png'" style="width:150px; height: 150px">
+                <img src="../../getPicture?id=<%=list.get(3).getTitolo()%>" onerror="this.src='./imgs/nophoto.png'" style="width:150px; height: 150px">
                 <h3><%=list.get(3).getTitolo()%></h3>
                 <p><%=list.get(3).getPrezzo()%></p>
             </div>
         </div>
         <div class="column">
             <div class="content">
-                <img src="./getPicture?id=<%=list.get(4).getTitolo()%>" onerror="this.src='./imgs/nophoto.png'" style="width:150px; height: 150px">
+                <img src="../../getPicture?id=<%=list.get(4).getTitolo()%>" onerror="this.src='./imgs/nophoto.png'" style="width:150px; height: 150px">
                 <h3><%=list.get(4).getTitolo()%></h3>
                 <p><%=list.get(4).getPrezzo()%></p>
             </div>
         </div>
         <div class="column">
             <div class="content">
-                <img src="./getPicture?id=<%=list.get(5).getTitolo()%>" onerror="this.src='./imgs/nophoto.png'" style="width:150px; height: 150px">
+                <img src="../../getPicture?id=<%=list.get(5).getTitolo()%>" onerror="this.src='./imgs/nophoto.png'" style="width:150px; height: 150px">
                 <h3><%=list.get(5).getTitolo()%></h3>
                 <p><%=list.get(5).getPrezzo()%></p>
             </div>
         </div>
         <div class="column">
             <div class="content">
-                <img src="./getPicture?id=<%=list.get(6).getTitolo()%>" onerror="this.src='./imgs/nophoto.png'" style="width:150px; height: 150px">
+                <img src="../../getPicture?id=<%=list.get(6).getTitolo()%>" onerror="this.src='./imgs/nophoto.png'" style="width:150px; height: 150px">
                 <h3><%=list.get(6).getTitolo()%></h3>
                 <p><%=list.get(6).getPrezzo()%></p>
             </div>
         </div>
         <div class="column">
             <div class="content">
-                <img src="./getPicture?id=<%=list.get(7).getTitolo()%>" onerror="this.src='./imgs/nophoto.png'" style="width:150px; height: 150px">
+                <img src="../../getPicture?id=<%=list.get(7).getTitolo()%>" onerror="this.src='./imgs/nophoto.png'" style="width:150px; height: 150px">
                 <h3><%=list.get(7).getTitolo()%></h3>
                 <p><%=list.get(7).getPrezzo()%></p>
             </div>
