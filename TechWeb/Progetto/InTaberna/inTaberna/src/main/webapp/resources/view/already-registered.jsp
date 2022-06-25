@@ -70,7 +70,7 @@
 
     <script>
         function redirect(){
-            location.href = "index.jsp";
+            location.href = "../../index.jsp";
         }
 
         setTimeout(redirect,3000);

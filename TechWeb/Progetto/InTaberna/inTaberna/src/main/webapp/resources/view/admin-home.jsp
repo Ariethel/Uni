@@ -77,7 +77,7 @@
 
 
 <div class="main">
-    <button type="button" onclick="document.location.href='resources/view/admin-function.jsp';" style="float: right">Admin Function</button>
+    <button type="button" onclick="document.location.href='admin-function.jsp';" style="float: right">Admin Function</button>
 
     <div class="row">
         <div class="column">

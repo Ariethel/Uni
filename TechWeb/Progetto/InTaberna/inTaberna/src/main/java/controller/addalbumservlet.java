@@ -52,7 +52,8 @@ public class addalbumservlet extends HttpServlet {
         Album album = new Album(titolo,prezzo,inputStream,homepage);
         AlbumDAO service = new AlbumDAO();
         service.doInsertAlbum(album);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/view/admin-home.jsp");
-        dispatcher.forward(request,response);
+        response.sendRedirect("resources/view/admin-function.jsp");
+      /*  RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/admin-function.jsp");
+        dispatcher.forward(request,response);*/
     }
 }

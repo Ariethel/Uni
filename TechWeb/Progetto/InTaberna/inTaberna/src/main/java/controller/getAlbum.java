@@ -3,6 +3,8 @@ package controller;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+import model.Album;
+import model.AlbumDAO;
 import model.UserDAO;
 import model.Utente;
 import org.json.JSONArray;
@@ -11,16 +13,16 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "getUser", value = "/getUser")
-public class getUser extends HttpServlet {
+@WebServlet(name = "getAlbum", value = "/getAlbum")
+public class getAlbum extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        UserDAO service = new UserDAO();
-        ArrayList<Utente> utenti = service.doRetriveAllUsers();
+        AlbumDAO service = new AlbumDAO();
+        ArrayList<Album> album = service.doRetriveAllAlbums();
         JSONArray array = new JSONArray();
-        for (Utente u:utenti) {
+        for (Album a:album) {
             JSONObject obj = new JSONObject();
-            obj.put("name", u.getEmail());
+            obj.put("name", a.getTitolo());
             array.put(obj);
         }
         response.setContentType("application/json");

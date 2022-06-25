@@ -64,11 +64,33 @@
       if (this.readyState==4 && this.status==200) {
         const obj = JSON.parse(this.responseText);
         for (let i = 0; i < obj.length; i++){
-          $("#userList p").append(obj[i].name + "<br>");
+          $("#userList ul").append("<li>"+ obj[i].name +
+                  "<form action=\"\">"+
+                    "<input type=\"hidden\" name=\"id\" value=\""+obj[i].name+"\">" +
+                    "<input type=\"submit\" value=\"Modifica\">"
+                  +"</form>" + "</li>");
         }
       }
     }
     xmlhttp.open("GET","../../getUser",true);
+    xmlhttp.send();
+  })
+
+  $(document).ready(function(){
+    var xmlhttp=new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function() {
+      if (this.readyState==4 && this.status==200) {
+        const obj = JSON.parse(this.responseText);
+        for (let i = 0; i < obj.length; i++){
+          $("#albumList ul").append("<li>"+ obj[i].name +
+          "<form action=\"\">"+
+          "<input type=\"hidden\" name=\"id\" value=\""+obj[i].name+"\">" +
+          "<input type=\"submit\" value=\"Modifica\">"
+          +"</form>" + "</li>");
+        }
+      }
+    }
+    xmlhttp.open("GET","../../getAlbum",true);
     xmlhttp.send();
   })
 
@@ -88,14 +110,23 @@
 <div class="main">
   <div>
     <h3>Gestisci utenti</h3>
-    //Usare ajax per prendere tutti gli utenti
     <div id="userList">
-      <p></p>
+      <ul>
+
+      </ul>
     </div>
   </div>
+
+
   <div>
     <h3>Gestisci Album</h3>
-    //Usare ajax per prendere tutti gli album
+    <div id="albumList">
+      <ul>
+
+      </ul>
+    </div>
+
+    <h3>Aggiungi Album</h3>
     <div id="addAlbum">
       <form action="../../addalbumservlet" method="post" enctype="multipart/form-data">
         <input type="text" name="titolo" placeholder="Titolo">
