@@ -31,7 +31,7 @@
 
            <div class="buttons">
                <ul class="buttons">
-                   <li class="buttons"><a class="buttons" href="#HOME">🛒</a></li>
+                   <li class="buttons"><a class="buttons" href="resources/view/shopping.jsp">🛒</a></li>
                    <li class="buttons"><a class="buttons" href="resources/view/login.jsp">Log-In</a></li>
                    <li class="buttons"><a class="buttons" href="resources/view/help.jsp">Help</a></li>
                </ul>
@@ -52,7 +52,7 @@
                        var obj = JSON.parse(this.responseText);
                        $(".main").fadeOut();
                        $(".result").show();
-                       var str = "<img style=\"width:400px; height: 400px\" src=\"./getPicture?id="+ obj[0].name+ "\">" + "<h3>" + obj[0].name +"</h3> <p>" +obj[0].prezzo +"$</p>" + "<form action='' style='display: inline'><input style='background-color: limegreen; border-radius: 10px' type='submit' value='Aggiungi al carrello'></form>";
+                       var str = "<img style=\"width:400px; height: 400px\" src=\"./getPicture?id="+ obj[0].name+ "\">" + "<h3>" + obj[0].name +"</h3> <p>" +obj[0].prezzo +"$</p>" + "<form action='./addSession' style='display: inline'><input style='background-color: limegreen; border-radius: 10px' type='submit' value='Aggiungi al carrello'><input type='hidden' name='albumName' value='"+obj[0].name+"\'></form>";
                        $(".result .content").html(str);
                        $("#songList").text("");
                        for(let i = 0; i<obj.length; i++){
