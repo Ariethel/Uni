@@ -26,7 +26,7 @@
 
         <div class="buttons">
             <ul class="buttons">
-                <li class="buttons"><a class="buttons" href="#HOME">🛒</a></li>
+                <li class="buttons"><a class="buttons" href="../../chart">🛒</a></li>
                 <li class="buttons"><a class="buttons" href="login.jsp">Log-In</a></li>
                 <li class="buttons"><a class="buttons" href="help.jsp">Help</a></li>
             </ul>
@@ -61,6 +61,22 @@
             xmlhttp.open("GET","../../livesearch?str="+str,true);
             xmlhttp.send();
         }
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            var xmlhttp=new XMLHttpRequest();
+            xmlhttp.onreadystatechange=function() {
+                if (this.readyState==4 && this.status==200) {
+                    const obj = JSON.parse(this.responseText);
+                    for (let i = 0; i < obj.length; i++){
+                        $(".chartList").append("<li>"+ obj[i].name + "</li>");
+                    }
+                }
+            }
+            xmlhttp.open("GET","../../loadChart",true);
+            xmlhttp.send();
+        })
     </script>
 
     <style>
@@ -116,7 +132,9 @@
 
 
 <div class="main">
-
+    <div class="chartList">
+        <!-- Devo solo dare uno stile a questa pagina e capire come calcolare il totale -->
+    </div>
 </div>
 
 </body>

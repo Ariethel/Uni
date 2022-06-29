@@ -21,17 +21,25 @@ public class loginservlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         if (service.doCheckAdmin(username) && service.doCheckPassword(username,password)){
+            if (request.getSession() != null) request.getSession().invalidate();
+            HttpSession ssn = request.getSession();
+            synchronized (ssn){
+                ssn.setAttribute("id", username);
+                ssn.setAttribute("password",password);
+            }
             //Forward a pagina home admin
             response.sendRedirect("resources/view/admin-home.jsp");
-           /* RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/admin-home.jsp");
-            dispatcher.forward(request,response);*/
         }
 
-        if(service.doCheckPassword(username,password)){
+        if(service.doCheckPassword(username,password) && !service.doCheckAdmin(username)){
             //Forward a pagina personale utente registrato
-
-        }else{
-            //Forward a pagina di errore
+            if (request.getSession() != null) request.getSession().invalidate();
+            HttpSession ssn = request.getSession();
+            synchronized (ssn){
+                    ssn.setAttribute("id", username);
+                    ssn.setAttribute("password",password);
+            }
+            response.sendRedirect("index.jsp");
         }
 
     }

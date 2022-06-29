@@ -31,7 +31,7 @@
 
            <div class="buttons">
                <ul class="buttons">
-                   <li class="buttons"><a class="buttons" href="resources/view/shopping.jsp">🛒</a></li>
+                   <li class="buttons"><a class="buttons" href="./chart">🛒</a></li>
                    <li class="buttons"><a class="buttons" href="resources/view/login.jsp">Log-In</a></li>
                    <li class="buttons"><a class="buttons" href="resources/view/help.jsp">Help</a></li>
                </ul>

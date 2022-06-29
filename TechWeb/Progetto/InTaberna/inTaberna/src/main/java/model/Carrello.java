@@ -4,18 +4,18 @@ import java.util.ArrayList;
 
 public class Carrello {
 
-    public Carrello(String username, String password, ArrayList<Album> albums){
+    public Carrello(String username, String password, String a_name){
         this.username = username;
         this.password = password;
-        this.albums = albums;
+        this.a_name = a_name;
     }
 
-    public ArrayList<Album> getAlbums() {
-        return albums;
+    public String getA_name() {
+        return a_name;
     }
 
-    public void setAlbums(ArrayList<Album> albums) {
-        this.albums = albums;
+    public void setA_name(String a_name) {
+        this.a_name = a_name;
     }
 
     public String getUsername() {
@@ -50,7 +50,7 @@ public class Carrello {
         this.totale = totale;
     }
 
-    private ArrayList<Album> albums;
+    private String a_name;
     private String username, password;
     private int numOrdine;
     private double totale;
