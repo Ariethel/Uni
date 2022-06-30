@@ -114,4 +114,21 @@ public class AlbumDAO {
             e.printStackTrace();
         }
     }
+
+
+    public double doGetPrice(String name){
+        double res = 0;
+        try (Connection conn = ConnPool.getConnection()) {
+            PreparedStatement ps = conn.prepareStatement("SELECT prezzo FROM album WHERE a_titolo= ?");
+            ps.setString(1,name);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                res = rs.getDouble(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return res;
+    }
 }
+
