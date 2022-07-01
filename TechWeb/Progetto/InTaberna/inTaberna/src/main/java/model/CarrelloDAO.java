@@ -37,4 +37,16 @@ public class CarrelloDAO {
 
         return albumName;
     }
+
+
+    public void doEmpty(String id){
+        try (Connection conn = ConnPool.getConnection()) {
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM aggiunge WHERE u_email = (?)");
+            ps.setString(1,id);
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

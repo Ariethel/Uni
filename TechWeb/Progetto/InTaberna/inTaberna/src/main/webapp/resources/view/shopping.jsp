@@ -70,12 +70,13 @@
             xmlhttp.onreadystatechange=function() {
                 if (this.readyState==4 && this.status==200) {
                     const obj = JSON.parse(this.responseText);
+                    $(".chartList ").text("");
                     for (let i = 0; i < obj.length; i++){
                         $(".chartList ").append("<div style='background-color: whitesmoke;padding: 10px;margin: 4%'>"+"<img style=\"width:120px; height: 120px\" src=\"../../getPicture?id="+ obj[i].name+ "\">" +"</br></br>"+"<p style='font-weight:bold'>"+ obj[i].name + "</p>"+ "<p style='font-weight:lighter'>"+ obj[i].prezzo + "</p>"+"</div>");
                          tot += obj[i].prezzo;
                     }
                     $(".total").text("");
-                    $(".total").append("Totale:"+ tot + "<form method=\"get\" action=\"#\"><input style='background-color: limegreen; border-radius: 10px' type='submit' value='Concludi ordine'>");
+                    $(".total").append("Totale:"+ tot + "<form method=\"get\" action=\"../../emptyChart\"><input style='background-color: limegreen; border-radius: 10px' type='submit' value='Concludi ordine'>");
                 }
             }
             xmlhttp.open("GET","../../loadChart",true);
