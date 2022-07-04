@@ -1,0 +1,10 @@
+.login{
+    margin: 3%;
+    border: 2px solid palevioletred;
+    display: flex;
+    justify-content: center;
+}
+
+.login input{
+    margin: 20px;
+}

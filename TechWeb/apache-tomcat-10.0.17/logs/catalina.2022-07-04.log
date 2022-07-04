@@ -1,0 +1,140 @@
+04-Jul-2022 10:38:05.225 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.0.17
+04-Jul-2022 10:38:05.232 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 21 2022 19:36:49 UTC
+04-Jul-2022 10:38:05.232 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.0.17.0
+04-Jul-2022 10:38:05.233 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+04-Jul-2022 10:38:05.233 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            5.13.0-51-generic
+04-Jul-2022 10:38:05.233 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+04-Jul-2022 10:38:05.233 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-17-openjdk-amd64
+04-Jul-2022 10:38:05.233 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.3+7-Ubuntu-0ubuntu0.20.04.1
+04-Jul-2022 10:38:05.233 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Private Build
+04-Jul-2022 10:38:05.234 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17
+04-Jul-2022 10:38:05.234 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17
+04-Jul-2022 10:38:05.248 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+04-Jul-2022 10:38:05.248 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+04-Jul-2022 10:38:05.248 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+04-Jul-2022 10:38:05.249 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+04-Jul-2022 10:38:05.249 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+04-Jul-2022 10:38:05.249 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/conf/logging.properties
+04-Jul-2022 10:38:05.249 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+04-Jul-2022 10:38:05.249 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+04-Jul-2022 10:38:05.249 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+04-Jul-2022 10:38:05.250 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+04-Jul-2022 10:38:05.250 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+04-Jul-2022 10:38:05.250 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17
+04-Jul-2022 10:38:05.250 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17
+04-Jul-2022 10:38:05.250 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/temp
+04-Jul-2022 10:38:05.252 INFORMAZIONI [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+04-Jul-2022 10:38:05.647 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+04-Jul-2022 10:38:05.683 INFORMAZIONI [main] org.apache.catalina.startup.Catalina.load Server initialization in [716] milliseconds
+04-Jul-2022 10:38:05.747 INFORMAZIONI [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+04-Jul-2022 10:38:05.748 INFORMAZIONI [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.0.17]
+04-Jul-2022 10:38:05.757 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/examples]
+04-Jul-2022 10:38:06.416 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/examples] has finished in [658] ms
+04-Jul-2022 10:38:06.416 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/host-manager]
+04-Jul-2022 10:38:06.458 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/host-manager] has finished in [41] ms
+04-Jul-2022 10:38:06.458 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/ROOT]
+04-Jul-2022 10:38:06.487 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/ROOT] has finished in [29] ms
+04-Jul-2022 10:38:06.488 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/manager]
+04-Jul-2022 10:38:06.537 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/manager] has finished in [49] ms
+04-Jul-2022 10:38:06.537 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/docs]
+04-Jul-2022 10:38:06.563 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/docs] has finished in [26] ms
+04-Jul-2022 10:38:06.569 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+04-Jul-2022 10:38:06.594 INFORMAZIONI [main] org.apache.catalina.startup.Catalina.start Server startup in [910] milliseconds
+04-Jul-2022 10:40:40.836 INFORMAZIONI [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+04-Jul-2022 10:40:40.837 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+04-Jul-2022 10:40:40.840 INFORMAZIONI [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+04-Jul-2022 10:40:40.875 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+04-Jul-2022 10:40:40.885 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+04-Jul-2022 10:40:44.823 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.0.17
+04-Jul-2022 10:40:44.829 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 21 2022 19:36:49 UTC
+04-Jul-2022 10:40:44.829 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.0.17.0
+04-Jul-2022 10:40:44.829 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+04-Jul-2022 10:40:44.830 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            5.13.0-51-generic
+04-Jul-2022 10:40:44.830 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+04-Jul-2022 10:40:44.830 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-17-openjdk-amd64
+04-Jul-2022 10:40:44.830 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.3+7-Ubuntu-0ubuntu0.20.04.1
+04-Jul-2022 10:40:44.831 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Private Build
+04-Jul-2022 10:40:44.831 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17
+04-Jul-2022 10:40:44.831 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17
+04-Jul-2022 10:40:44.846 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+04-Jul-2022 10:40:44.847 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+04-Jul-2022 10:40:44.848 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+04-Jul-2022 10:40:44.850 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+04-Jul-2022 10:40:44.850 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+04-Jul-2022 10:40:44.851 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/conf/logging.properties
+04-Jul-2022 10:40:44.851 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+04-Jul-2022 10:40:44.851 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+04-Jul-2022 10:40:44.851 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+04-Jul-2022 10:40:44.851 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+04-Jul-2022 10:40:44.851 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+04-Jul-2022 10:40:44.852 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17
+04-Jul-2022 10:40:44.852 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17
+04-Jul-2022 10:40:44.852 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/temp
+04-Jul-2022 10:40:44.854 INFORMAZIONI [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+04-Jul-2022 10:40:45.360 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+04-Jul-2022 10:40:45.398 INFORMAZIONI [main] org.apache.catalina.startup.Catalina.load Server initialization in [848] milliseconds
+04-Jul-2022 10:40:45.466 INFORMAZIONI [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+04-Jul-2022 10:40:45.466 INFORMAZIONI [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.0.17]
+04-Jul-2022 10:40:45.476 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/examples]
+04-Jul-2022 10:40:46.217 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/examples] has finished in [740] ms
+04-Jul-2022 10:40:46.217 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/host-manager]
+04-Jul-2022 10:40:46.260 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/host-manager] has finished in [43] ms
+04-Jul-2022 10:40:46.260 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/ROOT]
+04-Jul-2022 10:40:46.299 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/ROOT] has finished in [38] ms
+04-Jul-2022 10:40:46.299 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/manager]
+04-Jul-2022 10:40:46.334 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/manager] has finished in [34] ms
+04-Jul-2022 10:40:46.334 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/docs]
+04-Jul-2022 10:40:46.362 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/docs] has finished in [28] ms
+04-Jul-2022 10:40:46.370 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+04-Jul-2022 10:40:46.417 INFORMAZIONI [main] org.apache.catalina.startup.Catalina.start Server startup in [1018] milliseconds
+04-Jul-2022 10:44:26.429 INFORMAZIONI [Catalina-utility-2] org.apache.catalina.users.MemoryUserDatabase.backgroundProcess Reloading memory user database [UserDatabase] from updated source [file:/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/conf/tomcat-users.xml]
+04-Jul-2022 10:44:44.573 INFORMAZIONI [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+04-Jul-2022 10:44:44.574 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+04-Jul-2022 10:44:44.576 INFORMAZIONI [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+04-Jul-2022 10:44:44.604 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+04-Jul-2022 10:44:44.610 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+04-Jul-2022 10:44:47.729 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.0.17
+04-Jul-2022 10:44:47.735 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 21 2022 19:36:49 UTC
+04-Jul-2022 10:44:47.735 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.0.17.0
+04-Jul-2022 10:44:47.735 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+04-Jul-2022 10:44:47.735 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            5.13.0-51-generic
+04-Jul-2022 10:44:47.736 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+04-Jul-2022 10:44:47.736 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-17-openjdk-amd64
+04-Jul-2022 10:44:47.736 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.3+7-Ubuntu-0ubuntu0.20.04.1
+04-Jul-2022 10:44:47.736 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Private Build
+04-Jul-2022 10:44:47.737 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17
+04-Jul-2022 10:44:47.737 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17
+04-Jul-2022 10:44:47.766 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+04-Jul-2022 10:44:47.766 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+04-Jul-2022 10:44:47.767 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+04-Jul-2022 10:44:47.767 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+04-Jul-2022 10:44:47.767 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+04-Jul-2022 10:44:47.767 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/conf/logging.properties
+04-Jul-2022 10:44:47.767 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+04-Jul-2022 10:44:47.768 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+04-Jul-2022 10:44:47.768 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+04-Jul-2022 10:44:47.768 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+04-Jul-2022 10:44:47.768 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+04-Jul-2022 10:44:47.768 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17
+04-Jul-2022 10:44:47.768 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17
+04-Jul-2022 10:44:47.769 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/temp
+04-Jul-2022 10:44:47.772 INFORMAZIONI [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+04-Jul-2022 10:44:48.341 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+04-Jul-2022 10:44:48.379 INFORMAZIONI [main] org.apache.catalina.startup.Catalina.load Server initialization in [943] milliseconds
+04-Jul-2022 10:44:48.448 INFORMAZIONI [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+04-Jul-2022 10:44:48.448 INFORMAZIONI [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.0.17]
+04-Jul-2022 10:44:48.460 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/examples]
+04-Jul-2022 10:44:49.464 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/examples] has finished in [1,003] ms
+04-Jul-2022 10:44:49.466 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/host-manager]
+04-Jul-2022 10:44:49.538 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/host-manager] has finished in [72] ms
+04-Jul-2022 10:44:49.541 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/ROOT]
+04-Jul-2022 10:44:49.617 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/ROOT] has finished in [79] ms
+04-Jul-2022 10:44:49.618 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/manager]
+04-Jul-2022 10:44:49.713 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/manager] has finished in [95] ms
+04-Jul-2022 10:44:49.713 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/docs]
+04-Jul-2022 10:44:49.748 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/docs] has finished in [35] ms
+04-Jul-2022 10:44:49.756 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+04-Jul-2022 10:44:49.811 INFORMAZIONI [main] org.apache.catalina.startup.Catalina.start Server startup in [1431] milliseconds
+04-Jul-2022 10:46:03.287 INFORMAZIONI [http-nio-8080-exec-10] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/inTaberna-1.0-SNAPSHOT.war]
+04-Jul-2022 10:46:03.784 INFORMAZIONI [http-nio-8080-exec-10] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+04-Jul-2022 10:46:04.865 INFORMAZIONI [http-nio-8080-exec-10] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/inTaberna-1.0-SNAPSHOT.war] has finished in [1,578] ms

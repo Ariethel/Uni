@@ -119,8 +119,8 @@
     <h1 style="justify-content: center; display: flex ">Benvenuto</h1>
     <div class="login">
         <form name="loginform" action="../../login-servlet" method="post" onsubmit="return validateform()">
-            <input type="text" placeholder="username" name="username" required><br>
-            <input type="password" placeholder="password" name="password" required><br>
+            <input type="text" placeholder="username" name="username" required pattern="^[a-z0-9]{4,15}$" title="Il campo Username deve contenere 4-15 caratteri"><br>
+            <input type="password" placeholder="password" name="password" required pattern="^[a-z0-9]{4,15}$" title="Il campo Password deve contenere 4-15 caratteri"><br>
             <input type="submit" formaction="../../register-servlet" value="Register">
             <input type="submit" value="Submit">
         </form>
