@@ -16,7 +16,11 @@ public class confirmupdateAlbum extends HttpServlet {
         String title = request.getParameter("title");
         Double prezzo = Double.valueOf(request.getParameter("prezzo"));
         String id = request.getParameter("id");
-        service.doUpdateAlbum(id,title,prezzo);
+        String homepage = request.getParameter("homepage");
+        if (homepage == null)
+            service.doUpdateAlbum(id,title,prezzo);
+        else
+            service.doUpdateAlbumComplete(id,title,prezzo);
 
         response.sendRedirect("resources/view/admin-function.jsp");
     }

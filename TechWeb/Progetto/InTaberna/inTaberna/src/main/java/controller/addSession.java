@@ -23,7 +23,7 @@ public class addSession extends HttpServlet {
                 ssn.setAttribute("albumList", albumList);
                 System.out.println("Session id: " + ssnId);
                 for (String str:albumList) {
-                    System.out.println("Album: " + str);
+                    System.out.println(" Aggiunto Album: " + str);
                 }
                 response.sendRedirect("index.jsp");
             }

@@ -21,6 +21,8 @@
         <input type="text" name="title" id="title" value="<%=a.getTitolo()%>"><br>
         <label for="prezzo">Prezzo</label><br>
         <input type="number" name="prezzo" id="prezzo" value="<%=a.getPrezzo()%>"><br>
+        <label for="homepage">Homepage</label><br>
+        <input type="checkbox" name="homepage" id="homepage"><br>
         <input type="hidden" name="id" value="<%=a.getTitolo()%>">
         <input type="submit" value="Salva">
     </form>

@@ -105,7 +105,19 @@ public class AlbumDAO {
 
     public void doUpdateAlbum(String id, String title, Double prezzo){
         try (Connection conn = ConnPool.getConnection()) {
-            PreparedStatement ps = conn.prepareStatement("UPDATE album SET a_titolo = (?), prezzo = (?) WHERE a_titolo = (?)");
+            PreparedStatement ps = conn.prepareStatement("UPDATE album SET a_titolo = (?), prezzo = (?), homepage = false WHERE a_titolo = (?)");
+            ps.setString(1, title);
+            ps.setDouble(2, prezzo);
+            ps.setString(3, id);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void doUpdateAlbumComplete(String id, String title, Double prezzo){
+        try (Connection conn = ConnPool.getConnection()) {
+            PreparedStatement ps = conn.prepareStatement("UPDATE album SET a_titolo = (?), prezzo = (?), homepage = true WHERE a_titolo = (?)");
             ps.setString(1, title);
             ps.setDouble(2, prezzo);
             ps.setString(3, id);

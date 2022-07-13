@@ -21,7 +21,6 @@ public class getPicture extends HttpServlet {
             if(bt != null)
             {
                 out.write(bt);
-                System.out.println("Scritta l'immagine di " + id);
                 response.setContentType("image/jpeg");
             }
             out.close();

@@ -25,14 +25,10 @@ public class registerservlet extends HttpServlet {
         if (service.doCheckEmail(username)){
             //Forward a pagina di utente gia' registrato
             response.sendRedirect("resources/view/already-registered.jsp");
-            /*RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/already-registered.jsp");
-            dispatcher.forward(request,response);*/
         }else{
             service.doAddUser(u);
             //forward a pagina di registrazione avvenuta
             response.sendRedirect("resources/view/register-confirmation.jsp");
-           /* RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/register-confirmation.jsp");
-            dispatcher.forward(request,response);*/
         }
     }
 }
