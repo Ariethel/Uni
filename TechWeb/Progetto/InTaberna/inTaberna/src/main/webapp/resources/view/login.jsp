@@ -86,7 +86,7 @@
     </style>
 </head>
 
-<!--Form validation-->
+<!--Server Side Form validation-->
 <script>
     function validateform(){
         var name=document.loginform.username.value;

@@ -138,7 +138,6 @@
 
 <div class="main">
     <div class="chartList">
-        <!-- Devo solo dare uno stile a questa pagina e capire come calcolare il totale -->
     </div>
 
     <div class="total"></div>
