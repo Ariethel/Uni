@@ -3,6 +3,8 @@ package controller;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+import model.Carrello;
+import model.CarrelloDAO;
 import model.UserDAO;
 import model.Utente;
 
@@ -27,6 +29,21 @@ public class registerservlet extends HttpServlet {
             response.sendRedirect("resources/view/already-registered.jsp");
         }else{
             service.doAddUser(u);
+            // Verifico se ci sono album in sessione ed eventualmente li associo al nuovo utente
+            HttpSession ssn = request.getSession();
+            synchronized (ssn){
+                CarrelloDAO serviceC = new CarrelloDAO();
+                ssn.setAttribute("id", username);
+                ssn.setAttribute("password",password);
+                ArrayList<String> albumList = new ArrayList<>();
+                if (ssn.getAttribute("albumList") != null) //Se la sessione contiene gia' l'attributo allora lo preleva
+                    albumList = (ArrayList<String>) ssn.getAttribute("albumList");
+                for (String str: albumList) {
+                    Carrello c = new Carrello(username, password, str);
+                    serviceC.doLoadChart(c);
+                }
+
+            }
             //forward a pagina di registrazione avvenuta
             response.sendRedirect("resources/view/register-confirmation.jsp");
         }
