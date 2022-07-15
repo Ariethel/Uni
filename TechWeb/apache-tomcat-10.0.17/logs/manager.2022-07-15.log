@@ -1,0 +1,5 @@
+15-Jul-2022 17:35:55.779 INFORMAZIONI [http-nio-8080-exec-10] org.apache.catalina.core.ApplicationContext.log HTMLManager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+15-Jul-2022 17:35:55.779 INFORMAZIONI [http-nio-8080-exec-10] org.apache.catalina.core.ApplicationContext.log HTMLManager: init: Global resources are available
+15-Jul-2022 17:35:55.787 INFORMAZIONI [http-nio-8080-exec-10] org.apache.catalina.core.ApplicationContext.log HTMLManager: list: Listing contexts for virtual host 'localhost'
+15-Jul-2022 17:36:05.419 INFORMAZIONI [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log HTMLManager: restart: Reloading web application '/inTaberna-1.0-SNAPSHOT'
+15-Jul-2022 17:36:06.379 INFORMAZIONI [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log HTMLManager: list: Listing contexts for virtual host 'localhost'

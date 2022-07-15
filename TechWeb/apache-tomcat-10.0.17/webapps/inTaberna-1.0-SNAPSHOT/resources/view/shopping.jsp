@@ -76,7 +76,7 @@
                          tot += obj[i].prezzo;
                     }
                     $(".total").text("");
-                    $(".total").append("Totale:"+ tot + "<form method=\"get\" action=\"../../emptyChart\"><input style='background-color: limegreen; border-radius: 10px' type='submit' value='Concludi ordine'>");
+                    $(".total").append("Totale:"+ tot.toFixed(2) + "<form method=\"get\" action=\"../../emptyChart\"><input style='background-color: limegreen; border-radius: 10px' type='submit' value='Concludi ordine'>");
                 }
             }
             xmlhttp.open("GET","../../loadChart",true);
@@ -138,7 +138,6 @@
 
 <div class="main">
     <div class="chartList">
-        <!-- Devo solo dare uno stile a questa pagina e capire come calcolare il totale -->
     </div>
 
     <div class="total"></div>
