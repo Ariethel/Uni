@@ -94,7 +94,8 @@
           $("#userList ul").append("<li>"+ obj[i].name +
                   "<form action=\"../../updateUser\">"+
                     "<input type=\"hidden\" name=\"id\" value=\""+obj[i].name+"\">" +
-                    "<input type=\"submit\" value=\"Modifica\">"
+                    "<input type=\"submit\" value=\"Modifica\">"+
+                  "<input type=\"submit\" formaction=\"../../deleteUser\" value=\"Cancella\">"
                   +"</form>" + "</li>");
         }
       }
@@ -112,7 +113,8 @@
           $("#albumList ul").append("<li>"+ obj[i].name +
           "<form action=\"../../updateAlbum\">"+
           "<input type=\"hidden\" name=\"id\" value=\""+obj[i].name+"\">" +
-          "<input type=\"submit\" value=\"Modifica\">"
+          "<input type=\"submit\" value=\"Modifica\">" +
+          "<input type=\"submit\" formaction=\"../../deleteAlbum\" value=\"Cancella\">"
           +"</form>" + "</li>");
         }
       }

@@ -142,5 +142,15 @@ public class AlbumDAO {
         }
         return res;
     }
+
+    public void doDeleteById(String id){
+        try (Connection conn = ConnPool.getConnection()) {
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM album WHERE a_titolo = (?)");
+            ps.setString(1, id);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
 
