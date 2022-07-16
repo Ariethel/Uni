@@ -1,0 +1,87 @@
+16-Jul-2022 10:44:21.697 AVVERTENZA [main] org.apache.catalina.core.StandardServer.await Invalid shutdown command [] received
+16-Jul-2022 10:44:44.935 INFORMAZIONI [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+16-Jul-2022 10:44:44.935 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+16-Jul-2022 10:44:44.936 INFORMAZIONI [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+16-Jul-2022 10:44:44.948 AVVERTENZA [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [inTaberna-1.0-SNAPSHOT] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+16-Jul-2022 10:44:44.949 AVVERTENZA [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [inTaberna-1.0-SNAPSHOT] appears to have started a thread named [Tomcat JDBC Pool Cleaner[377125902:1657899365734]] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.3/java.lang.Object.wait(Native Method)
+ java.base@17.0.3/java.util.TimerThread.mainLoop(Timer.java:563)
+ java.base@17.0.3/java.util.TimerThread.run(Timer.java:516)
+16-Jul-2022 10:44:44.950 AVVERTENZA [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [inTaberna-1.0-SNAPSHOT] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.3/java.lang.Object.wait(Native Method)
+ java.base@17.0.3/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:70)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.3/java.lang.Thread.run(Thread.java:833)
+16-Jul-2022 10:44:44.970 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+16-Jul-2022 10:44:44.982 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+16-Jul-2022 10:48:27.764 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.0.17
+16-Jul-2022 10:48:27.772 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 21 2022 19:36:49 UTC
+16-Jul-2022 10:48:27.773 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.0.17.0
+16-Jul-2022 10:48:27.773 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+16-Jul-2022 10:48:27.773 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            5.15.0-41-generic
+16-Jul-2022 10:48:27.773 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+16-Jul-2022 10:48:27.773 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-17-openjdk-amd64
+16-Jul-2022 10:48:27.774 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.3+7-Ubuntu-0ubuntu0.20.04.1
+16-Jul-2022 10:48:27.774 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Private Build
+16-Jul-2022 10:48:27.774 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17
+16-Jul-2022 10:48:27.774 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17
+16-Jul-2022 10:48:27.785 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+16-Jul-2022 10:48:27.785 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+16-Jul-2022 10:48:27.786 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+16-Jul-2022 10:48:27.786 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+16-Jul-2022 10:48:27.786 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+16-Jul-2022 10:48:27.786 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/conf/logging.properties
+16-Jul-2022 10:48:27.787 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+16-Jul-2022 10:48:27.787 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+16-Jul-2022 10:48:27.787 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+16-Jul-2022 10:48:27.787 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+16-Jul-2022 10:48:27.787 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+16-Jul-2022 10:48:27.788 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17
+16-Jul-2022 10:48:27.788 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17
+16-Jul-2022 10:48:27.788 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/temp
+16-Jul-2022 10:48:27.791 INFORMAZIONI [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+16-Jul-2022 10:48:28.321 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+16-Jul-2022 10:48:28.371 INFORMAZIONI [main] org.apache.catalina.startup.Catalina.load Server initialization in [879] milliseconds
+16-Jul-2022 10:48:28.463 INFORMAZIONI [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+16-Jul-2022 10:48:28.464 INFORMAZIONI [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.0.17]
+16-Jul-2022 10:48:28.510 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/inTaberna-1.0-SNAPSHOT.war]
+16-Jul-2022 10:48:30.071 INFORMAZIONI [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+16-Jul-2022 10:48:31.342 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/inTaberna-1.0-SNAPSHOT.war] has finished in [2,831] ms
+16-Jul-2022 10:48:31.343 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/examples]
+16-Jul-2022 10:48:31.781 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/examples] has finished in [438] ms
+16-Jul-2022 10:48:31.782 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/host-manager]
+16-Jul-2022 10:48:31.826 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/host-manager] has finished in [43] ms
+16-Jul-2022 10:48:31.826 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/ROOT]
+16-Jul-2022 10:48:31.855 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/ROOT] has finished in [28] ms
+16-Jul-2022 10:48:31.855 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/manager]
+16-Jul-2022 10:48:31.906 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/manager] has finished in [51] ms
+16-Jul-2022 10:48:31.907 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/docs]
+16-Jul-2022 10:48:31.929 INFORMAZIONI [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/amnesia/Uni/TechWeb/apache-tomcat-10.0.17/webapps/docs] has finished in [22] ms
+16-Jul-2022 10:48:31.936 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+16-Jul-2022 10:48:31.984 INFORMAZIONI [main] org.apache.catalina.startup.Catalina.start Server startup in [3611] milliseconds
+16-Jul-2022 10:49:31.604 INFORMAZIONI [http-nio-8080-exec-1] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/inTaberna-1.0-SNAPSHOT] has started
+16-Jul-2022 10:49:31.613 AVVERTENZA [http-nio-8080-exec-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [inTaberna-1.0-SNAPSHOT] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+16-Jul-2022 10:49:31.620 AVVERTENZA [http-nio-8080-exec-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [inTaberna-1.0-SNAPSHOT] appears to have started a thread named [Tomcat JDBC Pool Cleaner[787122337:1657961310191]] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.3/java.lang.Object.wait(Native Method)
+ java.base@17.0.3/java.util.TimerThread.mainLoop(Timer.java:563)
+ java.base@17.0.3/java.util.TimerThread.run(Timer.java:516)
+16-Jul-2022 10:49:31.621 AVVERTENZA [http-nio-8080-exec-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [inTaberna-1.0-SNAPSHOT] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.3/java.lang.Object.wait(Native Method)
+ java.base@17.0.3/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:70)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.3/java.lang.Thread.run(Thread.java:833)
+16-Jul-2022 10:49:31.939 INFORMAZIONI [http-nio-8080-exec-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+16-Jul-2022 10:49:32.503 INFORMAZIONI [http-nio-8080-exec-1] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/inTaberna-1.0-SNAPSHOT] is completed
+16-Jul-2022 10:49:35.220 INFORMAZIONI [Abandoned connection cleanup thread] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1464)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1054)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkContextClassLoaders(AbandonedConnectionCleanupThread.java:96)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:69)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:833)
