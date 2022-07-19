@@ -85,3 +85,19 @@
 		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 		at java.base/java.lang.Thread.run(Thread.java:833)
+16-Jul-2022 12:00:22.436 INFORMAZIONI [Thread-3] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+16-Jul-2022 12:00:22.442 INFORMAZIONI [Thread-3] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+16-Jul-2022 12:00:22.507 AVVERTENZA [Thread-3] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [inTaberna-1.0-SNAPSHOT] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+16-Jul-2022 12:00:22.516 AVVERTENZA [Thread-3] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [inTaberna-1.0-SNAPSHOT] appears to have started a thread named [Tomcat JDBC Pool Cleaner[2050788394:1657961371952]] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.3/java.lang.Object.wait(Native Method)
+ java.base@17.0.3/java.util.TimerThread.mainLoop(Timer.java:563)
+ java.base@17.0.3/java.util.TimerThread.run(Timer.java:516)
+16-Jul-2022 12:00:22.517 AVVERTENZA [Thread-3] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [inTaberna-1.0-SNAPSHOT] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.3/java.lang.Object.wait(Native Method)
+ java.base@17.0.3/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:70)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.3/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.3/java.lang.Thread.run(Thread.java:833)
+16-Jul-2022 12:00:22.579 INFORMAZIONI [Thread-3] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+16-Jul-2022 12:00:22.588 INFORMAZIONI [Thread-3] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]

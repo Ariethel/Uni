@@ -34,9 +34,9 @@ public class addalbumservlet extends HttpServlet {
             homepage = true;
         }
 
-        InputStream inputStream = null; // input stream of the upload file
+        InputStream inputStream = null;
 
-        // obtains the upload file part in this multipart request
+        // Prendo le parti del file
         Part filePart = request.getPart("file");
         if (filePart != null) {
             // prints out some information for debugging
@@ -44,7 +44,7 @@ public class addalbumservlet extends HttpServlet {
             System.out.println(filePart.getSize());
             System.out.println(filePart.getContentType());
 
-            // obtains input stream of the upload file
+            // input stream dal file
             inputStream = filePart.getInputStream();
         }
 

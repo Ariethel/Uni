@@ -136,3 +136,11 @@
 127.0.0.1 - - [16/Jul/2022:10:50:26 +0200] "GET /inTaberna-1.0-SNAPSHOT/livesearch?str=Cel HTTP/1.1" 200 170
 127.0.0.1 - - [16/Jul/2022:10:50:27 +0200] "GET /inTaberna-1.0-SNAPSHOT/livesearch?str=Ce HTTP/1.1" 200 170
 127.0.0.1 - - [16/Jul/2022:10:50:27 +0200] "GET /inTaberna-1.0-SNAPSHOT/livesearch?str=C HTTP/1.1" 200 1243
+127.0.0.1 - - [16/Jul/2022:10:57:45 +0200] "GET /inTaberna-1.0-SNAPSHOT/updateUser?id=user1 HTTP/1.1" 200 600
+127.0.0.1 - - [16/Jul/2022:10:57:45 +0200] "GET /favicon.ico HTTP/1.1" 200 8192
+127.0.0.1 - - [16/Jul/2022:10:57:55 +0200] "GET /inTaberna-1.0-SNAPSHOT/confirm-update?username=user&password=pass&tipo=registrato&id=user1 HTTP/1.1" 302 -
+127.0.0.1 - - [16/Jul/2022:10:57:55 +0200] "GET /inTaberna-1.0-SNAPSHOT/resources/view/admin-function.jsp HTTP/1.1" 200 6364
+127.0.0.1 - - [16/Jul/2022:10:57:55 +0200] "GET /inTaberna-1.0-SNAPSHOT/getUser HTTP/1.1" 200 33
+127.0.0.1 - - [16/Jul/2022:10:57:55 +0200] "GET /inTaberna-1.0-SNAPSHOT/getAlbum HTTP/1.1" 200 284
+127.0.0.1 - - [16/Jul/2022:10:57:55 +0200] "GET /inTaberna-1.0-SNAPSHOT/getAlbum HTTP/1.1" 200 284
+127.0.0.1 - - [16/Jul/2022:10:58:25 +0200] "GET /inTaberna-1.0-SNAPSHOT/resources/view/help.jsp HTTP/1.1" 200 5240
