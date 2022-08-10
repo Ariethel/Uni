@@ -14,8 +14,8 @@ import java.sql.*;
 
 
 public class Gui {
-	static final String DBURL = "jdbc:mysql://localhost/progetto";
-	static final String USER = "root"; // Ricordati di cambiare user sul portatile
+	static final String DBURL = "jdbc:mysql://localhost/progetto?serverTimezone=Europe/Rome";
+	static final String USER = "admin"; // admin su portatile -> root su fisso
 	static final String PASS = "root";
 	static final String QueryVista = "SELECT * FROM utenti"; //Visualizzazione elenco tuple
 	static final String QueryUpdate1 = "UPDATE utenti\n" // Update data scadenza abbonamento mensile
