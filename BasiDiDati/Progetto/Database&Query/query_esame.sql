@@ -90,8 +90,8 @@ AND NomeAutore <> "Fabrizio De Andre";
                  
 
 # 8 - Una selezione con l'uso appropriato del doppio not exists
-# Playlist che contiene tutte le canzoni
-SELECT *
+# Playlist che contiene tutte le canzoni (codice)
+SELECT p.codice
 FROM playlist p
 WHERE NOT EXISTS (SELECT *
 				  FROM canzoni c
