@@ -15,7 +15,7 @@ import java.sql.*;
 
 public class Gui {
 	static final String DBURL = "jdbc:mysql://localhost/progetto?serverTimezone=Europe/Rome";
-	static final String USER = "root"; // admin su portatile -> root su fisso
+	static final String USER = "admin"; // admin su portatile -> root su fisso
 	static final String PASS = "root";
 	static final String QueryVista = "SELECT * FROM utenti"; //Visualizzazione elenco tuple
 	static final String QueryUpdate1 = "UPDATE utenti\n" // Update data scadenza abbonamento mensile
@@ -123,8 +123,12 @@ public class Gui {
 				String tipo = txtTipo.getText();
 				String dataIsc = txtDataiscr.getText();
 				String tipoAbb = txtTipoabbonamento.getText();
-				JOptionPane.showInputDialog("INSERT INTO utenti(CF, Nome, Cognome, Citta, CV, Via, Tipo, DataIscrizione, TipoAbbonamento) VALUES (" + "\"" + cf +"\",\""+ Nome +"\",\""+ Cognome +"\",\""+ Citta +"\",\""+ cv +"\",\""+ via +"\",\""+ tipo +"\",\""+ dataIsc +"\",\""+ tipoAbb + "\")", e);
-				String QueryInserimento = "INSERT INTO utenti(CF, Nome, Cognome, Citta, CV, Via, Tipo, DataIscrizione, TipoAbbonamento) VALUES (" + "\"" + cf +"\",\""+ Nome +"\",\""+ Cognome +"\",\""+ Citta +"\",\""+ cv +"\",\""+ via +"\",\""+ tipo +"\",\""+ dataIsc +"\",\""+ tipoAbb + "\")"; // Query Inserimento
+				/*
+				 * JOptionPane.
+				 * showInputDialog("INSERT INTO utenti(CF, Nome, Cognome, Citta, CV, Via, Tipo, DataIscrizione, TipoAbbonamento) VALUES ("
+				 * + "\"" + cf +"\",\""+ Nome +"\",\""+ Cognome +"\",\""+ Citta +"\",\""+ cv
+				 * +"\",\""+ via +"\",\""+ tipo +"\",\""+ dataIsc +"\",\""+ tipoAbb + "\")", e);
+				 */				String QueryInserimento = "INSERT INTO utenti(CF, Nome, Cognome, Citta, CV, Via, Tipo, DataIscrizione, TipoAbbonamento) VALUES (" + "\"" + cf +"\",\""+ Nome +"\",\""+ Cognome +"\",\""+ Citta +"\",\""+ cv +"\",\""+ via +"\",\""+ tipo +"\",\""+ dataIsc +"\",\""+ tipoAbb + "\")"; // Query Inserimento
 				textArea.setText("");
 				try (Connection conn = DriverManager.getConnection(DBURL, USER, PASS);
 						Statement stmt = conn.createStatement();){
@@ -168,9 +172,14 @@ public class Gui {
 				String QueryDelete = "DELETE FROM utenti WHERE CF = "+ "\"" + cf + "\"" +" AND Nome = " + "\"" + Nome + "\"" +" AND Cognome = " + "\"" + Cognome + "\"" + " AND Citta = " + "\"" + Citta  + "\"" +" AND"
 						+ " CV = " + "\"" + cv + "\"" +" AND Via = " + "\"" +via + "\"" +" AND Tipo = " + "\"" +tipo + "\"" + " AND DataIscrizione = " + "\"" + dataIsc + "\"" + " AND"
 						+ " TipoAbbonamento = " + "\"" + tipoAbb+ "\""; // Query delete
-				JOptionPane.showInputDialog("DELETE FROM utenti WHERE CF = "+ "\"" + cf + "\"" +" AND Nome = " + "\"" + Nome + "\"" +" AND Cognome = " + "\"" + Cognome + "\"" + " AND Citta = " + "\"" + Citta  + "\"" +" AND"
-						+ " CV = " + "\"" + cv + "\"" +" AND Via = " + "\"" +via + "\"" +" AND Tipo = " + "\"" +tipo + "\"" + " AND DataIscrizione = " + "\"" + dataIsc + "\"" + " AND"
-						+ " TipoAbbonamento = " + "\"" + tipoAbb+ "\"", e);
+				/*
+				 * JOptionPane.showInputDialog("DELETE FROM utenti WHERE CF = "+ "\"" + cf +
+				 * "\"" +" AND Nome = " + "\"" + Nome + "\"" +" AND Cognome = " + "\"" + Cognome
+				 * + "\"" + " AND Citta = " + "\"" + Citta + "\"" +" AND" + " CV = " + "\"" + cv
+				 * + "\"" +" AND Via = " + "\"" +via + "\"" +" AND Tipo = " + "\"" +tipo + "\""
+				 * + " AND DataIscrizione = " + "\"" + dataIsc + "\"" + " AND" +
+				 * " TipoAbbonamento = " + "\"" + tipoAbb+ "\"", e);
+				 */
 				textArea.setText(""); 
 				try (Connection conn = DriverManager.getConnection(DBURL, USER, PASS);
 						Statement stmt = conn.createStatement();){
