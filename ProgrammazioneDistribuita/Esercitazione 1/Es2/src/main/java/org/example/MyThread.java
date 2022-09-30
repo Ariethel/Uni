@@ -16,6 +16,7 @@ public class MyThread implements Runnable{
         }
     }
 
+
     private int start, end;
     private int[] array;
 }
