@@ -3,12 +3,16 @@ public class Contatore {
         this.count = 0;
     }
 
-    public int getCount(){
-        return this.count;
+    public void addCount(){
+        this.count += 1;
     }
 
-    public void setCount(int i){
-        this.count = i;
+    public int getCount(){
+        return count;
+    }
+
+    public void reset(){
+        count = 0;
     }
     private int count;
 }
