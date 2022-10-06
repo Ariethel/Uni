@@ -1,0 +1,102 @@
+### 1 ###
+Obiettivo: Presentare i principi di programmazione concorrente in Java, in modo da poter utilizzarli per le applicazioni di programmazione distribuita. Introduciamo innanzitutto i thread in Java. Presentare le motivazioni alla sincronizzazione efficiente (legge di Amdahl), gli strumenti che si hanno a disposizione (metodi sincronizzati, lock e accessi atomici) e brevemente alcune problematiche che sorgono dalla sincronizzazione (deadlock, etc.). Presentare esempi che aiutino la comprensione della sincronizzazione, della efficienza su multicore ed un esempio conclusivo che evidenzia la complessità dell'argomento anche in situazioni apparentemente molto semplici.
+Contenuti
+
+    Motivazioni alla programmazione concorrente
+        La tecnologia dei microprocessori
+        Le sfide
+        A cosa serve la programmazione concorrente
+    I thread in Java
+        Processi e Thread
+        Alcuni metodi utili
+    Sincronizzazione di thread
+        Interferenza tra thread
+        Inconsistenza della memoria
+    La legge di Amdahl
+    Sincronizzazione di thread: gli strumenti
+        Metodi sincronizzati
+        Lock intrinseci
+        Accesso atomico
+    Sincronizzazione di thread: i problemi
+        Deadlock
+        Altri problemi
+    La efficienza dei thread
+    Il Singleton e il double-checked locking
+
+Materiale bibliografico:
+
+    "A Fundamental Turn Toward Concurrency in Software", Dr. Dobb's Journal,1 Marzo 2005, Herb Sutter.
+    Java Sun Tutorial su Concorrenza e Thread
+    Gli stati e il ciclo di vita dei thread
+    Video: "Moore's Law graphed vs real CPUs & GPUs 1965 - 2019"
+    Documenazione Java su Thread
+    The "Double-Checked Locking is Broken" Declaration di David Bacon, Joshua Bloch, Jeff Bogda, Cliff Click, e altri.
+    La soluzione con volatile descritta nel JSR 133 e quella con l'idioma initialization on demand holder
+
+Altri link interessanti:
+
+    "Race Conditions: A Case Study" by Steve Carr, Jean Mayo and Ching-Kuang Shene.
+    What is Java thread priority? da JavaMex Tutorials
+    Esempio di deadlock e livelock dal libro online Model Checking Concurrent Programs di John Geiner
+    Classe Logger e il package java.util.logging di Java
+    Un articolo tecnico di Oracle sul benchmarking in Java: Avoiding Benchmarking Pitfalls on the JVM
+
+Alcune domande di riepilogo:
+
+    Quale è la differenza tra un processo ed un thread? E quali le somiglianze?
+    Perché dire che un thread è un "processo light-weight" è tecnicamente scorretto, anche se molto diffuso nella prassi comune?
+    Quali sono esempi di applicazioni che hanno necessità di essere multithread?
+    Come usa un server il pool di thread per ottimizzare le prestazioni?
+    Illustrare il diagramma degli stati di un thread in Java
+    Come si può creare un thread in Java e quali sono i vantaggi e svantaggi delle due tecniche possibili?
+    Quando si invoca il metodo .start() su un thread cosa succede? 
+    Quando si invoca il metodo .run() su un thread cosa succede?
+    Quando si invoca il metodo .start() su un thread, il thread viene eseguito: vero o falso? 
+    Quando si invoca il metodo .run() su un thread, il thread viene eseguito: vero o falso?
+    Quale è la differenza tra un metodo run() e un metodo start() di un thread? 
+    Cosa sono gli interrupt su un thread e quali metodi sono a disposizione per trattarli/gestirli?
+    Quali sono gli stati del diagramma di stato di un thread?
+        Un thread come passa dallo stato "New" a quello di "Runnable"?
+        Un thread come passa dallo stato "Runnable" a quello di "Timed Waiting" e come se ne esce?
+        Un thread come passa dallo stato "Runnable" a quello di "Waiting" e come se ne esce?
+        Un thread come passa dallo stato "Runnable" a quello di "Blocked" e come se ne esce? 
+    Perchè lo stato "Runnable" è strutturato in due sottostati "Ready" e "Running" e come si passa dall'uno all'altro?
+    Quali sono i possibili tipi di errore che vengono generati dai thread?
+    Cosa è la interferenza tra thread? E come si risolve?
+    Cosa è la inconsistenza della memoria? E come si risolve?
+    Cosa è una race condition?
+    Perché i bug dovuti a race condition sono particolarmente complessi da trattare?
+    Cosa è la relazione "happens-before"? 
+    Come faccio a stabilire una relazione "happens-before"?
+    Cosa significa che una variabile in memoria è dichiarata "volatile"?
+    Perché è necessaria la sincronizzazione?
+    Perché è necessaria la sincronizzazione efficiente?
+    Cosa sono i metodi sincronizzati?
+    Cosa sono i metodi statici sincronizzati?
+    Che relazione (dal punto di vista dell'accesso esclusivo) hanno un metodo sincronizzato dell'istanza e un metodo sincronizzato statico?
+    Un thread che è in esecuzione di un metodo sincronizzato dell'istanza blocca l'esecuzione di:
+        un altro thread che esegue un metodo sincronizzato dell'istanza
+        un altro thread che esegue un metodo statico sincronizzato
+        un altro thread che esegue un metodo statico
+        un altro thread che esegue un metodo dell'istanza
+        tutti i thread in esecuzione sulla JVM
+        tutti i thread in esecuzione su tutte le JVM in esecuzione sulla vostra macchina
+        tutti i thread in esecuzione su tutte le JVM in esecuzione su tutti i vostri computer
+        tutti i thread in esecuzione su tutte le JVM in esecuzione su tutti i computer dell'Università
+    E' possibile con i lock impliciti simulare i metodi sincronizzati di istanza
+    E' possibile con i lock impliciti simulare i metodi sincronizzati statici
+    E' possibile con i metodi sincronizzati di istanza simulare i lock
+    E' possibile con i metodi sincronizzati statici simulare i lock
+    Cosa è una variabile volatile?
+    E' possibile usare una variabile volatile per eliminare l'interferenza tra thread (race condition)
+    E' possibile usare una variabile volatile per eliminare i problemi di inconsistenza della memoria
+    Operazioni atomiche sono estremamente più efficienti delle operazioni non atomiche: vero/falso.. e perché?
+    Se la variabile int a è volatile, allora la operazione a++ viene eseguita in mutua esclusione da parte di due thread: vero o falso.. e perché?
+    Cosa è il deadlock/livelock/starvation?
+    Quale è la differenza tra deadlock e livelock?
+    Sull'esempio di SimpleThread e Example, completare lo studio del comportamento per metodi istanza/statici, synchronized/no-synchronized, invocazione dei due thread dello stesso metodo o di metodi diversi
+    A cosa serve il design pattern del Singleton?
+    Cosa è la lazy allocation?
+    La soluzione al Singleton con il metodo getInstance() sincronizzato è corretta? Se no, perché? Se si, allora perché ne studiamo delle altre?
+    Perché la soluzione al Singleton con un blocco synchronized subito dopo l'if non funziona?
+    Cosa è il double-checked locking? Perché non è corretto? Come si può modificare per renderlo corretto?

@@ -1,0 +1,129 @@
+ ### 1 ###
+Obiettivo: Introdurre i sistemi distribuiti, prima attraverso le visioni dei pionieri dell'informatica che ne hanno intuito utilità, impatto ed usi, poi attraverso la definizione e una serie di considerazioni sulle motivazioni.
+Contenuti
+
+    Prologo
+    Visioni del futuro dal passato
+    Sistemi Distribuiti: Perché? Come si caratterizzano?
+
+Materiale bibliografico
+
+    Scarano. "Programmazione con Oggetti Distribuiti: Java RMI". Cap. 1, par. 1.1
+    La legge di Moore: su Wikipedia, solo l'enunciato
+    La legge di Reed: "That Sneaky Exponential-Beyond Metcalfe's Law to the Power of Community Building" di D.P. Reed
+
+Altri link interessanti
+
+    Su Vannevar Bush:
+        Una biografia di Vannevar Bush ed il suo articolo "As we may think" 
+        La versione di Life Magazine dello stesso articolo, con le immagini dell'epoca
+    Su John Licklider:
+        Memorandum su Intergalactic Computer Network
+         "The computer as a communication device"
+    Su Thomas J. Watson:
+        Le citazioni di T.J Watson
+    Un articolo sulle lezioni del passato e sulle evoluzioni possibili in "Jim Gray on computing's breakthroughs, lessons, and future", IEEE Distributed Systems online Volume: 5 Issue: 1 Date: 2004.
+    Video su John Licklider e la creazione di Internet
+    Video su Memex
+    Video sulla legge di Moore
+
+Alcune domande di riepilogo:
+
+    Cosa è un sistema distribuito?
+    Quali sono le motivazioni tecnologiche ai sistemi distribuiti?
+    Quali sono le motivazioni economiche ai sistemi distribuiti?
+    Cosa è la "legge" di Moore?
+    In che maniera un sistema distribuito permette di rispondere efficacemente al progresso tecnologico preservando le risorse legacy?
+    Cosa sono le "leggi" di Sarnoff / Metcalfe /Reed?
+    Perchè nelle domande precedenti, la parola "legge" viene messa tra virgolette? sorridente
+    Che cosa è il middleware e quale è il suo ruolo?
+    Perchè le reti sono naturalmente (dal punto di vista economico) portate ad accorparsi, integrando i servizi in modo da fornirli agli utenti di tutte le reti che si stanno fondendo? E che cosa ha a che fare questo con le leggi di Metcalfe / Reed? E perché questo capita in maniera molto minore con la legge di Sarnoff (ma capita comunque)?
+
+
+
+### 2 ###
+Obiettivo: Presentare il significato di Reference Model. Successivamente introdurre l'Open Distributed Processing di ISO/IEC illustrando caratteristiche, requisiti e trasparenza. Presentare il middleware ad oggetti distribuiti (con alcuni esempi) ed evidenziare il ruolo delle tecnologie ad oggetti distribuiti (come Java RMI) al loro interno.
+Contenuti
+
+    Un modello di riferimento per i Sistemi Distribuiti
+        Cosa è un modello di riferimento
+        Open Distributed Processing
+    Le caratteristiche di un sistema distribuito
+        Requisiti funzionali e non funzionali
+    La trasparenza di un sistema distribuito
+
+    Middleware ad oggetti distribuiti
+        Motivazioni
+        Tipi di middleware
+    L'evoluzione del Middleware
+        Remote Procedure Call (RPC)
+        Da RPC al Middleware a oggetti Distribuiti
+    Alcuni esempi di Middleware
+        CORBA
+        Microsoft .NET (con Remoting)
+        Enterprise Javabeans (con Java RMI)
+    Middleware implicito ed esplicito
+
+Materiale bibliografico:
+
+    Scarano. "Programmazione con Oggetti Distribuiti: Java RMI". Cap. 1, par. 1.2 (escluso i viewpoints 1.2.4), 1.3, 1.4
+    Slides su Middleware implicito (Prof. Scarano)
+
+Altri link interessanti:
+
+    Gli standard ISO sono scaricabile direttamente dal sito di OSI, in particolare: ISO/IEC 10746-1:1998, ISO/IEC 10746-2:1996, ISO/IEC 10746-3:1996, ISO/IEC 10746-4:1998
+    La pagina di Wikipedia di RM-ODP
+    Risorse su RM-ODP a cura del Politecnico di Losanna (Svizzera)
+    Il reference model di RM-ODP
+    La pagina di Wikipedia sulle Transazioni
+    La pagina di Wikipedia su Corba
+
+Alcune domande di riepilogo:
+
+    Cosa è un modello di riferimento (reference model) e a cosa/chi serve?
+    Cosa sono i requisiti non funzionali di un sistema?
+    Quale è la differenza sostanziale tra un sistema distribuito ed uno parallelo/concorrente? 
+    Perché un sistema distribuito è concorrente, e perché la soluzione della concorrenza è più complessa rispetto ad un sistema centralizzato?
+    Che significa che in un sistema distribuito manca un clock globale, e che cosa comporta?
+    Cosa significa che un sistema distribuito può tollerare malfunzionamenti parziali?
+    Perché un sistema distribuito è eterogeneo?
+    Cosa significa che un sistema distribuito asseconda l'evoluzione aziendale?
+    Perché un sistema distribuito offre autonomia di gestione ai singoli nodi?
+    Cosa significa che un sistema distribuito deve:
+        essere aperto
+        essere integrato
+        essere flessibile
+        essere modulare
+        supportare la federazione di sistemi
+        essere facilmente gestibile
+        essere scalabile
+        essere trasparente
+    Cosa è la trasparenza di accesso?
+    Cosa è la trasparenza di locazione?
+    Cosa è la trasparenza di migrazione / replica e perché dipende da trasparenza di locazione e di accesso?
+    Cosa è la trasparenza alla persistenza e perché dipende dalla trasparenza di locazione
+    Cosa è la trasparenza alle transazioni?
+    Cosa è la trasparenza alla scalabilità e perché dipende da trasparenza di migrazione e di replica?
+    Cosa è la trasparenza alle prestazioni e perché dipende da trasparenza di migrazione, di replica e di persistenza?
+    Cosa è la trasparenza ai malfunzionamenti e perché dipende dalla trasparenza alle transazioni?
+    A cosa serve il middleware?
+    In che maniera i sistemi distribuiti basati su oggetti distribuiti si appoggiano alle funzionalità offerte dai sistemi distribuiti e dalla programmazione a oggetti?
+    Perché il middleware rende più efficiente la progettazione e la realizzazione di sistemi software complessi?
+    E perché per sistemi software di piccole dimensioni il middleware potrebbe essere non altrettanto efficiente?
+    Che tipi diversi di middleware esistono? Che obiettivi hanno e in che relazione sono con ciascuno degli altri livelli?
+    Che tipo di astrazione fornisce il Middleware?
+    Perché il Middleware favorisce il riuso delle applicazioni adottate
+    Descrivere il meccanismo di Remote Procedure Call
+    Quale è il ruolo di client e server stub in RPC?
+    Cosa è il marshalling in RPC e quale è il suo obiettivo?
+    Perché diciamo che la invocazione RPC è sincrona?
+    Come vengono creati client stub e server stub in RPC?
+    Quali sono le limitazioni di RPC, alla luce anche del paradigma ad oggetti?
+    Perché è necessario passare da RPC ad un middleware basato su oggetti distribuiti?
+    Quali sono le difficoltà ad inserire gli oggetti all'interno di un paradigma di invocazione remota come RPC?
+    Descrivere Corba e la sua architettura.
+    Cosa è l'Object Request Broker?
+    Descrivere come .Net di Microsoft si appoggia al Common Language Runtime come middleware di infrastruttura ed a Remoting come middleware di comunicazione.
+    Cosa è una componente?
+    Cosa è il middleware implicito e come funziona rispetto a quello esplicito?
+    Quale è il ruolo degli oggetti distribuiti all'interno del modello a componenti di Enterprise Computing?

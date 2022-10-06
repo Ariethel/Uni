@@ -1,0 +1,93 @@
+ ### 1 ###
+ Obiettivo: Presentare i socket TCP in Java ed alcuni semplici esempi di programmi che li usano, allo scopo di utilizzarli, poi, per realizzare una invocazione remota di metodi. Presentare gli obiettivi della progettazione di Java RMI, con particolare riferimento all'impatto ed alle relazioni con alcune caratteristiche della macchina virtuale Java (garbage collection e sicurezza). Presentare gli obiettivi della progettazione di Java RMI, con particolare riferimento al modello ad oggetti ed alla architettura a livelli di Java RMI.
+Contenuti
+
+    Programmazione con i socket
+        Socket TCP
+        Stream
+    Alcuni esempi di uso dei socket:
+        "HelloWorld"
+        Un registro di nomi con architettura client-server
+    Java Remote Method Invocation
+        Gli obiettivi della progettazione
+    La sicurezza di Java
+    Il modello a oggetti distribuito di Java RMI
+        Interfacce ed eccezioni remote
+        Implementazioni remote
+        Riferimenti remoti
+        Localizzazione ed invocazione
+        Passaggio di parametri
+        Meccanismo di Marshalling
+    Differenze tra oggetti locali e remoti
+    La architettura di Java RMI
+        Il meccanismo di marshalling
+    Il processo di creazione
+    Il primo esempio: HelloWorld!
+
+Materiale bibliografico
+
+    Scarano. "Programmazione con Oggetti Distribuiti: Java RMI".
+        Cap. 2, par. 2.1, 2.2
+        Cap. 3, par. 3.1, 3.2, 3.3, 3.5.3
+        Cap. 3, par. 3.3, 3.4.1, 3.5.4.; Cap. 4, par. 4.1, 4.2, 4.3
+
+Altri link interessanti
+
+    Whitepaper di Java di James Gosling e Henry McGilton (1995), versione online dal sito di Oracle
+    La cronistoria di Java dal sito di Oracle
+    La storia delle versioni di Java disponibile su Wikipedia
+    Un'introduzione a Java RMI di Chris Matthews
+
+Alcune domande di riepilogo:
+
+    Come funzionano i socket TCP in Java?
+    Quale è la differenza tra le classi ServerSocket e Socket in Java?
+    Cosa sono ed a cosa servono gli stream? 
+    Cosa significa che gli stream vengono usati tipicamente come wrapper di altri stream?
+    Quali sono i metodi più importanti (e cosa fanno) di InputStream e di OutputStream?
+    Perché di solito i programmatori non usano InputStream o OutputStream direttamente?
+    Come si fa a usare gli stream che sono associati ad un socket?
+    Quali sono i metodi offerti da ObjectInputStream (e ObjectOutputStream) per leggere (scrivere) un oggetto dallo (sullo) stream?
+    In che maniera la esperienza di Jim Waldo all'interno della progettazione di CORBA ha influito su alcuni requisiti di progettazione di Java RMI?
+    Quale è il motivo dell'obiettivo di RMI come ambiente semplice? e come ambiente familiare al programmatore Java?
+    Quali sono i vantaggi dell'integrare il modello distribuito all'interno di un linguaggio di programmazione?
+    Perché la garbage collection rappresenta un utile strumento per la semplificazione dei compiti del programmatore?
+    Quali sono i rischi di memory leak? E perché sono problemi che sono particolarmente critici per i server?
+    Quali sono i vantaggi e gli svantaggi di un ambiente in cui la gestione della memoria è a carico del programmatore? E quando invece è a carico del sistema con un meccanismo di garbage collection?
+    Cosa sono le invocazioni unicast, multicast, di oggetti attivabili?
+    A cosa può servire la invocazione multicast?
+    A cosa può servire avere oggetti attivabili?
+    Perché è importante poter sostituire livelli di trasporto (in RMI ma anche in altri sistemi) senza dover modificare gli strati superiori, fino all'applicazione?
+    Cosa significa che una applicazione Java viene eseguita in una sandbox?
+    Quali sono i 4 livelli di sicurezza forniti da Java?
+    Per ciascuno dei 4 livelli di sicurezza, fornire l'obiettivo e alcuni esempi di funzionamento
+    Perché è necessario che il Bytecode Verifier "ripeta" i controlli che (ovviamente?) il compilatore ha già effettuato?
+    Quali sono i package in cui si struttura Java RMI e quali sono le loro funzioni?
+    Cosa è una interfaccia Remota?
+    Come vengono distinti i metodi remoti?
+    Cosa significa che la interfaccia remota aggiunge un ulteriore modificatore di accesso ai tradizionali valori in Java di public, private, etc. ?
+    Come devono essere i parametri di un metodo remoto?
+    Cosa si intende quando si dice che un oggetto locale è passato per copia invece che per riferimento?
+    Cosa garantisce la integrità referenziale?
+    Dare un esempio di integrità referenziale
+    Come si fa a localizzare un oggetto remoto? 
+    Perché è importante che il compilatore forzi la gestione della eccezione di RemoteException per i metodi remoti?
+    Cosa è un metodo idempotente? e perché è utile come metodo remoto?
+    Perché gli oggetti remoti è bene che siano (quanto più possibile) simili agli oggetti locali?
+    Perché non è possibile la totale trasparenza, tra oggetti locali e remoti?
+    Cosa fa la classe RemoteObject? Cosa ridefinisce di Object?
+    Quale è la differenza nel passaggio di parametri remoti?
+    Descrivere l'architettura a layer di Java RMI con i compiti di ciascun layer e la maniera in cui comunicano tra di loro
+    Quali sono i vantaggi di una architettura a layer? E quali gli svantaggi?
+    Cosa fa lo Stub&Skeleton/Remote-Reference/Transport layer?
+    In che maniera il marshalling è diverso dalla serializzazione?
+    Cosa specializza di ObjectOutputStream lo stream di Marshal?
+    Quali sono i passi che permettono di creare un oggetto server con Java RMI?
+    Quali sono i passi che permettono di creare un oggetto client con Java RMI?
+    Quali passi della creazione di un oggetto server devono essere effettuati prima di quella di un oggetto client?
+    A cosa serve rmic?
+    Una volta creata una applicazione client-server in Java RMi, quali sono i passi strettamente necessari se (1) si modifica la implementazione del server; (2) si modifica la implementazione del client; (3) si modifica la interfaccia?
+    Se client e server vengono scritti in due progetti diversi, indipendenti, quali sono i file che devono essere comuni tra di essi?
+    [E**] Provare a modificare il policy file in maniera da trovare il minimo insieme di regole di accesso che permette la esecuzione di HelloWorld
+    [P*] Scrivere l'esempio di HelloWorld senza il meccanismo del riuso della implementazione remota (subclassing di UnicastRemoteObject) ma con la classe di implementazione locale (uso del metodo exportObject()) (vedi cap. 3.3.1)
+    [P*] Usare due progetti separati per HelloWorld, usando la modalità di generazione di stub e skeleton con rmic
