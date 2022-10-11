@@ -13,6 +13,7 @@ public class Main {
         ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
 
         oos.writeObject(pippo);
+        System.out.println("Scritto pippo");
         System.out.println("Il server ha risposto: " + ois.readInt());
     }
 }
