@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e94a3811-69a5-42ce-8e63-0dbcbc36f325" name="Changes" comment="" />
+    <list default="true" id="e94a3811-69a5-42ce-8e63-0dbcbc36f325" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/HelloImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/HelloImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/HelloImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/HelloImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Main.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,9 +43,15 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/amnesia/Uni/Fondamenti Intelligenza Artificiale/2. Ricerca/TravelingSalesmanProblem"
+    "last_opened_file_path": "/home/amnesia/Uni/Fondamenti Intelligenza Artificiale/2. Ricerca/TravelingSalesmanProblem",
+    "nodejs_package_manager_path": "npm"
   }
 }]]></component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn compile" />
+    </option>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -49,6 +62,7 @@
       <updated>1665606196074</updated>
       <workItem from="1665606198703" duration="2728000" />
       <workItem from="1665674278460" duration="34000" />
+      <workItem from="1665729321615" duration="3397000" />
     </task>
     <servers />
   </component>
