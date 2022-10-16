@@ -3,5 +3,13 @@
 3 - Use Case Diagram
 4 - Sono utili a rappresentare sistemi di workflow, logia interna di una processo, concorrenza, operazioni ecc
 5 - Il tempo impiegato dall'ogetto per eseguire un task
-6 - 
+6 - falsa : mostra il mapping hardware / software
+7 - Object Constraing Language
+8 - vere:
+	* BOH NON TROVO NIENTE A RIGUARDO
+9 - Il glossario di un sistema; sono prese decisioni relativamente
+    alle astrazioni da considerare
+10 - Non sono corrette: 
+	* Gli oggetti sono attivati quando vengono istanziati
+	(anche se a me in realta' sembrano tutte corrette) 
 
