@@ -1,0 +1,23 @@
+1 - Offrono una breve descrizione delle funzionalita' e del comportamento del
+    sistema, oltre alla logica ad alto livello della logica di business
+2 - Si tratta di una matrice che consente di tenere traccia di tutti gli 
+    artefatti generati a partire da un certo use case
+3 - Interviste
+4 - Brain Storming
+5 - Functionality
+6 - Reliability
+7 - Scalability
+8 - Manutenzione
+9 - 
+10 - 
+11 - Non prevedere una funzionalita' richiesta
+12 - Correttezza ed 
+13 - Focus group e analisi dei dati
+14 - E' una istanza di un problema piu' grande, utile agli sviluppatori per
+     capire in che modo il sistema dovra' agire in determinate situazioni
+15 - Un visionary scenario descrive il sistema futuro, viene usato sia come punto
+     di modellazione che come prototipo per stimolare il cliente durante la
+     raccolta dei requisiti
+16 - Uno scenario As-Is descriver una situazione corrente, puo' essere utile
+     in progetti reengineering per capire come un funziona un certo scenario
+     ed eventualmente reimplementarlo 
