@@ -21,6 +21,7 @@ public class ChatImpl extends UnicastRemoteObject implements Chat {
         super();
     }
 
+
     public void send(String msg, String name) throws java.rmi.RemoteException {
         this.msg.add(name + ": " + msg);
     }
