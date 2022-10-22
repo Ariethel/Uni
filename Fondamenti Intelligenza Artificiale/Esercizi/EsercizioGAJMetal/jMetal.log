@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-10-22T09:02:32.519896980Z</date>
+  <millis>1666429352519</millis>
+  <nanos>896980</nanos>
+  <sequence>0</sequence>
+  <logger>org.uma.jmetal.util.JMetalLogger</logger>
+  <level>INFO</level>
+  <class>org.uma.jmetal.util.JMetalLogger</class>
+  <method>configureLoggers</method>
+  <thread>1</thread>
+  <message>Loggers configured with null</message>
+</record>
+<record>
+  <date>2022-10-22T09:02:32.595230815Z</date>
+  <millis>1666429352595</millis>
+  <nanos>230815</nanos>
+  <sequence>1</sequence>
+  <logger>org.uma.jmetal.util.JMetalLogger</logger>
+  <level>INFO</level>
+  <class>it.unisa.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Total execution time: 569ms</message>
+</record>
+<record>
+  <date>2022-10-22T09:02:32.598220161Z</date>
+  <millis>1666429352598</millis>
+  <nanos>220161</nanos>
+  <sequence>2</sequence>
+  <logger>org.uma.jmetal.util.JMetalLogger</logger>
+  <level>INFO</level>
+  <class>it.unisa.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Best solution: Variables: 6 3 5 8 1 4 2 7 Objectives: 0.0 Constraints: 	AlgorithmAttributes: {}
+</message>
+</record>
+</log>

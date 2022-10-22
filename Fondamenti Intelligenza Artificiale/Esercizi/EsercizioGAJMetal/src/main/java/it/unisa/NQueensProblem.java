@@ -27,9 +27,31 @@ public class NQueensProblem extends AbstractIntegerProblem {
         setVariableBounds(lowerBounds, upperBounds);
     }
 
+    public int computeConflicts(List<Integer> encoding){
+        int rowConflicts = 0;
+        int upperRightConflicts = 0;
+        int lowerRightConflicts = 0;
+        for (int col = 0; col < chessboardSize; col++){
+            int row = encoding.get(col);
+            for (int rightCol = col + 1; rightCol < chessboardSize; rightCol++){
+                int rightRow = encoding.get(rightCol);
+                if (row == rightRow){
+                    rowConflicts++;
+                }
+                if (row == rightRow - (rightCol - col)){
+                    upperRightConflicts++;
+                }
+                if (row == rightRow + (rightCol - col)){
+                    lowerRightConflicts++;
+                }
+            }
+        }
+        return rowConflicts + upperRightConflicts + lowerRightConflicts;
+    }
     @Override
-    public IntegerSolution evaluate(IntegerSolution integerSolution) {
-        return null;
+    public void evaluate(IntegerSolution integerSolution) {
+        int evaluation = computeConflicts(integerSolution.getVariables());
+        integerSolution.getObjectives()[0] = evaluation;
     }
 
 
