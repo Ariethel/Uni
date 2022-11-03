@@ -42,6 +42,8 @@ public class Main {
                     Book b2 = em.find(Book.class, sc.next());
                     b2.toString();
                     break;
+                case 0:
+                    System.exit(0);
             }
         }
     }
