@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="BookStore" uuid="cab91eb1-3f39-4af7-bb20-1c534aeca986">
+      <driver-ref>derby.embedded</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.apache.derby.jdbc.EmbeddedDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby:BookStore;create=true</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>
