@@ -11,7 +11,7 @@
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/BookStore"/>
             <property name="javax.persistence.jdbc.password" value="admin"/>
-            <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+            <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
             <property name="javax.persistence.jdbc.user" value="admin"/>
         </properties>
     </persistence-unit>
