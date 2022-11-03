@@ -14,7 +14,25 @@
           <element id="module-output" name="BookStore" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.glassfish.jersey.containers:jersey-container-servlet:3.0.4" />
+          <element id="library" level="project" name="Maven: org.glassfish.jersey.containers:jersey-container-servlet-core:3.0.4" />
+          <element id="library" level="project" name="Maven: org.glassfish.jersey.core:jersey-common:3.0.4" />
+          <element id="library" level="project" name="Maven: org.glassfish.hk2:osgi-resource-locator:1.0.3" />
+          <element id="library" level="project" name="Maven: org.glassfish.jersey.core:jersey-server:3.0.4" />
+          <element id="library" level="project" name="Maven: jakarta.ws.rs:jakarta.ws.rs-api:3.0.0" />
+          <element id="library" level="project" name="Maven: org.glassfish.jersey.media:jersey-media-json-jackson:3.0.4" />
+          <element id="library" level="project" name="Maven: org.glassfish.jersey.ext:jersey-entity-filtering:3.0.4" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.13.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.13.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.module:jackson-module-jakarta-xmlbind-annotations:2.13.0" />
           <element id="library" level="project" name="Maven: jakarta.xml.bind:jakarta.xml.bind-api:3.0.1" />
+          <element id="library" level="project" name="Maven: org.glassfish.jersey.inject:jersey-cdi2-se:3.0.4" />
+          <element id="library" level="project" name="Maven: jakarta.enterprise:jakarta.enterprise.cdi-api:3.0.0" />
+          <element id="library" level="project" name="Maven: jakarta.el:jakarta.el-api:4.0.0" />
+          <element id="library" level="project" name="Maven: jakarta.interceptor:jakarta.interceptor-api:2.0.0" />
+          <element id="library" level="project" name="Maven: org.glassfish.jersey.core:jersey-client:3.0.4" />
+          <element id="library" level="project" name="Maven: jakarta.inject:jakarta.inject-api:2.0.0" />
           <element id="library" level="project" name="Maven: org.eclipse.persistence:org.eclipse.persistence.jpa:3.0.2" />
           <element id="library" level="project" name="Maven: org.eclipse.persistence:org.eclipse.persistence.asm:9.1.0" />
           <element id="library" level="project" name="Maven: org.eclipse.persistence:org.eclipse.persistence.core:3.0.2" />
@@ -28,14 +46,41 @@
           <element id="library" level="project" name="Maven: org.hibernate.common:hibernate-commons-annotations:6.0.0.CR1" />
           <element id="library" level="project" name="Maven: net.bytebuddy:byte-buddy:1.12.8" />
           <element id="library" level="project" name="Maven: jakarta.activation:jakarta.activation-api:2.0.1" />
-          <element id="library" level="project" name="Maven: jakarta.inject:jakarta.inject-api:2.0.0" />
           <element id="library" level="project" name="Maven: org.antlr:antlr4-runtime:4.9.1" />
           <element id="library" level="project" name="Maven: org.glassfish.jaxb:jaxb-runtime:3.0.2" />
           <element id="library" level="project" name="Maven: com.sun.activation:jakarta.activation:2.0.1" />
           <element id="library" level="project" name="Maven: org.glassfish.jaxb:jaxb-core:3.0.2" />
           <element id="library" level="project" name="Maven: org.glassfish.jaxb:txw2:3.0.2" />
           <element id="library" level="project" name="Maven: com.sun.istack:istack-commons-runtime:4.0.1" />
-          <element id="library" level="project" name="Maven: org.apache.derby:derbyshared:10.16.1.1" />
+          <element id="library" level="project" name="Maven: org.hibernate.validator:hibernate-validator:7.0.4.Final" />
+          <element id="library" level="project" name="Maven: jakarta.validation:jakarta.validation-api:3.0.0" />
+          <element id="library" level="project" name="Maven: org.glassfish:jakarta.faces:3.0.1" />
+          <element id="library" level="project" name="Maven: jakarta.annotation:jakarta.annotation-api:2.0.0" />
+          <element id="library" level="project" name="Maven: org.glassfish.tyrus:tyrus-container-grizzly-server:2.0.2" />
+          <element id="library" level="project" name="Maven: org.glassfish.grizzly:grizzly-framework:3.0.1" />
+          <element id="library" level="project" name="Maven: org.glassfish.grizzly:grizzly-http-server:3.0.1" />
+          <element id="library" level="project" name="Maven: org.glassfish.grizzly:grizzly-http:3.0.1" />
+          <element id="library" level="project" name="Maven: org.glassfish.tyrus:tyrus-server:2.0.2" />
+          <element id="library" level="project" name="Maven: jakarta.websocket:jakarta.websocket-api:2.0.0" />
+          <element id="library" level="project" name="Maven: org.glassfish.tyrus:tyrus-client:2.0.2" />
+          <element id="library" level="project" name="Maven: org.glassfish.tyrus:tyrus-core:2.0.2" />
+          <element id="library" level="project" name="Maven: org.glassfish.tyrus:tyrus-spi:2.0.2" />
+          <element id="library" level="project" name="Maven: org.glassfish.tyrus:tyrus-container-grizzly-client:2.0.2" />
+          <element id="library" level="project" name="Maven: org.glassfish.tyrus.bundles:tyrus-standalone-client:2.0.2" />
+          <element id="library" level="project" name="Maven: org.jboss.weld.se:weld-se-core:4.0.3.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.weld.environment:weld-environment-common:4.0.3.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.weld:weld-core-impl:4.0.3.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.weld:weld-api:4.0.SP1" />
+          <element id="library" level="project" name="Maven: org.jboss.weld:weld-spi:4.0.SP1" />
+          <element id="library" level="project" name="Maven: org.jboss.weld.probe:weld-probe-core:4.0.3.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.classfilewriter:jboss-classfilewriter:1.2.5.Final" />
+          <element id="library" level="project" name="Maven: com.mysql:mysql-connector-j:8.0.31" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.19.4" />
+          <element id="library" level="project" name="Maven: javax.persistence:javax.persistence-api:2.2" />
+          <element id="library" level="project" name="Maven: org.eclipse.persistence:eclipselink:4.0.0" />
+          <element id="library" level="project" name="Maven: com.sun.xml.bind:jaxb-xjc:4.0.0" />
+          <element id="library" level="project" name="Maven: com.sun.xml.bind:jaxb-core:4.0.0" />
+          <element id="library" level="project" name="Maven: org.eclipse.angus:angus-activation:1.0.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">

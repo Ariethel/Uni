@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ffdc29b8-65a0-441b-a22c-ab5f9d207d57" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../BasiDiDati/Progetto/Database&amp;Query/query_esame.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../BasiDiDati/Progetto/Database&amp;Query/query_esame.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/BookStore_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/BookStore_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/README_DO_NOT_TOUCH_FILES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/db.lck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/dbex.lck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/log/README_DO_NOT_TOUCH_FILES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/log/log.ctrl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/log/log1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/log/logmirror.ctrl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/README_DO_NOT_TOUCH_FILES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c10.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c101.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c111.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c121.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c130.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c141.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c150.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c161.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c171.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c180.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c191.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c1a1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c1b1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c1c0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c1d1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c1e0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c1f1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c20.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c200.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c211.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c221.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c230.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c241.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c251.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c260.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c271.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c281.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c290.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c2a1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c2b1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c2c1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c2d0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c2e1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c2f0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c300.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c31.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c311.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c321.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c331.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c340.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c351.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c361.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c371.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c380.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c391.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c3a1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c3b1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c3c0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c3d1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c3e1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c3f1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c400.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c41.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c411.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c421.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c430.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c441.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c451.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c461.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c470.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c481.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c51.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c60.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c71.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c81.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/c90.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/ca1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/cb1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/cc0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/cd1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/ce1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/seg0/cf0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/service.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/.idea/artifacts/BookStore2_war.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/.idea/artifacts/BookStore2_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/README_DO_NOT_TOUCH_FILES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/db.lck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/dbex.lck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/log/README_DO_NOT_TOUCH_FILES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/log/log.ctrl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/log/log1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/log/logmirror.ctrl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/README_DO_NOT_TOUCH_FILES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c10.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c101.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c111.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c121.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c130.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c141.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c150.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c161.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c171.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c180.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c191.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c1a1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c1b1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c1c0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c1d1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c1e0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c1f1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c20.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c200.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c211.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c221.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c230.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c241.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c251.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c260.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c271.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c281.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c290.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c2a1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c2b1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c2c1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c2d0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c2e1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c2f0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c300.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c31.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c311.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c321.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c331.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c340.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c351.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c361.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c371.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c380.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c391.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c3a1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c3b1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c3c0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c3d1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c3e1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c3f1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c400.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c41.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c411.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c421.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c430.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c441.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c451.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c461.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c470.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c481.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c51.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c60.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c71.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c81.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/c90.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/ca1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/cb1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/cc0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/cd1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/ce1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/seg0/cf0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/BookStoreProva/service.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/derby.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/src/main/java/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/src/main/java/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/src/main/resources/META-INF/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookStore2/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="com.haulmont.jpb.JpaEntity" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2H2tPiRYrDSalGN3OX4zDxD9w5Y" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_directory_selection": "/home/amnesia/Uni/ProgrammazioneDistribuita/Lab/Esercitazione JPA/BookStore/src/main/java",
+    "last_opened_file_path": "/home/amnesia/Uni/BasiDiDati/Progetto/GuiProgettoBDD/mysql-connector-java-8.0.11.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2281106",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ffdc29b8-65a0-441b-a22c-ab5f9d207d57" name="Changes" comment="" />
+      <created>1667494984142</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667494984142</updated>
+      <workItem from="1667494985582" duration="2239000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

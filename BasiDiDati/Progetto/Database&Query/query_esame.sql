@@ -19,8 +19,8 @@ ORDER BY u.CF, u.Nome, u.Cognome;
 # 2 - selezione su due o piu' tabelle con condizioni
 # Selezionare tutte le canzoni dei Folkstone dalla playlist di Giacomo Poretti (Titolo)
 SELECT r.Titolo
-FROM raccogliere r, playlist p, utenti u, comporre c
-WHERE r.Codice = p.Codice AND p.CF = u.CF AND r.Titolo = c.Titolo AND c.NomeAutore = "Folkstone" AND u.Nome = "Giacomo" AND u.Cognome = "Poretti";
+FROM raccogliere r, playlist p, utenti u
+WHERE r.Codice = p.Codice AND p.CF = u.CF AND u.Nome = "Giacomo" AND u.Cognome = "Poretti";
 
 
 
@@ -70,7 +70,7 @@ SELECT Titolo, Durata
 FROM LunghezzaAlbum
 WHERE Durata = 	(SELECT MAX(a.Durata)
 				 FROM (SELECT la.Durata
-					  FROM LunghezzaAlbum la join canzoni c on la.Titolo = c.NomeAlbum
+					  ascoltareFROM LunghezzaAlbum la join canzoni c on la.Titolo = c.NomeAlbum
 					  GROUP BY la.Titolo
 					  HAVING COUNT(*) <= 10) a);
                 
