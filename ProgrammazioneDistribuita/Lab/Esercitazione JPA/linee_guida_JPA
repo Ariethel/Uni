@@ -1,0 +1,4 @@
+1 - Creare DB
+2 - Creare persistence unit da Netbeans (come se volessi creare una classe)
+3 - Creare Entity (dovrebbe associarla da solo alla PU)
+4 - Creare Main per gestire la entity

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="JpbDataSourceConfig">
-    <data-source-infos>
-      <data-source-info id="ad871ef2-cbaf-4992-8484-660cc5beb1d2" persistence-unit-name="BookPU" />
-    </data-source-infos>
-  </component>
-</project>
