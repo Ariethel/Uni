@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="44a38582-d589-4405-94f4-0ce2b4d57581" name="BookStorePersistance@localhost Mapping">
+      <data-sources db="ad871ef2-cbaf-4992-8484-660cc5beb1d2" />
+      <scope>
+        <node kind="schema" qname="BookStorePersistance" />
+      </scope>
+    </mapping>
+  </component>
+</project>
