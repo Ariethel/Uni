@@ -3,20 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
  */
 
-package com.mycompany.jobscheduler1;
+package com.mycompany.jobscheduler;
 
-import entity.*;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 /**
  *
  * @author amnesia
  */
-public class JobScheduler1 {
+public class JobScheduler {
 
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("JobPU");
@@ -39,11 +39,27 @@ public class JobScheduler1 {
         em.persist(j2);
         tx.commit();
         
-        Job result = new Job("Risultati",9999,p1);
-        List<Job> results = result.findAll();
-        for(Job j: results){
-            j.toString();
+        //Creo un 3 job solo per testing
+        tx.begin();
+        Job j3 = new Job("Derubare banca", 99999, p1);
+        em.persist(j3);
+        tx.commit();
+        
+        
+        //Creo una query nativa e itero tra i risultati per stampare le informazioni che mi interessano
+        //Importante indicare "Job.class" altrimenti non si riesce ad iterare tra gli elementi
+        Query query = em.createNativeQuery("Select * From JOB ORDER BY EMPLOYEED_FIRSTNAME ",Job.class);
+        List<Job> results = query.getResultList();
+        System.out.println("\n\n\n##############################################################################");
+        for (Job j: results){
+            System.out.println(j.getEmployeed().getFirstName() + " " + j.getEmployeed().getLastName()+ " --> " + j.getTitle() );
+
         }
+        System.out.println("##############################################################################\n\n\n");
+        
+        em.close();
+        emf.close();
+       
         
     }
 }

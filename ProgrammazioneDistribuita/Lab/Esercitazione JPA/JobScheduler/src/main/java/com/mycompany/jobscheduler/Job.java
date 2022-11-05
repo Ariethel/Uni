@@ -2,31 +2,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package entity;
+
+package com.mycompany.jobscheduler;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Entity;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
+import javax.persistence.Table;
 
 /**
  *
  * @author amnesia
  */
 @Entity
-@NamedQueries({
-@NamedQuery(name="Job.findAll",
-        query="SELECT * FROM Job"),
-})
+@Table(name= "JOB")
 public class Job implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -44,16 +36,7 @@ public class Job implements Serializable {
     }
 
     public Job() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
-    
-    public List<Job> findAll(){
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("JobPU");
-        EntityManager em = emf.createEntityManager();
-        TypedQuery<Job> trovaTutto = em.createNamedQuery("Job.findAll", Job.class);
-        List<Job> results = trovaTutto.getResultList();
-        return results;
+        
     }
 
     public String getTitle() {
@@ -82,7 +65,7 @@ public class Job implements Serializable {
     
     @Override
     public String toString(){
-        return "Job: " + this.title + "\t Employeed: " + this.employeed.getFirstName();
+        return "Job: " + this.title + "\t Employeed: " + this.employeed.getFirstName() +" "+this.employeed.getLastName();
     }
 
     

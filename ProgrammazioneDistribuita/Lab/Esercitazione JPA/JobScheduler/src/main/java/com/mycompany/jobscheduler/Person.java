@@ -2,14 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package entity;
-
+package com.mycompany.jobscheduler;
 import java.io.Serializable;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 /**
  *
@@ -22,6 +18,9 @@ public class Person implements Serializable {
     @Id
     private String firstName;
     private String lastName;
+    
+    public Person(){}
+    
     
     public Person(String firstName, String lastName){
         this.firstName = firstName;

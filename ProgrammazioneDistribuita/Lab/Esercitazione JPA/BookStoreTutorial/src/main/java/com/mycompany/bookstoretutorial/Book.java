@@ -78,10 +78,9 @@ public class Book implements Serializable {
         }
         return true;
     }
-
-    @Override
-    public String toString() {
-        return "com.mycompany.bookstoretutorial.Book[ id=" + isbn + " ]";
-    }
     
+    @Override
+    public String toString(){
+        return "Titolo: " + this.titolo + "\nPrezzo: " + this.prezzo;
+    }
 }

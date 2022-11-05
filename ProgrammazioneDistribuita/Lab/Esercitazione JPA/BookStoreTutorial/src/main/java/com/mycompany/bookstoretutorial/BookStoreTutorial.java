@@ -51,7 +51,7 @@ public class BookStoreTutorial {
                     Book b2 = em.find(Book.class, sc.next());
                     if (b2 == null)
                         System.out.println("Oggetto non trovato");
-                    else b2.toString();
+                    else System.out.println(b2.toString());
                 }
                 case 0 -> System.exit(0);
             }
