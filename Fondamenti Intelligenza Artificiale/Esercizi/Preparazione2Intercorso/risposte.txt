@@ -1,0 +1,119 @@
+## MACHINE LEARNING ##	
+
+1 - Quale delle affermazioni sull'apprendimento non supervisionato e' vera?
+	Un algoritmo non supervisionato sara' in grado di stimare il alore della
+	variabile dipendente senza conoscerne il valore reale.
+
+2 - L'errore irriducibile...
+	Indica una misura di variabilita' intrinseca del fenomeno in esame
+
+3 - Quale delle seguenti NON e' utilizzata per mitigare il rischio di
+    underfitting ed overfitting?
+	La diminuzione della dimensione del dataset
+
+4 - Quale delle seguenti meglio riflette la definizione di machine learning?
+	Il machine learning consente la definizione di algoritmi che possano 
+	imparare dai dati e sulla base di questi fare previsioni
+
+5 - Descrivere i concetti di errore, bias e varianza, con particolare riferimento
+    al compromesso bias-varianza.
+	L'errore e' la differenza tra il valore stimato e quello reale.
+	Si ha Bias se, quando viene addestrato su diversi dataset, l'output
+	restituito da un modello e' sistematicamente sbagliato.
+	Si ha Varianza se, quando viene addestrato su diversi dataset, l'output
+	restituito da un modello e' sistematicamente diverso
+	Si ha Bias in casi di underfitting, ovvero quando il modello non si adatta
+	bene ai dati in input ed ha una scarsa accuratezza in fase di predizione
+	Si ha Varianza in casi di Overfitting, ovvero quando il modello non riesce
+	a generalizzare e quindi non riesce ad apprendere dati anche solo di poco 
+	diversi da quelli in input.
+
+	Sfortunatamente bias e varianza crescono in maniera inversamente 
+	proporzionale, dunque non e' possibile azzerarli entrambi, si dovra'
+	necessariamente trovare un buon compromesso che li tenga a valori
+	accettabili
+
+6 - Descrivere i componenti di un agente capace di apprendere
+	Elemento critico, che si occupa di fornire un feedback sulle prestazioni
+	all'agente, in tale modo l'elemento di apprendimento potra' determinare
+	se apportare delle modifiche all'elemento esecutivo per migliorare
+	le performance.
+	Elemento di apprendimento, responsabile del miglioramento interno
+	Elemento esecutivo, si occupa di scegliere l'azione da inviare agli 
+	attuatori
+	Generatore di problemi, serve ad esploare meglio lo spazio delle
+	soluzioni introducendo delle anomalie
+
+7 - Fornire una definizione di Machine Learning, oltre che una categorizzazione
+    delle varie tipologie di apprendimento
+	Il machine learning consente la creazione di algoritmi che apprendano
+	da una conoscenza pregressa in modo da predire valori su dati nuovi.
+	L'apprendimento puo' essere supervisionato oppure non supervisionato:
+		* Supervisionato quando i dati di apprendimento sono etichettati
+		  con il valore della variabile da predire, per ogni entry.
+		* Non Supervisionato quando l'agente dovra' essere in grado di 
+		  imparare senza conoscere il valore reale della variabile
+		  dipendente
+
+	Le 3 principali metodologie di apprendimento sono Regressione,
+	classificazione e clustering
+		* Regressione quando la variabile da predire e' continua 
+		* Classificazione quando e' continua
+		* Clustering quando si vuole fare una suddivisione in gruppi
+		  con un certo grado di similarita'
+
+
+## Ingegneria del Machine Learning ##
+
+
+1 - Considerando il modello CRISP-DM, la fase di data preparation...
+	Ha come attivita' principale quella del feature engineering
+
+2 - Quale delle seguenti meglio riflette la definizione di data modeling?
+	E' uan fase del modello CRISP-DM nella quale poter selezionare la tecnica
+	da usare e procedere al suo addestramento
+
+3 - Quale delle seguenti affermazioni, riferite allo SCRUM Master e' FALSA?
+	Le responsabilita' dello SCRUM Master includono la gestione del personale
+	che sviluppera' il progetto
+
+4 - Fornire una descrizione del modello CRISP-DM
+
+	E' un modello di sviluppo software che puo' essere paragonato ad un
+	modello a cascata con feedback tradizionale.
+	Ha una fase di Business Understanding nella quale si definiscono gli 
+	obiettivi
+	Una fase di data understanding durante la quale si identificano e
+	selezionano i dati che andranno a formare il dataset di apprendimento
+	Una fase di data preparation, nella quale si effettuano operazioni di
+	pulizia dei dati, balancing e feature engineering
+	Una fase di data modeling durante la quale si cerca di capire come
+	impostare nel modo piu' corretto il problema, comprendendo la fase di 
+	addestramento.
+	Una fase di Evaluation durante la quale si stabilisce se progredire con
+	lo sviluppo o se tornare indietro e valutare altri aspetti
+	Una fase di deployment nella quale si stabilisce modalita' di utilizzo
+	del sistema, disponibilita' ed altre caratteristiche classiche di
+	qualunque altra fase di deployment in altri modelli
+
+5 - Descrivere i cambiamenti richiesti al modello CRISP-DM per poter consentire
+    uno sviluppo agile
+	In realta' CRISP-DM e' gia' un modello flessibile, non bisogna effettuare
+	nessuna modifica al modello in se per renderlo agile, soltanto stabilire
+	un grado di flessibilita' piu' alto.
+
+6 - Descrivere la fase di data understanding, con particolare riferimento alle
+    attivita' che un progettista dovra' svolgere.
+	Si identificano i dati che dovranno far parte del dataset di addestramento
+	Questi verranno poi caricati in un tool di analisi dei dati grazie al quale
+	verranno esaminati e documentati, verranno poi visualizzate ed analizzate
+	eventuali correlazioni ed infine vengono documentati i problemi di data
+	quality.
+
+7 - Descrivere le principali differenze tra i modelli CRISP-DM e TDSP
+	A differenza di CRISP-DM, TDSP combina insieme la data understanding e la
+	fase di data preparation, cosi' come la fase di data modeling ed evaluation
+	Ma la principale caratteristica sono le regolari fasi di customer
+	acceptance oltre alla definizione di ruoli di business che stabiliscono
+	con precisione le relazioni sociali cosi' come nell'ingegneria del software
+	classica.
