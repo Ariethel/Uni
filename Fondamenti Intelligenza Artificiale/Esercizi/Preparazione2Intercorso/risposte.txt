@@ -117,3 +117,185 @@
 	acceptance oltre alla definizione di ruoli di business che stabiliscono
 	con precisione le relazioni sociali cosi' come nell'ingegneria del software
 	classica.
+
+
+## Qualita' dei dati e feature engineering ##
+
+1 - Quale delle seguenti affermazioni, riferite ai dati strutturali e' VERA?
+	Sono dati aventi forma tabulare ed in cui righe e colonne sono ben definite
+
+2 - La data imputation...
+	E' l'insieme delle tecniche che possono stimare il valore di dati mancanti
+	sulla base dei dati disponibili
+
+3 - Quale delle seguenti meglio riflette la definizione di feature engineering?
+	E' un processo nel quale il progettista utilizza la propria conoscenza del
+	dominio per determinare le feature dai dati grazzi estraibili
+	tramite metodi di data mining
+
+4 - Descrivere il tipico processo di data preparation, con particolare riferimento
+    alle operazioni di pulizia dei dati necessari per disporre di dati utili per
+    un modello di machine learning
+	Il primo passo da effettuare e' il data cleaning, ovvero il processo durante 
+	il quale si eliminano o correggono dati mancanti o rumorosi.
+	Questo puo' essere effettuato attraverso operazioni di eliminazione colonne / righe
+	tuttavia potrebbe essere un grande svantaggio nel caso in cui i dati di partenza
+	non fossero tanti.
+	Esiste allora la possibilita' di andare ad integrare i dati mancanti con tecniche
+	di data imputation, prevalentemente basate sulla statistica, che vanno a riempire
+	i campi vuoti di una colonna o di una riga a seconda dei valori delle altre entry
+	in qualla colonna / riga.
+	Avviene poi il feature scaling, che serve a normalizzare tutti i valori di una
+	caratteristica su una sola scala
+	Il feature selection, ovvero la scelta delle sole feature rilevanti al fine di 
+	determinare il valore della variabile dipendente
+	Infine avviene il data balancing, grazie al quale dataset sbilanciati possono
+	essere bilanciati artificialmente mediante la generazione di nuove istanze
+	o la rimozione di alcune di esse (Oversampling e Undersampling)
+
+5 -  Descrivere il processo di pulizia dei dati testuali, facendo riferimento alle 
+     varie operazioni necessarie in questa fase
+	Il testo viene normalizzato attraverso numerosi passaggi intermedi, alcuni
+	tra quelli comuni riguardano:
+		* Eliminare le forme contratte attraverso l'uso di dizionari
+		* Sostituzione di parole con il loro significato piu' semplice
+		* Rimozioni di parti non semantiche ed eliminazione del rumore
+		* Eliminazione delle concatenazioni tra parole
+
+6 - Descrivere il motivo per cui le tecniche di data balancing sono talvolta
+    necessarie. Fornire inoltre una panoramica delle tecnihc edi data balancing
+    dettagliando le differenze tra merodi di oversampling e undersampling
+	Spesso si possono dover affrontare situazioni per le quali si hanno pochi
+	dati dai quali generare conoscenza per gli agenti. Un caso potrebbe essere
+	il numero di persone con malattie cardiache,  il numero di persone
+	che non soffrono di questo tipo di malattie sono di gran lunga superiori al
+	numero di persone che ne soffre. Risulterebbe difficile quindi permettere
+	ad un agente di fare previsioni su queste, per tale motivo bisogna bilanciare
+	il nostro dataset. Se volessimo farlo attraverso una tecnica di undersampling
+	dovremmo cancellare delle istanze in maniera casuale o pseudo-casuale dal
+	dataset di maggioranza, questo
+	non e' il massimo poiche' potremmo andare a perdere istanze particolarmente
+	significative per il nostro agente.
+	Se volessimo invece bilanciare il dataset attraverso tecniche di oversampling
+	potremmo decidere di clonare delle istanze oppure di generarne alcune
+	completamente nuove attraverso tecniche statistiche per l'imputazione dei dati,
+	questa sembra essere la soluzione piu' conveniente ma e' possibile ottenere dei
+	valori completamente errati qualora le nuove istanze non dovessero essere generate
+	efficacemente
+
+7 - Data la seguente stringa, definire un processo di normalizzazione, motivando le scelte eseguite 
+    e riportando il risultato di ciascuna operazione
+	 
+	* Converto alcuni simboli nel loro significato espanso
+		integer finalGrade equals from exam getFirstGrade() + from exam getSecondGrade() +
+		from exam getProjectGrade()
+
+	* Adesso elimino alcuni caratteri privi di sintassi
+		integer finalGrade equals from exam getFirstGrade + from exam getSecondGrade +
+		from exam getProjectGrade
+
+	* Adesso separo i termini uniti ed elimino i get che sono ormai privi di significato
+		integer final grade equals from exam first Grade + second Grade + Project Grade
+
+
+## Problemi di Classificazione ##
+
+1 - L'information gain...
+	misura il grado di purezza di un attributo, ovvero quanto un certo attributo sara' in grado 
+	di dividere adeguatamente il dataset
+
+2 - Definizione di classificazione
+	Task in cui l'obiettivo e' predire il valore di una variabile categorica, chiamata 
+	variabile dipendente, target o classe tramite l'utilizzo di un training set, ovvero
+	un insieme di osservazioni per cui la variabile target e' nota
+
+3 - Quale delle seguenti affermazioni, riferite agli alberi decisionali, e' VERA?
+	Sono algoritmi di apprendimento che mirano a creare un albero i cui nodi rappresentano
+	un sotto-insieme di caratteristiche del problema e i cui archi rappresentano delle
+	decisioni
+
+4 - Descrivere le principali differenze tra algoritmi di apprendimento probabilistici
+    e basati su entropia
+	
+
+5 - Fornire una descrizione dei passi necessari alla costruzione di un albero decisionale
+	Alla radice di questo si posizione la miglior caratteristica del training set, ovvero 
+	quella caratterista che maggiormente separa i nostri sottoinsiemi
+	Si divide il training set in sottoinsiemi, se questi sono puri (ovvero composti da tutti e
+	soli gli elementi di una classe) si termina, altrimenti si sceglie un'altra caratteristica
+	discriminante e si ripetono le operazioni finche' tutti i sottoinsiemi non sono puri
+
+6 - Descrivere il processo di validazione di un modello di machine learning, con particolare
+    riferimento a come evitare il fenomeno del data leakage
+	La valutazione e' un processo statistico che consiste nella ripetuta suddivisione e 
+	valutazione dell'insieme di dati di partenza.
+	Il piu' comune tra i processi di validazione e' il k-fold cross validation
+	Prima di tutto si mischiano gli elementi in maniera casuale, poi si divide l'insieme di dati in k 
+	gruppi, per ogni gruppo si considera quello in esame
+	come test set, mentre gli altri k-1 vengono usati come training set. Si addestra quindi
+	il modell con il training set e si valuta sul test set.
+	Vista la suddivisione casuale dei dati nei vari set, e' possibile che al classificatore
+	vengano sottoposti insiemi anche fortemente sbilanciati. Ci sono diversi modi per rimediare
+	a questo problema:
+		* Ripetizione della validazione N volte, in modo da ridurre l'influenza della casualita'
+		* Introdurre vincoli, ad esempio temporali.
+
+
+7 - Predizione per P(Soleggiato|si) * P(caldo|Si) * (Elevata|Si) trovare la possibilita' di giocare con
+    queste condizioni atmosferiche
+
+                                 GIOCARE
+                                SI	NO	
+		soleggiato      2/9	3/5    --> 5/14   
+	METEO	nuvoloso	4/9	0      --> 4/14
+		piovoso		3/9	2/5    --> 5/14
+			
+P(GIOCARE/NON GIOCARE)		9/14    5/14
+
+A = P(Soleggiato|Si) * P(Si) / P(Soleggiato) = (2/9 * 3/9) / 5/14 = 0,4
+Na = P(Soleggiato|No) * P(No) / P(Soleggiato) = 0,6
+
+                                 GIOCARE  
+                                SI      NO      
+                caldo		2/9     2/5      --> 4/14
+  TEMPERATURA   mite		4/9     2/5      --> 6/14
+                freddo		2/9     0	 --> 2/14
+                        
+P(GIOCARE/NON GIOCARE)          8/14    4/14
+
+B = P(Caldo|Si) * P(Si) / P(Caldo) = (2/9 * 8/14) / 4/14 = 0,44
+Nb = P(Caldo|No) * P(No) / P(Caldo) = 0,4
+
+
+                                 GIOCARE
+                                SI      NO
+                Elevata         3/9     4/5      --> 7/14
+  Umidita'      Normale         5/9     1/5      --> 6/14
+                                        
+P(GIOCARE/NON GIOCARE)          8/14    5/14
+
+C = P(Elevata|Si) * P(Si) / P(Elevata) = (3/9 * 8/14) / 7/14 = 0,38
+Nc = P(Elevata|No) * P(No) / P(Elevata) = 0,57
+
+
+A*B*C = 0,066
+
+Na*Nb*Nc = 0,13
+
+Quindi il classificatore dovra' suggerire di Non giocare
+
+8 - Descrivere le principali metriche di validazione di modelli di machine learning, facendo 
+    particolare riferimento ai problemi potenziali che la metrica di accuratezza puo' causare 
+    per l'interpretazione dei risultati 
+	Due tra le metriche di valutazione piu' importanti sono la precision e la recall:
+		* Precision: Il numero di predizioni corrette per la classe in esame rispetto
+			     alle valutazioni complessive
+		
+		* Recall: Numero di predizioni corrette per tutte le istanze positive di quella
+			  classe
+
+	La accuracy indica il numero totale di predizioni corrette, ma quindi questo compende anche
+	i veri negativi, ovvero i correttamente classificati come negativi. In dataset sbilanciati
+	dove il numero di positivi e' basso si potrebbe avere un valore di accuracy altissimo ma questo
+	sara' dovuto al corretto riconoscimento dei negativi, qualora invece avessimo bisogno di
+	riconoscere correttamente i positivi questo valore sarebbe fuorviante
