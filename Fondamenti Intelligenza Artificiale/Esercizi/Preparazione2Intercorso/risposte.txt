@@ -299,3 +299,130 @@ Quindi il classificatore dovra' suggerire di Non giocare
 	dove il numero di positivi e' basso si potrebbe avere un valore di accuracy altissimo ma questo
 	sara' dovuto al corretto riconoscimento dei negativi, qualora invece avessimo bisogno di
 	riconoscere correttamente i positivi questo valore sarebbe fuorviante
+
+
+## Problemi di Regressione ##
+
+1 - Quale delle seguenti meglio riflette la definizione di regressione?
+	Task in cui l'obiettivo e' predire il valore di una variabile numerica, chiamata variabile
+	dipendente o di risposta, tramite l'utilizzo di un training set, ovvero un insieme di
+	osservazioni per cui la variabile dipendente e' nota
+
+2 - Quale delle seguenti NON e' una assunzione fatta dalla regressione lineare?
+	Nessuna delle precedenti, sono necessarie
+	* Linearita' dei dati
+	* Normalita' dei residui
+	* Omoschedasticita'
+
+3 - La regressione multipla...
+	Serve a predire il valore della variabile dipendente sulla base di un piu' variabili
+	indipendenti	
+
+4 - Descrivere i passi necessari per l'esecuzione dell'approccio di predizione basato sui minimi quadrati
+	* Per ogni punto noto si calcolo x^2 e xy
+	* Si sommano tutti gli x, y, x^2 e xy
+	* Si calcola l'inclinazione della retta b1
+	* Si calcola l'intercetta della retta b0
+	* Si mette tutto insieme nella forma ~y = b0 + b1 * x1
+
+5 - Fornire una descrizione delle assunzioni di base richieste per l'applicazione della regressione lineare
+	* Linearita' dei dati
+		La relazione attraverso variabile dipendente e variabile indipendente
+		deve essere rappresentabile tramite una funzione lineare
+	* Normalita' 
+		Gli errori devono essere normalmente distribuiti
+	* Omoschedasticita'
+		Gli errori residui devono avere una varianza costante
+	* Indipendenza degli errori
+		Gli errori devono essere indipendenti dal valore della variabile
+		indipendente
+
+6 - Fornire una descrizione delle matriche di valutazione per gli algoritmi di regressione lineare
+	* MAE: indica la differenza media osservata tra i valori predetti e i valori reali
+	* MSE: Errore quadratico medio commesso sui dati del test set
+	* RMSE: Radice quadrata di MSE
+
+
+## Problemi di Clustering ##
+
+1 - Quale delle seguenti meglio riflette la definizione di clustering?
+	Task in cui l'obiettivo e' raggruppare oggetti in gruppi che abbiano un certo grado di omogeneita'
+	ma che al tempo stesso abbiano un certo grado di eterogeneita' rispetto agli altri gruppi
+
+2 - Il clustering gerarchico agglomerativo
+	Procede nel raggruppamento degli elementi partendo da cluster atomici fino ad arrivare al punto in 
+	cui esiste un unico cluster
+
+3 - Quale delle seguenti affermazioni, riferite alle metriche di valutazione del clustering, e' VERA?
+	Nessuna delle indicate
+
+4 - Discutere le proprieta' di una misura metrica
+	La misura metrica e' una misura calcolabile di distanza tra piu' elementi di una popolazione
+		* Identita': d(x,x) = 0 per ogni x
+		* Positivita': d(x,y) > 0
+		* Simmetria: d(x,y) = d(y,x)
+		* Disuguaglianza triangolare = d(x,z) <= d(x,y) + d(y,z)
+
+5 - Discutere le differenze principali tra algoritmi di clustering partizionali ed algoritmi di clustering
+    gerarchici
+	Gli algoritmi di clustering partizionali si limitano a fare una sola partizione dei dati in cluster
+	e mostrano quella. Gli algoritmi di clustering gerarchici, invece, mostrano diversi partizionamenti
+	dei dati a seconda del diverso livello di similarita'
+
+6 - Fornire una descrizione dell'algoritmo k-means, con particolare riferimento alle potenziali
+    problematiche che possono ridurre le sue prestazioni
+	L'algoritmo k-means consiste dei seguenti passi:
+		* Scegliere k centroidi casuali
+		* Generare k cluster assegnandoli al centroide piu' vicino
+		* Calcolare nuovamente i centroidi per ogni cluster
+		* Riparti da 2
+	
+	Il problema principale per k-means e' la scelta del k, un k troppo basso potrebbe portare
+	ad un risultato inutile e troppo semplice, mentre un k troppo alto richiederebbe all'algoritmo
+	tantissime iterazioni 
+	Un secondo problema potrebbe essere la scelta dei centroidi, problema agirabile con una scelta
+	pseudo-casuale.
+	Inoltre k-means non si presta bene a riconoscere forme arbitrarie.
+
+7 - 
+
+
+## Usabilita' di Algoritmi di Intelligenza Artificiale ##
+
+1 - Attraverso quale dei seguenti design pattern e' possibile integrare un algorimo di intelligenza
+    artificiale nel contesto di un sistema software complesso?
+	Adapter
+
+2 - Quale delle seguenti NON E' riconducibile ad un conversational agent?
+	I conversation agent comunicano attraverso un'interfaccia a command-line
+
+3 - Le principali 3 "V" dei big data sono...
+	Volume, velocity, variety
+
+4 - Uno smart object...
+	E' un dispositivo equipaggiato con sensori e/o attuatori
+
+5 - Descrivere l'architettura di un conversational agent
+	Un conversational agent avra' bisogno di
+	* Un framework a seconda della piattaforma di utilizzo del bot
+	* Un linguaggio di programmazione a scelta per la logica di business e per le 
+	  chiamate http
+	* Un modulo separato di ML in modo da ridurre l'accoppiamento ed aumentare il riutilizzo
+	  questo potra' essere formato da qualunque tecnologia possa servire 
+	Tra il sottosistema del bot e quello del machine learner si dovra' costruire un oggetto Adapter
+	che esegue la conversione di un output in qualcosa di utilizzabile dal sistema
+
+6 - Descrivere l'architettura di un sistema IoT
+	L'architettura di un sistema IoT e' basata su 4 livelli
+	1 - Perception Layer: Si tratta degli smart object, oggetti dotati di sensori ed attuatori, sono
+	    spesso di piccole dimensioni ed hanno una ridotta capacita' di calcolo e di storage. Ogni
+	    smart object avra' dei constraint dati dalle sue caratteristiche
+
+	2 - Network Layer: Permette di realizzare la comunicazione tra le thing stesse e le connette al
+			   layer superiore
+
+	3 - Processing Layer: Detto anche middleware, e' dove i dati raccolti dai sensori vengono 
+			      elaborati
+
+	4 - Application Layer: I dati elaborati vengono presentati all'utente che puo' prendere
+			       decisioni oppure decidere di inviare comandi agli attuatori
