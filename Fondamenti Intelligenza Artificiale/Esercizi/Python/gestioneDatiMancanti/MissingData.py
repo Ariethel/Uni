@@ -1,0 +1,22 @@
+import numpy as np
+from sklearn.compose import ColumnTransformer
+from sklearn.impute import SimpleImputer
+
+#eta e sesso
+X = [
+    [20, np.nan],
+    [np.nan, 'm'],
+    [30, 'f'],
+    [35, 'f'],
+    [np.nan, np.nan]
+]
+
+#applico delle trasformazioni alle colonne vuote con il SimpleImputer
+transformers = [
+    ['age_imputer', SimpleImputer(strategy='mean'), [0]],
+    ['sex_imputer', SimpleImputer(strategy='constant', fill_value='n.d.'), [1]]
+]
+ct = ColumnTransformer(transformers)
+X = ct.fit_transform(X)
+
+print(X)
