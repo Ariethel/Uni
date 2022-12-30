@@ -18,20 +18,20 @@ def img_split(img, row, col):
     i = 0
     print(f'Shape[0]:{img.shape[0]} Shape[1]:{img.shape[1]} M:{M} N: {N}')
     tiles = [[img[x:x + M, y:y + N] for x in range(0, img.shape[0] - (img.shape[0] % col), M) for y in range(0, img.shape[1] - (img.shape[1] % row), N)]]
-    row = row[0]
-    tiles = []
+    tiles_f = []
     tmp = []
-    for idx, i in enumerate(row):
-        tmp.append(i)
-        if(idx + 1) % col == 0:
-            tiles.append(tmp)
+    for idx, i in enumerate(tiles[0]):
+        tmp.append(i) #costruisco una riga
+        if(idx + 1) % col == 0: #se l'indice + 1 sara' multiplo di 3 allora vado a capo
+            tiles_f.append(tmp)
             tmp = []
-
+    tiles = tiles_f
     for t in tiles:
         for n in t:
             cv2.imshow("img", n)
             cv2.waitKey(0)
 
+    
 
 
 def plot_grid(grid,row,col,h=5,w=5):
