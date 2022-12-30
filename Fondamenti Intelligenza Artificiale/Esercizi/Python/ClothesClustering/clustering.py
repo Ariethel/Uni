@@ -12,13 +12,27 @@ img = cv2.imread("painting.png", 0)
 
 
 def img_split(img, row, col):
-    M = img.shape[0] // col #larghezza colonna
-    N = img.shape[1] // row #larghezza riga
+    M = img.shape[0] // col #larghezza singola colonna
+    N = img.shape[1] // row #altezza singola riga
+    j = 0
+    i = 0
     print(f'Shape[0]:{img.shape[0]} Shape[1]:{img.shape[1]} M:{M} N: {N}')
-    tiles = [[img[x:x + M, y:y + N] for x in range(0, img.shape[0], N) for y in range(1, img.shape[1], M)]]
-    #Cosa cazzo succede qui? Chiedere a Lore, in pratica e' come se creasse una matrice di una sola riga ma molto larga
-    cv2.imshow("img", tiles[0][9])
-    cv2.waitKey(0)
+    tiles = [[img[x:x + M, y:y + N] for x in range(0, img.shape[0] - (img.shape[0] % col), M) for y in range(0, img.shape[1] - (img.shape[1] % row), N)]]
+    row = row[0]
+    tiles = []
+    tmp = []
+    for idx, i in enumerate(row):
+        tmp.append(i)
+        if(idx + 1) % col == 0:
+            tiles.append(tmp)
+            tmp = []
+
+    for t in tiles:
+        for n in t:
+            cv2.imshow("img", n)
+            cv2.waitKey(0)
+
+
 
 def plot_grid(grid,row,col,h=5,w=5):
     fig, ax = plt.subplots(nrows=row, ncols=col)
