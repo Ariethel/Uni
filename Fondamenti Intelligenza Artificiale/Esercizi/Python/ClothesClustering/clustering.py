@@ -4,24 +4,21 @@ import cv2
 import numpy as np
 from image_slicer import slice
 
-img = cv2.imread("painting.png", -1)
+img = cv2.imread("painting.png", 0)
 
-def img_split(img, n):
-    slice(img, n)
+#Il nostro scopo e' quello di arrivare ad avere ogni immagine come A = [[array di immagini(matrici)], etichetta]
+#per compararle pero' bisogna effettuare delle trasformazioni: Devono avere tutte la stessa risoluzione e devono essere normalizzate tutte le feature
+#forse devono pure essere tutte in scala di grigi
 
 
-'''
-   def img_split(img, row, col):
-    M = img.shape[0] // row
-    N = img.shape[1] // col
-    tiles = [
-        [img[x:x + M, y:y + N]
-             for x in range(0, img.shape[0], M)
-             for y in range(0, img.shape[1], N)]
-    ]
-    cv2.imshow("img", tiles[1][0])
+def img_split(img, row, col):
+    M = img.shape[0] // col #larghezza colonna
+    N = img.shape[1] // row #larghezza riga
+    print(f'Shape[0]:{img.shape[0]} Shape[1]:{img.shape[1]} M:{M} N: {N}')
+    tiles = [[img[x:x + M, y:y + N] for x in range(0, img.shape[0], N) for y in range(1, img.shape[1], M)]]
+    #Cosa cazzo succede qui? Chiedere a Lore, in pratica e' come se creasse una matrice di una sola riga ma molto larga
+    cv2.imshow("img", tiles[0][9])
     cv2.waitKey(0)
-'''
 
 def plot_grid(grid,row,col,h=5,w=5):
     fig, ax = plt.subplots(nrows=row, ncols=col)
@@ -38,7 +35,7 @@ def plot_grid(grid,row,col,h=5,w=5):
 
 if __name__=='__main__':
     row, col = 3, 3
-    img_split(img, 9)
+    img_split(img, row, col)
 
     #grid, r, c = img_split(img, row, col)
     #plot_grid(grid, r, c)
