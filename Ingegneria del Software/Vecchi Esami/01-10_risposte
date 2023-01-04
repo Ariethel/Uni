@@ -8,12 +8,20 @@
 	comprensione dell'organizzazione delle attivita' e dei task
 
 3 - (Class Diagram) Quali delle seguenti affermazioni sono vere?
-	 
+	I ruoli sono spesso usati per relazioni tra oggetti della stessa classe
+	I nomi di ruolo possono essere usati in alternativa ai nomi delle associazioni
+		 
 
 4 - (Sequence Diagram) Quali delle seguenti non sono corrette?
-
+	E' uno dei principali input per l'implementazione dello scenario	
 
 5 - Quale tra le seguenti e' una tecnica utilizzata nell'attivita' chiamata
     Requirement elicitation?
-	
+	Brain Storming
+
+6 - Quale dei seguenti NON e' un attributo di FURPS?
+	Scalability
+
+7 - Quale delle seguenti non e' una attivita' dell'analisi dei requisiti?
+		
 	
