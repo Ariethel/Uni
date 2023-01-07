@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.0 (wsit240-7e98ff4; 2017-08-03T21:19:54+0200) JAXWS-RI/2.3.0 JAXWS-API/2.3.0 JAXB-RI/2.3.0 JAXB-API/2.3.0 svn-revision#unknown. --><xs:schema xmlns:tns="http://canzoneSanremo/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://canzoneSanremo/">
+
+<xs:element name="aggiornaCanzone" type="tns:aggiornaCanzone"/>
+
+<xs:element name="aggiornaCanzoneResponse" type="tns:aggiornaCanzoneResponse"/>
+
+<xs:element name="aggiungiCanzone" type="tns:aggiungiCanzone"/>
+
+<xs:element name="aggiungiCanzoneResponse" type="tns:aggiungiCanzoneResponse"/>
+
+<xs:element name="canzone" type="tns:canzone"/>
+
+<xs:element name="eliminaCanzone" type="tns:eliminaCanzone"/>
+
+<xs:element name="eliminaCanzoneResponse" type="tns:eliminaCanzoneResponse"/>
+
+<xs:element name="trovaPerCategoria" type="tns:trovaPerCategoria"/>
+
+<xs:element name="trovaPerCategoriaResponse" type="tns:trovaPerCategoriaResponse"/>
+
+<xs:element name="trovaPerId" type="tns:trovaPerId"/>
+
+<xs:element name="trovaPerIdResponse" type="tns:trovaPerIdResponse"/>
+
+<xs:element name="trovaPerVoti" type="tns:trovaPerVoti"/>
+
+<xs:element name="trovaPerVotiResponse" type="tns:trovaPerVotiResponse"/>
+
+<xs:element name="trovaTutteCanzoni" type="tns:trovaTutteCanzoni"/>
+
+<xs:element name="trovaTutteCanzoniResponse" type="tns:trovaTutteCanzoniResponse"/>
+
+<xs:complexType name="eliminaCanzone">
+<xs:sequence>
+<xs:element name="arg0" type="tns:canzone" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="canzone">
+<xs:sequence>
+<xs:element name="cantato" type="xs:boolean" minOccurs="0"/>
+<xs:element name="categoria" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="incipit" type="xs:string" minOccurs="0"/>
+<xs:element name="nomeCantante" type="xs:string" minOccurs="0"/>
+<xs:element name="votiRicevuti" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminaCanzoneResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="trovaTutteCanzoni">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="trovaTutteCanzoniResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:canzone" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="aggiornaCanzone">
+<xs:sequence>
+<xs:element name="arg0" type="tns:canzone" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="aggiornaCanzoneResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="trovaPerId">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="trovaPerIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:canzone" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="aggiungiCanzone">
+<xs:sequence>
+<xs:element name="arg0" type="tns:canzone" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="aggiungiCanzoneResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="trovaPerVoti">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="trovaPerVotiResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:canzone" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="trovaPerCategoria">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="trovaPerCategoriaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:canzone" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
