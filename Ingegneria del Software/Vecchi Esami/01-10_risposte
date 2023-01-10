@@ -23,5 +23,38 @@
 	Scalability
 
 7 - Quale delle seguenti non e' una attivita' dell'analisi dei requisiti?
-		
+	Identificare gli attori
+
+8 - Quale delle seguenti affermazioni e' corretta:
+	Gli oggetti entity rappresentano le entita' visibili del sistema rispetto al dominio applicativo
+
+9 - Relativamente agli oggetti Boundary, quali delle seguenti affermazioni non e' corretta?
+	Non considerare i messaggi che il sistema usa per rispondere all'utente
+
+10 - QUale delle seguenti figure non e' prevista per la suddivisione delle responsabilita' durante
+     l'analisi e la raccolta dei requisiti?
+	Manager di qualita'
+
+11 - Un servizio e':
+	un insieme di operazioni correlate fornite dal sottosistema per uno specifico scopo
+
+12 - Quale delle seguenti euristiche e' corretta?
+	Gli sviluppatori possono trattare ad ogni livello di astrazione un numero di concetti
+	pari a 5 +- 2
+
+13 - Quale delle seguenti affermazioni e' corretta?
+	Una macchina virtuale e' un sottosistema connesso a macchine virtuali di livello piu'
+	alto e piu' basso attraverso associazioni "provides services for"
+
+14 - Quale delle seguenti affermazioni e' corretta? In una architettura client/server le funzioni
+     eseguite dal client sono:
+	fornire interfaccia utente standard
+
+15 - Quale selle seguenti attivita' non rientra in quelle da fare per la specifica delle interfacce,
+     durante l'object design:
+	
+
+16 - Quale di queste non e' una attivita' di ottimizzazione effettuata durante la fase di object design
+     e implementazione del sistema?
+			
 	
