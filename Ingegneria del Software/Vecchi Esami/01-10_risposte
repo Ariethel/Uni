@@ -52,9 +52,23 @@
 
 15 - Quale selle seguenti attivita' non rientra in quelle da fare per la specifica delle interfacce,
      durante l'object design:
+	mantenere traccia dei contratti nel codice sorgente
 	
-
 16 - Quale di queste non e' una attivita' di ottimizzazione effettuata durante la fase di object design
      e implementazione del sistema?
-			
+	Trasformazione di oggetti in attributi
 	
+17 - Se devo effettuare una trasformazione prima sul modello a oggetti e poi ottengo il codice faccio:
+	Prima operazioni di object model transformation e poi di forward engineering
+
+18 - Se il mio obiettivo e' fornire implementazioni diverse per uno stesso sottosistema
+	Uso un bridge pattern
+
+19 - Durante l'ispezione ai fini del fault detection:
+
+20 - Quanto si effettua il testing di regressione?
+
+21 - Quale affermazione e' vera?
+
+22 - Quale di queste affermazioni e' vera?
+
